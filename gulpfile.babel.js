@@ -68,6 +68,7 @@ gulp.task("svg", () => {
 
 gulp.task("server", ["hugo", "css", "js", "svg"], () => {
   browserSync.init({
+    port: 9003,
     server: {
       baseDir: "./dist"
     }
