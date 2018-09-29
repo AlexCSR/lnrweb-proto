@@ -3,7 +3,7 @@
 {{ partial "jumbotron" (dict "imageUrl" "/img/blog-index.jpg" "title" "News1 layout") }}
 
 <div class="mw7 center">
-  <ul class="flex-ns flex-wrap mhn1-ns pa3">
+  <div class="flex-ns flex-wrap mhn1-ns pa3" data-infinite-scroll='{ "path": "[title=\"Next Page\"]", "append": ".news", "history": true, "checkLastPage": true }'>
       {{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
           {{ .Render .Type }}
 
@@ -11,7 +11,7 @@
             {{ .Render "li"}}
           </div> -->
       {{ end }}
-  </ul>
+  </div>
   {{ partial "pagination" . }}
 </div>
 

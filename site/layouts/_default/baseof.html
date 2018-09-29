@@ -1,9 +1,36 @@
 <!doctype html>
-<html lang="en">
-  {{ partial "head" . }}
-  <body class="sans-serif">
-    {{ partial "nav" . }}
-    {{ block "main" . }}{{ end }} 
+<html lang="en"{{ if .Params.basename }} class="page-{{ .Params.basename }}"{{ end }}>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="author" content="L+R">
+    <meta name="copyright" content="Levin &amp; Riegner, LLC">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="/js/libs/isMobile.min.js"></script>
+    <script src="/js/document.js"></script>
+    <link rel="icon" type="image/png" href="/img/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-icon-152x152.png">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    {{ with .Keywords }}<meta name="keywords" content="{{ range $i, $e := . }}{{ if $i }} {{ end }}{{ $e }}{{ end }}">{{ end }}
+    <meta name="description" content="{{ .Description }}">
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="/css/pages/work.css">
+    <link rel="stylesheet" href="/css/components/subhead.css">
+    <script src="/js/libs/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/pages/work.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+    {{ partial "header" . }}
+    <main class="main">
+      {{ block "main" . }}{{ end }}
+    </main>
     {{ partial "footer" . }} 
+    <!-- {{ partial "svg" . }} -->
+    </div>
+    <script src="/app.js"></script>
   </body>
 </html>

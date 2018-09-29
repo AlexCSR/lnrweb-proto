@@ -1,0 +1,443 @@
+$clients = gc, schumacher
+$ns = ".work"
+
+@keyframes workCasesGradient
+  from
+    transform translateX(-400%) scale(2)
+  to
+    transform translateX(0%) scale(2)
+
+@keyframes workFormGradient
+  from
+    transform translateX(-200%)
+  to
+    transform translateX(0.01%)
+
+{$ns}
+  padding-top 226px
+  &__cases
+    padding-bottom 115px
+    &-item
+      +a($m)
+        margin 23px 0 30px
+      +b($m)
+        margin 23px 0
+      &-content
+        position relative
+        overflow hidden
+      &-preview
+        background-size cover
+        background-position 50% 50% 
+        transition transform $speed * 4
+        +a($m)
+          height 550px
+        +b($m)
+          height 560px
+      &-fader
+        position absolute
+        z-index 2
+        left 0
+        width 100% 
+        opacity 0.33
+        background-image linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, #000000 100%)
+        +a($m)
+          bottom 0
+          height 90px
+        +b($m)
+          transform rotate(180deg)
+          top 0
+          height 110px
+      &-overlay
+        position absolute
+        z-index 1
+        width 100% 
+        height 100% 
+        top 0
+        left 0
+        transform translateY(100%)
+        opacity 0.85
+        transition-property transform
+        transition-duration $speed * 3
+        +b($m)
+          display none
+        &-gradient
+          position absolute
+          top 0
+          left 0
+          width 100% 
+          height 100% 
+          animation workCasesGradient 5s linear infinite forwards
+          transform-origin top left
+          i
+            display block
+            position absolute
+            top 0
+            width 100% 
+            height 100% 
+            background-image linear-gradient(-90deg, #0000FF 0%, #6701CF 18%, #FF0000 38%, #FF9B00 57%, #FFF001 79%, #00D700 100%)
+            &:nth-child(1)
+              left 0
+            &:nth-child(2)
+              left 100%
+              transform rotate(180deg)
+              margin-left -1px
+            &:nth-child(3)
+              left 200%
+              margin-left -2px
+      &-about
+        position absolute
+        z-index 3
+        +a($m)
+          bottom 26px
+          left 31px
+          max-width 375px
+          transform translateY(100%)
+          transition transform $speed * 3 cubic-bezier(.15,.03,.28,1)
+        +b($m)
+          top 20px
+          left 10px
+        &-logo
+          +a($m)
+            position absolute
+            bottom 100% 
+            left 0
+          img
+            display block
+        p
+          color #fff 
+          font-weight 600 
+          font-size 17px
+          line-height 24px
+          padding-top 24px
+          opacity 0
+          transition opacity $speed * 3 cubic-bezier(.15,.03,.28,1) 
+          +b($m)
+            display none
+      a
+        display block
+        position absolute
+        z-index 4
+        top 0
+        left 0
+        width 100% 
+        height 100% 
+        text-decoration none 
+      for client in $clients
+        &.-{client}
+          {$ns}__cases-item-preview
+            +a($m)
+              background-image url("/img/work/" + client + "/preview-bg-desktop.jpg")
+              +density(2)
+                background-image url("/img/work/" + client + "/preview-bg-desktop@2x.jpg")
+            +b($m)
+              background-image url("/img/work/" + client + "/preview-bg-mobile.jpg")
+              +density(2)
+                background-image url("/img/work/" + client + "/preview-bg-mobile@2x.jpg")
+              +density(3)
+                background-image url("/img/work/" + client + "/preview-bg-mobile@3x.jpg")
+      +hover()
+        {$ns}__cases-item
+          &-preview
+            transform scale(1.05)
+          &-overlay
+            transform none
+          &-about
+            transform none
+            p
+              opacity 1
+  &__featured
+    padding-bottom 37px
+    .subhead
+      padding-bottom 50px
+    &-list
+      display flex
+      flex-wrap wrap
+      justify-content space-between
+      align-items flex-end
+    &-item
+      position relative
+      margin-bottom 122px
+      &:nth-child(4n-3),
+      &:nth-child(4n)
+        width 49.5268%
+      &:nth-child(4n-2),
+      &:nth-child(4n-1)
+        width 41.1672%
+      &-preview
+        padding-bottom 15px
+        img
+          display block
+          width 100%
+          position absolute
+          z-index -1
+          visibility hidden
+          &.-active
+            position static
+            visibility visible
+      &-title
+        font-family $Ogg 
+        height 100px
+        font-size 17px
+        line-height 24px
+  &__clients
+    background-color #fafafa
+    padding 143px 0 122px
+    margin-bottom 136px
+    .subhead
+      padding-bottom 62px
+    &-list
+      display flex
+      flex-wrap wrap
+    &-item
+      text-align center
+      flex 0 0 auto
+      font-size 0
+      box-sizing border-box
+      position relative
+      +a($t)
+        width 25%
+      +btw($m, $t)
+        width 33.33%
+      +a($m)
+        height 240px
+        line-height 240px
+      +b($m)
+        width 50%
+        height 150px
+        line-height 150px
+        transform scale(0.68)
+      .animate__item
+        height 100% 
+      img
+        display block
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%, -50%)
+        max-width 100% 
+        opacity 0
+        visibility hidden
+        transition-property opacity, visibility
+        transition-duration $speed * 8
+        &.-active
+          opacity 1
+          visibility visible
+  &__brief
+    &-container
+      background-color #0f1010 
+      color #fff 
+      border-radius 3px
+      position relative
+      display flex
+      padding 107px 104px 0 0
+      &-spine
+        position absolute
+        bottom 100% 
+        left 94px
+        background-color #0f1010 
+        width 314px
+        height 13px
+        border-radius 3px 3px 0 0
+        &:before,
+        &:after
+          content "" 
+          display block
+          position absolute
+          top 0
+          width 0
+          height 0
+          border-style solid
+          margin 1px -1px
+        &:before
+          border-width 0 0 13px 15px
+          border-color transparent transparent #0f1010 transparent
+          right 100% 
+        &:after
+          border-width 13px 0 0 15px
+          border-color transparent transparent transparent #0f1010
+          left 100% 
+    &-title
+      flex 0 0 auto
+      line-height 1
+      font-family $SharpSans
+      font-weight 500
+      white-space nowrap
+      padding 2px 104px 0
+      +a($m)
+        font-size 60px
+      +b($m)
+        font-size 40px
+      span
+        font-family $Ogg 
+        margin 0 0.105em 0 -0.105em
+    &-about
+      padding-bottom 56px
+    &-form
+      width 100% 
+      position relative
+      margin auto
+      opacity 0.15
+      transition opacity $speed * 4 $speed * 5
+      +a($m)
+        padding-bottom 22px
+      &-input
+        height 50px
+        position relative
+        input
+          display block
+          width 100% 
+          height 100%
+          background none
+          border none
+          font 500 17px/24px $SharpSans
+          color #fff  
+          box-sizing border-box
+          +a($m)
+            padding-right 100px
+          +b($m)
+            padding-right 30px
+          &::-webkit-input-placeholder
+            color #fff
+          &::-moz-placeholder
+            color #fff
+          &:-ms-input-placeholder
+            color #fff
+          &:-moz-placeholder
+            color #fff
+          &:-webkit-autofill
+            -webkit-box-shadow 0 0 0 30px #0e0f0f inset
+          &:-webkit-autofill
+            -webkit-text-fill-color #fff !important
+        &-border
+          position absolute
+          z-index 4
+          bottom 0
+          left 0
+          overflow hidden
+          width 100% 
+          height 1px
+          background-color rgba(#fff, 0.15) 
+          transition height $speed * 3 
+          &-gradient
+            top 0
+            left 0
+            width 100% 
+            height 100%
+            animation workFormGradient 5s linear infinite forwards
+            opacity 0
+            transition opacity $speed * 3 
+            i
+              display block
+              position absolute
+              top 0
+              width 100% 
+              height 100% 
+              background-image linear-gradient(-90deg, #0000FF 0%, #6701CF 18%, #FF0000 38%, #FF9B00 57%, #FFF001 79%, #00D700 100%)
+              &:nth-child(1)
+                left 0
+              &:nth-child(2)
+                left 100%
+                transform rotate(180deg)
+              &:nth-child(3)
+                left 200%
+          .subhead
+            color #fff 
+            position absolute
+            left 20px
+            top 50%
+            transform translateY(100%)
+            transition transform $speed * 2  $speed * 2
+            font-size 20px
+            margin-top -2px
+            &__title:after
+              background-color #fff 
+      &-control
+        position relative
+        display block
+        position absolute
+        z-index 3
+        transition-property visibility, opacity
+        transition-duration $speed * 2 
+        top 18px
+        right 0
+      &-button
+        border none
+        background none
+        font 500 17px/24px $SharpSans
+        display block
+        height 24px
+        transition color $speed * 3
+        color rgba(#fff, 0.29)
+        &[disabled]
+          pointer-events none
+      &-error
+        color #ff001f 
+        font-size 14px
+        line-height 24px
+        text-align left
+        visibility hidden
+        height 99px
+        box-sizing border-box
+        img
+          position relative
+          top 1px
+          margin-right 6px
+          flex 0 0 auto
+        &.-active
+          display flex
+          visibility visible
+          padding-top 9px
+      &.-active
+        {$ns}__brief-form
+          &-input
+            &:before,
+            &:after
+              opacity 0.5
+            &:before
+              transform translateX(-100%)
+            &:after
+              transform translateX(100%)
+          &-control
+            transform none
+          &-button
+            color #717171
+      &.-focused,
+      &.-filled
+        {$ns}__brief-form
+          &-input-border
+            height 2px
+            &-gradient
+              opacity 1
+      &.-filled
+        {$ns}__brief-form
+          &-button
+            color #fff 
+      &.-sent
+        {$ns}__brief-form
+          &-control
+            opacity 0
+            visibility hidden
+          &-input-border
+            height 100% 
+            &-gradient
+              opacity 1
+            .subhead
+              transform translateY(-50%)
+    &.-animated
+      {$ns}__brief
+        &-heading,
+        &-text
+          color #fff 
+        &-form
+          opacity 1
+  &__contact
+    padding 215px 0 
+    &-text
+      margin auto
+      max-width 842px
+      font-weight 300 
+      font-size 40px
+      line-height 52px
+      color #a4a4a4 
+      a
+        font-weight 500 

@@ -1,0 +1,33 @@
+.subhead
+  color $black 
+  +btw($t, $d)
+    margin-bottom 15px
+  +btw($m, $t)
+    margin-bottom 17px
+  +a($m)
+    font-size 17px
+    line-height 28px
+  +b($m)
+    font-size 15px
+    line-height 20px
+    margin-bottom 9px
+  &__title,
+  &__value
+    display inline-block
+    vertical-align baseline
+  &__title
+    font-weight 500 
+    &:after
+      content "" 
+      display inline-block
+      vertical-align 1px
+      height 1px
+      background-color $black
+      +a($m)
+        width 31px
+        margin 0 8px
+      +b($m)
+        width 26px
+        margin 0 5px
+  &__value
+    font-family $Ogg

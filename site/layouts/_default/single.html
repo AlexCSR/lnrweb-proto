@@ -3,4 +3,12 @@
 {{ partial "jumbotron" (dict "imageUrl" "/img/7.jpg" "title" "This is where the heading goes" "subtitle" "This is where the subtitle goes") }}
 {{ .Content }}
  
+{{ if .PrevInSection }}
+{{.PrevInSection.Title}}
+<a href="{{.PrevInSection.Permalink}}">Previous Post</a>
+{{ end }}
+{{ if .NextInSection }}
+<a href="{{.NextInSection.Permalink}}">Next Post</a>
+{{ end }}
+ 
 {{ end }}

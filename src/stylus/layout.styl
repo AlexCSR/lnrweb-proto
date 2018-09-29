@@ -1,0 +1,114 @@
+webfont('Sharp Sans No1', 'SharpSansNo1-Light', 300)
+webfont('Sharp Sans No1', 'SharpSansNo1-Book')
+webfont('Sharp Sans No1', 'SharpSansNo1-Medium', 500)
+webfont('Sharp Sans No1', 'SharpSansNo1-Semibold', 600)
+webfont('Sharp Sans No1', 'SharpSansNo1-Bold', 700)
+webfont('Sharp Sans No1', 'SharpSansNo1-Extrabold', 800)
+webfont('Druk Wide', 'DrukWide-Bold', 700)
+webfont('Ogg', 'Ogg-Roman')
+
+@keyframes hoverGradient
+  from
+    background-position 250% 50%
+  to
+    background-position 0% 50%
+
+html,
+body
+  background-color #fff
+  
+html
+  &.is-scrolling
+    &,
+    *
+      pointer-events none !important
+
+body
+  font-weight 500
+  font-family $SharpSans
+  color $text
+  +a($m)
+    font-size 20px
+    line-height 1.8em
+  +b($m)
+    font-size 17px
+    line-height 27px
+
+a
+  text-decoration none
+  border-bottom .05em solid currentColor 
+  color #000
+  &:hover
+    border-bottom-width 0
+    background linear-gradient(270deg, #e20a0a, #ffc200, #74e10b, #12b1e1, #bb11e1, #e20a0a)
+    background-size 500% 500%
+    animation hoverGradient 2s linear infinite
+    -webkit-background-clip text
+    -webkit-text-fill-color transparent
+
+.wrapper
+  width 100% 
+  min-height 100% 
+  overflow hidden
+  position relative
+  z-index 2
+  background-color #fff
+  +a($t)
+    margin-bottom 450px
+  +btw($m, $t)
+    margin-bottom 428px
+
+.main
+  background-color #fff 
+  position relative
+  z-index 2
+  transition transform $speed * 2
+    
+.container
+  margin auto
+  max-width 1268px
+  box-sizing border-box
+  +a($d)
+    width 88.055556%
+  +btw($m, $d)
+    width 81.7708%
+  +b($m)
+    width 88.8% 
+
+.hidden
+  &-a-d
+    +a($d)
+      display none !important
+  &-b-d
+    +b($d)
+      display none !important
+  &-a-t
+    +a($t)
+      display none !important
+  &-b-t
+    +b($t)
+      display none !important
+  &-a-m
+    +a($m)
+      display none !important
+  &-b-m
+    +b($m)
+      display none !important
+
+.ico
+  font 0/0 'a'
+  display inline-block
+  vertical-align middle
+  flex 0 0 auto
+  svg
+    width 100% 
+    height 100%
+    transition-duration $speed
+    transition-property fill, stroke, color
+    fill currentcolor
+    [fill]
+      fill currentcolor
+    [stroke]
+      stroke currentcolor
+    &:not(:root)
+      overflow hidden

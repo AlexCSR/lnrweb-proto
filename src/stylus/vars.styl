@@ -1,0 +1,46 @@
+// fonts
+
+$sans = Arial, sans-serif
+$serif = "Times New Roman", serif
+$SharpSans = "Sharp Sans No1", $sans
+$DrukWide = "Druk Wide", $sans
+$Ogg = "Ogg", $serif
+
+// colors
+
+$black = #000
+$text = #3c3c3c
+$gray = #717171
+$lightgray = #a4a4a4
+$pink = #ff00d5
+
+// animations
+
+$speed = 150ms
+
+// responsive
+
+rupture.anti-overlap = true
+
+a = above
+b = below
+btw = between
+
+$hd = 1979px
+$d = 1439px
+$t = 1023px
+$m = 767px
+
+// mixins
+
+hover()
+  html.no-mobile &:hover
+    {block}
+    
+webfont(family, file, weight = 'normal', style = 'normal')
+  @font-face
+    font-family family
+    src url('../fonts/' + file + '.woff2') format('woff2'), 
+        url('../fonts/' + file + '.woff') format('woff')
+    font-weight weight
+    font-style style

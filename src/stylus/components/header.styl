@@ -1,0 +1,118 @@
+.header
+  position fixed
+  z-index 100
+  top 0
+  left 0
+  width 100%
+  -webkit-backdrop-filter blur(3px)
+  backdrop-filter blur(3px)
+  background-color rgba(#fff, 0.97)
+  +a($m)
+    padding-top 28px
+  +b($m)
+    padding-top 18px
+  &__body
+    display flex
+    align-items center
+    height 64px
+    font-size 0
+    line-height 0
+  &__about
+    flex 1 1 auto
+    font-weight 500 
+    font-size 16px
+    line-height 22px
+    padding 0 3.6%
+    pointer-events none
+    visibility hidden
+    @media only screen and (min-width 768px) and (max-width 930px), only screen and (max-width 500px)
+      position absolute
+      top 100% 
+      padding 0
+      margin-top 10px
+    +btw($m, 930px)
+      left 9.1146%
+      width 81.7708%
+    +b($m)
+      width 88.8%
+      left 5.6%
+    &-dash
+      letter-spacing -2px
+      padding 0 9px 
+    p
+      white-space nowrap
+      color red !important 
+      +a(931px)
+        display inline
+  &__logo
+    flex 0 0 auto
+    a
+      display block
+      border none
+  &__menu
+    text-align right
+    +a(930px)
+      flex 0 0 auto
+    +b(930px)
+      flex 1 1 auto
+    &-burger
+      display block
+      float right
+      width 30px
+      height 30px
+      border none
+      background none
+      font-size 0
+      line-height 0
+      margin-right -10px
+      +a($m)
+        display none
+      .page-landing &
+        display block
+        +a(960px)
+          display none
+      i
+        display inline-block
+        vertical-align top
+        width 1px
+        height 17px
+        background-color #000
+        margin 0 2px 
+        transition-property opacity, transform, width, background-color
+        transition-duration $speed * 2  
+    &-list
+      +b($m)
+        display none
+      .page-landing &
+        +b(960px)
+          display none
+    &-item
+      display inline-block
+      vertical-align top
+      font-weight 600
+      font-size 16px
+      line-height 17px
+      & + &
+        margin-left 35px
+      a
+        border none
+        &:hover
+          addGradient() 
+      &.-active
+        color rgba(#000, 0.25)
+  &.-upscrolled
+    transition transform $speed * 2
+  &.-white
+    .header__menu-burger i
+      background-color #fff 
+    .header__about,
+    .header__menu a
+      color #fff 
+  .page-landing &
+    -webkit-backdrop-filter none
+    backdrop-filter none
+    background none
+    transform none !important 
+  .page-landing & .header__logo
+    visibility hidden
+    pointer-events none
