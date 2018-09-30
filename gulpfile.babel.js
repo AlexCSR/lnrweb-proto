@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
+import del from 'del';
 import cp from 'child_process';
 import gutil from 'gulp-util';
 import postcss from 'gulp-postcss';
@@ -24,8 +25,8 @@ if (process.env.DEBUG) {
 
 gulp.task('hugo', (cb) => buildSite(cb));
 gulp.task('hugo-preview', (cb) => buildSite(cb, ['--buildDrafts', '--buildFuture']));
-gulp.task('build', ['css', 'js', 'hugo']);
-gulp.task('build-preview', ['css', 'js', 'hugo-preview']);
+gulp.task('build', ['copy', 'css', 'js', 'hugo']);
+gulp.task('build-preview', ['copy', 'css', 'js', 'hugo-preview']);
 
 gulp.task('stylus', () => {
   const autoload = ['rupture', 'vars'];
@@ -70,23 +71,49 @@ gulp.task('js', (cb) => {
   });
 });
 
-gulp.task('svg', () => {
+gulp.task('sprite', () => {
   const svgs = gulp
-    .src('site/static/img/icons-*.svg')
-    .pipe(svgmin())
-    .pipe(svgstore({inlineSvg: true}));
+    .src('site/static/img/icons/*.svg')
+    .pipe($.plumber())
+    .pipe($.rename(path => {
+      path.basename = `ico_${path.basename}`;
+    }))
+    .pipe($.svgmin())
+    .pipe($.svgstore())
+    .pipe($.cheerio({
+      run: $ => {
+        const needlessEls = ['title', 'style'];
+        const needlessAttrs = ['fill', 'style', 'class', 'stroke', 'opacity'];
 
-  function fileContents(filePath, file) {
-    return file.contents.toString();
-  }
+        for (let el of needlessEls) {
+          $(el).remove();
+        }
+        for (let attr of needlessAttrs) {
+          $(`[${attr}]`).removeAttr(attr);
+        }
+      },
+      parserOptions: {
+        xmlMode: true,
+      },
+    }));
 
   return gulp
-    .src('site/layouts/partials/svg.html')
-    .pipe(inject(svgs, {transform: fileContents}))
+    .src('site/layouts/partials/sprite.html')
+    .pipe(inject(svgs, {
+      transform: (filePath, file) => file.contents.toString().replace(/^.*<svg/, '<svg'),
+    }))
     .pipe(gulp.dest('site/layouts/partials/'));
 });
 
-gulp.task('server', ['hugo', 'stylus', 'css', 'js', 'svg'], () => {
+gulp.task('copy', () => {
+  return del([
+    `${__dirname}/dist/fonts`,
+  ]).then(() => {
+    gulp.src('./src/fonts/**/*.*').pipe(gulp.dest('./dist/fonts'));
+  });
+});
+
+gulp.task('server', ['hugo', 'stylus', 'css', 'js', 'sprite', 'copy'], () => {
   browserSync.init({
     port: 9003,
     reloadDebounce: 200,
@@ -99,7 +126,7 @@ gulp.task('server', ['hugo', 'stylus', 'css', 'js', 'svg'], () => {
   gulp.watch('./src/js/**/*.js', ['js']);
   gulp.watch('./src/stylus/**/*.styl', ['stylus']);
   gulp.watch('./src/css/**/*.css', ['css']);
-  gulp.watch('./site/static/img/icons-*.svg', ['svg']);
+  gulp.watch('./site/static/img/icons/*.svg', ['sprite']);
   gulp.watch('./site/**/*', ['hugo']);
 });
 

@@ -1,18 +1,146 @@
 {{ define "main" }}
-
-{{ partial "jumbotron" (dict "imageUrl" "/img/blog-index.jpg" "title" "News1 layout") }}
-
-<div class="mw7 center">
-  <div class="flex-ns flex-wrap mhn1-ns pa3" data-infinite-scroll='{ "path": "[title=\"Next Page\"]", "append": ".news", "history": true, "checkLastPage": true }'>
-      {{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
-          {{ .Render .Type }}
-
-        <!--   <div class="w-50-ns ph1-ns flex">
-            {{ .Render "li"}}
-          </div> -->
-      {{ end }}
+  <link rel="stylesheet" href="/css/pages/news.css">
+  <div class="news">
+    <div class="container">
+      <div class="news__search">
+        <button type="button" class="news__search-handler">
+          {{ partial "svg" (dict "glyph" "search") }}
+          <span class="news__search-handler-value">
+            Search
+          </span>
+        </button>
+      </div>
+      <div class="news__list">
+        <div class="news__list-item news__pinned -skin-dark">
+          <div class="news__pinned-body">
+            {{ partial "subhead" (dict "title" "Our Team") }}
+            <div class="news__pinned-headline">
+              <a href="">
+                L+R named as one of the Top Creative, Design, and Development Companies in New York City for 2018
+              </a>
+            </div>
+            {{ partial "news-info" (dict "date" "Mar 29, 2018" "author" "Meredith") }}
+            <div class="news__pinned-more">
+              <a href="">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="news__list-item news__normal">
+          <div class="news__normal-preview"></div>
+          <div class="news__normal-body">
+            {{ partial "subhead" (dict "title" "Design Teaching") }}
+            <div class="news__normal-headline">
+              <a href="">
+                The search for alternatives: L+R’s Director of Aesthetics, Ryan Riegner, introduces systems and tools for alternate ideation
+              </a>
+            </div>
+            {{ partial "news-info" (dict "date" "May 9, 2018" "author" "L+R") }}
+          </div>
+        </div>
+        <div class="news__list-item news__normal">
+          <div class="news__normal-preview"></div>
+          <div class="news__normal-body">
+            {{ partial "subhead" (dict "title" "Our Team") }}
+            <div class="news__normal-headline">
+              <a href="">
+                L+R Senior Designer, Chris Martiníe named in GDUSA’s “People to Watch in 2018”
+              </a>
+            </div>
+            {{ partial "news-info" (dict "date" "Feb 13, 2018" "author" "L+R") }}
+          </div>
+        </div>
+        <div class="news__list-item news__normal">
+          <div class="news__normal-preview"></div>
+          <div class="news__normal-body">
+            {{ partial "subhead" (dict "title" "Project Launch") }}
+            <div class="news__normal-headline">
+              <a href="">
+                Dig – The dog person’s dating app launched
+              </a>
+            </div>
+            {{ partial "news-info" (dict "date" "Mar 29, 2018" "author" "Meredith") }}
+          </div>
+        </div>
+        <div class="news__list-item news__announcement -text-first">
+          <div class="news__announcement-body">
+            {{ partial "subhead" (dict "title" "☺") }}
+            <div class="news__announcement-headline">
+              It's been really great sharing our passion with you. <br>Infinite thanks and gratitude to you all as we transtion into 2017.
+            </div>
+          </div>
+          <div class="news__announcement-preview"></div>
+        </div>
+        <div class="news__list-item news__normal">
+          <div class="news__normal-preview"></div>
+          <div class="news__normal-body">
+            {{ partial "subhead" (dict "title" "Project Launch") }}
+            <div class="news__normal-headline">
+              <a href="">
+                Amazon Elastic Container Service for Kubernetes &amp; AWS Fargate announced at AWS re:Invent 2017
+              </a>
+            </div>
+            {{ partial "news-info" (dict "date" "Nov 29, 2017" "author" "L+R") }}
+          </div>
+        </div>
+        <div class="news__list-item news__social">
+          <div class="news__social-image"></div>
+          <div class="news__social-link">
+            <a href="">@levinriegner</a>
+          </div>
+        </div>
+        <div class="news__list-item news__social">
+          <div class="news__social-image"></div>
+          <div class="news__social-link">
+            <a href="">@levinriegner</a>
+          </div>
+        </div>
+        <div class="news__list-item news__announcement -text-first">
+          <div class="news__announcement-body">
+            {{ partial "subhead" (dict "title" "🍻") }}
+            <div class="news__announcement-headline">
+              2017 Holiday Party — Brooklyn, New York — 5th&nbsp;Annual
+            </div>
+          </div>
+          <div class="news__announcement-preview"></div>
+        </div>
+        <div class="news__list-item news__social">
+          <div class="news__social-post">
+            We will be attending #TechDay in Los Angeles on Sep 27th. Excited to meet with current and future partners at #SiliconBeach's leading #tech event. #techdaytalks
+          </div>
+          <div class="news__social-link">
+            <a href="">@levinriegner</a>
+          </div>
+        </div>
+        <div class="news__list-item news__normal">
+          <div class="news__normal-preview"></div>
+          <div class="news__normal-body">
+            {{ partial "subhead" (dict "title" "Our Team") }}
+            <div class="news__normal-headline">
+              <a href="">
+                L+R Senior Designer, Chris Martiníe named in GDUSA’s “People to Watch in 2018”
+              </a>
+            </div>
+            {{ partial "news-info" (dict "date" "Feb 13, 2018" "author" "L+R") }}
+          </div>
+        </div>
+        <div class="news__list-item news__normal">
+          <div class="news__normal-preview"></div>
+          <div class="news__normal-body">
+            {{ partial "subhead" (dict "title" "Project Launch") }}
+            <div class="news__normal-headline">
+              <a href="">
+                Dig – The dog person’s dating app launched
+              </a>
+            </div>
+            {{ partial "news-info" (dict "date" "Mar 29, 2018" "author" "Meredith") }}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  {{ partial "pagination" . }}
-</div>
-
+<!--
+{{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
+  <div></div>
+{{ end }}
+-->
 {{end}}

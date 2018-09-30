@@ -1,3 +1,8 @@
+require('./document');
+require('./components/header');
+// require('./pages/landing');
+require('./pages/work');
+
 // JS Goes here - ES6 supported
 if (window.netlifyIdentity) {
   window.netlifyIdentity.on("init", user => {

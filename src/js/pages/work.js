@@ -1,3 +1,5 @@
+import imagesLoaded from '../libs/imagesloaded.pkgd.min';
+
 ;(function () {
   // featured
   document.addEventListener('DOMContentLoaded', function () {

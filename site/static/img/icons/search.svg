@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>search (Selected)</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="7-News" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.402232143">
+        <g id="News-Home" transform="translate(-104.000000, -144.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="Search" transform="translate(86.000000, 133.000000)">
+                <g id="search-(Selected)" transform="translate(24.500000, 17.500000) scale(-1, 1) translate(-24.500000, -17.500000) translate(19.000000, 12.000000)">
+                    <path d="M6.5,9.5 C3.73857625,9.5 1.5,7.26142375 1.5,4.5 C1.5,1.73857625 3.73857625,-0.5 6.5,-0.5 C9.26142375,-0.5 11.5,1.73857625 11.5,4.5 C11.5,7.26142375 9.26142375,9.5 6.5,9.5 Z M6.5,8.5 C8.709139,8.5 10.5,6.709139 10.5,4.5 C10.5,2.290861 8.709139,0.5 6.5,0.5 C4.290861,0.5 2.5,2.290861 2.5,4.5 C2.5,6.709139 4.290861,8.5 6.5,8.5 Z" id="Oval-2"></path>
+                    <polygon id="Line" points="0.853553391 10.8535534 0.146446609 10.1464466 3.14644661 7.14644661 3.85355339 7.85355339"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,3 +1,5 @@
+import isMobile from './libs/isMobile.min';
+
 if (!Element.prototype.matches) {
   Element.prototype.matches = Element.prototype.msMatchesSelector ||
   Element.prototype.webkitMatchesSelector;

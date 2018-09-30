@@ -1,4 +1,4 @@
-<script src="/js/components/header.js"></script>
+<!--script src="/js/components/header.js"></script-->
 <link rel="stylesheet" href="/css/components/header.css">
 <header class="header">
   <div class="container">
@@ -9,8 +9,8 @@
       <div class="header__menu">
         <button class="header__menu-burger" type="button"><i></i><i></i><i></i></button>
         <div class="header__menu-list">
-          <div class="header__menu-item -active"><a href="/work.html" onclick="mixpanel.track(&quot;Work&quot;);">Work</a></div>
-          <div class="header__menu-item"><a href="https://levinriegner.news/" onclick="mixpanel.track('News');">News</a></div>
+          <div class="header__menu-item{{ if eq .Params.basename "work" }} -active{{ end }}"><a href="/work/" onclick="mixpanel.track('Work');">Work</a></div>
+          <div class="header__menu-item{{ if eq .Params.basename "news" }} -active{{ end }}"><a href="/news/" onclick="mixpanel.track('News');">News</a></div>
           <div class="header__menu-item"><a href="https://lr1.typeform.com/to/N9Okvv" onclick="mixpanel.track('Careers');">Careers</a></div>
           <div class="header__menu-item"><a href="https://lr1.typeform.com/to/Y8wFjZ" onclick="mixpanel.track('Contact');">Contact</a></div>
         </div>
