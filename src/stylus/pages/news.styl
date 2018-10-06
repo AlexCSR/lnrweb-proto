@@ -60,6 +60,8 @@ $ns = ".news"
       display block
   &__pinned
     color #fff 
+    +btw($t, $d)
+      background-size 56.6142% auto
     +a($t)
       min-height 600px
       background-position right center
@@ -101,10 +103,11 @@ $ns = ".news"
     &-headline
       font-family $Ogg
       +a($t)
+        margin-bottom 8px
+      +a($sd)
         font-size 46px
         line-height 60px
-        margin-bottom 8px
-      +btw($m, $t)
+      +btw($m, $sd)
         font-size 32px
         line-height 43px
       +b($m)
@@ -137,6 +140,8 @@ $ns = ".news"
           color rgba(#000, 0.4)
   &__announcement
     background-repeat no-repeat
+    +btw($t, $d)
+      background-size 66.4567% auto
     +a($t)
       display flex
       align-items center
@@ -159,31 +164,36 @@ $ns = ".news"
         margin-bottom 21px
     &-headline
       font-family $Ogg
-      +a($t)
+      +a($sd)
         font-size 40px
         line-height 52px
-      +btw($m, $t)
+      +btw($m, $sd)
         font-size 30px
         line-height 41px
       +b($m)
         font-size 23px
         line-height 35px
-    +a($t)
-      &.-text-first
-        background-position right center
-        {$ns}
-          &__announcement
-            &-body
+    &.-text-first
+      background-position right center
+      {$ns}
+        &__announcement
+          &-body
+            +a($d)
+              padding-left 106px
+            +btw($t, $d)
+              padding-left 53px
+            +a($t)
               width 50%
               box-sizing border-box
-              padding-left 106px
-      &.-image-first
+    &.-image-first
+      +a($t)
         background-position left center
-        {$ns}
-          &__announcement
-            &-body
+      {$ns}
+        &__announcement
+          &-body
+            +a($t)
               margin-left 50%
-              padding 0 0 28px 5px 
+              padding 0 0 26px 5px 
   &__normal
     .subhead
       color #000
@@ -199,7 +209,6 @@ $ns = ".news"
     &-inner
       display block
       box-shadow 3px 5px 14px rgba(#000, 0.06)
-      height 100% 
       transition box-shadow $speed
       &:hover
         &:not(:active)
@@ -249,7 +258,7 @@ $ns = ".news"
       display none
     &-inner
       display block
-      height 420px
+      height 100% 
       margin 0 33px
       position relative
       &:hover
@@ -260,6 +269,8 @@ $ns = ".news"
             // opacity 0
     &-media
       color #3c3c3c 
+      height calc(100% - 69px) 
+      position relative
       &:before
         content "" 
         display block
@@ -270,18 +281,21 @@ $ns = ".news"
         position absolute
         left 0
         width 100%
-      img
-        top 0
-      p
         top 50%
         transform translateY(-50%)
-        padding-bottom 32px
+      p
+        padding-top 36px
+        +b($d)
+          font-size 17px
+          line-height 30px
+          max-height 270px
+          overflow hidden
     &-link
       font-size 17px
       line-height 20px 
       position absolute
       overflow hidden 
-      bottom 26px
+      bottom 25px
       left 0
       color #000
       &-copy
