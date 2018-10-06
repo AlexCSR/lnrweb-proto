@@ -23,7 +23,7 @@ $searchOverlaySpeed = $speed * 3
       font-weight 600
       padding 0 18px 2px
       box-sizing border-box
-      transition-property box-shadow, color, opacity, visibility
+      transition-property box-shadow, color, background-color, opacity, visibility
       transition-duration $speed
       .ico
         width 12px
@@ -40,10 +40,15 @@ $searchOverlaySpeed = $speed * 3
           box-shadow 3px 5px 20px rgba(#000, 0.15)
       &.-opened
         position absolute
+        z-index 120
         top 0
         left 0
         opacity 0
         visibility hidden
+        color #fff
+        &:hover
+          color #000
+          background-color #fff 
     &-overlay
       position fixed
       z-index 110
@@ -108,9 +113,6 @@ $searchOverlaySpeed = $speed * 3
         padding-top 31px
     &.-active &
       &-handler
-        z-index 120
-        color #fff
-        box-shadow none
         &.-closed
           opacity 0
           visibility hidden
