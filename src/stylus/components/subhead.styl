@@ -1,5 +1,6 @@
 .subhead
-  color $black 
+  display block
+  color currentColor
   +btw($t, $d)
     margin-bottom 15px
   +btw($m, $t)
@@ -18,11 +19,14 @@
   &__title
     font-weight 500 
     &:after
-      content "" 
+      content "____" 
+      white-space nowrap
       display inline-block
-      vertical-align 1px
-      height 1px
-      background-color $black
+      vertical-align top
+      overflow hidden
+      letter-spacing -0.117647em
+      position relative
+      top -0.058824em
       +a($m)
         width 31px
         margin 0 8px

@@ -13,6 +13,12 @@ webfont('Ogg', 'Ogg-Roman')
   to
     background-position 0% 50%
 
+@keyframes spin
+  from
+    transform rotate(0deg)
+  to
+    transform rotate(360deg)
+
 html,
 body
   background-color #fff
@@ -36,15 +42,12 @@ body
 
 a
   text-decoration none
-  border-bottom .05em solid currentColor 
-  color #000
-  &:hover
-    border-bottom-width 0
-    background linear-gradient(270deg, #e20a0a, #ffc200, #74e10b, #12b1e1, #bb11e1, #e20a0a)
-    background-size 500% 500%
-    animation hoverGradient 2s linear infinite
-    -webkit-background-clip text
-    -webkit-text-fill-color transparent
+  &:not([data-no-flux])
+    border-bottom .05em solid currentColor 
+    color #000
+    &:hover
+      fluxText()
+      border-bottom-width 0
 
 .wrapper
   width 100% 
@@ -71,9 +74,11 @@ a
   +a($d)
     width 88.055556%
   +btw($m, $d)
-    width 81.7708%
+    // width 81.7708%
+    width 81.3%
   +b($m)
-    width 88.8% 
+    // width 88.8% 
+    width 91.8%
 
 .hidden
   &-a-d

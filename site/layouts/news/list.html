@@ -11,12 +11,12 @@
         </button>
       </div>
       <div class="news__list">
-        <div class="news__list-item news__pinned -skin-dark">
+        <div class="news__list-item news__pinned" style="background-color: #0D0D0D; background-image: url('/temp/clutch.jpg');">
           <div class="news__pinned-body">
             {{ partial "subhead" (dict "title" "Our Team") }}
             <div class="news__pinned-headline">
               <a href="">
-                L+R named as one of the Top Creative, Design, and Development Companies in New York City for 2018
+                L+R named as one of the Top Creative, Design, and Development Companies in&nbsp;New York City for 2018
               </a>
             </div>
             {{ partial "news-info" (dict "date" "Mar 29, 2018" "author" "Meredith") }}
@@ -26,114 +26,180 @@
           </div>
         </div>
         <div class="news__list-item news__normal">
-          <div class="news__normal-preview"></div>
-          <div class="news__normal-body">
-            {{ partial "subhead" (dict "title" "Design Teaching") }}
-            <div class="news__normal-headline">
-              <a href="">
+          <a href="" class="news__normal-inner" data-no-flux>
+            <span class="news__normal-preview">
+              <img src="/temp/news-1.jpg" alt="">
+            </span>
+            <span class="news__normal-body">
+              {{ partial "subhead" (dict "title" "Design Teaching") }}
+              <span class="news__normal-headline">
+                <span class="news__normal-headline-copy">
+                  <span>
+                    The search for alternatives: L+R’s Director of Aesthetics, Ryan Riegner, introduces systems and tools for alternate ideation
+                  </span>
+                </span>
                 The search for alternatives: L+R’s Director of Aesthetics, Ryan Riegner, introduces systems and tools for alternate ideation
-              </a>
-            </div>
-            {{ partial "news-info" (dict "date" "May 9, 2018" "author" "L+R") }}
-          </div>
+              </span>
+              {{ partial "news-info" (dict "date" "May 9, 2018" "author" "L+R") }}
+            </span>
+          </a>
         </div>
         <div class="news__list-item news__normal">
-          <div class="news__normal-preview"></div>
-          <div class="news__normal-body">
-            {{ partial "subhead" (dict "title" "Our Team") }}
-            <div class="news__normal-headline">
-              <a href="">
+          <a href="" class="news__normal-inner" data-no-flux>
+            <span class="news__normal-preview">
+              <img src="/temp/news-2.jpg" alt="">
+            </span>
+            <span class="news__normal-body">
+              {{ partial "subhead" (dict "title" "Our Team") }}
+              <span class="news__normal-headline">
+                <span class="news__normal-headline-copy">
+                  <span>
+                    L+R Senior Designer, Chris Martiníe named in GDUSA’s “People to Watch in 2018”
+                  </span>
+                </span>
                 L+R Senior Designer, Chris Martiníe named in GDUSA’s “People to Watch in 2018”
-              </a>
-            </div>
-            {{ partial "news-info" (dict "date" "Feb 13, 2018" "author" "L+R") }}
-          </div>
+              </span>
+              {{ partial "news-info" (dict "date" "Feb 13, 2018" "author" "L+R") }}
+            </span>
+          </a>
         </div>
         <div class="news__list-item news__normal">
-          <div class="news__normal-preview"></div>
-          <div class="news__normal-body">
-            {{ partial "subhead" (dict "title" "Project Launch") }}
-            <div class="news__normal-headline">
-              <a href="">
+          <a href="" class="news__normal-inner" data-no-flux>
+            <span class="news__normal-preview">
+              <img src="/temp/news-3.jpg" alt="">
+            </span>
+            <span class="news__normal-body">
+              {{ partial "subhead" (dict "title" "Project Launch") }}
+              <span class="news__normal-headline">
+                <span class="news__normal-headline-copy">
+                  <span>
+                    Dig – The dog person’s dating app launched
+                  </span>
+                </span>
                 Dig – The dog person’s dating app launched
-              </a>
-            </div>
-            {{ partial "news-info" (dict "date" "Mar 29, 2018" "author" "Meredith") }}
-          </div>
+              </span>
+              {{ partial "news-info" (dict "date" "Mar 29, 2018" "author" "Meredith") }}
+            </span>
+          </a>
         </div>
-        <div class="news__list-item news__announcement -text-first">
+        <div class="news__list-item news__announcement -text-first" style="background-image: url('/temp/2017.jpg');">
           <div class="news__announcement-body">
-            {{ partial "subhead" (dict "title" "☺") }}
+            {{ partial "subhead" (dict "title" "😊") }}
             <div class="news__announcement-headline">
-              It's been really great sharing our passion with you. <br>Infinite thanks and gratitude to you all as we transtion into 2017.
+              It's been really great sharing our passion with you. Infinite thanks and gratitude to you all as we transtion into 2017.
             </div>
           </div>
-          <div class="news__announcement-preview"></div>
         </div>
         <div class="news__list-item news__normal">
-          <div class="news__normal-preview"></div>
-          <div class="news__normal-body">
-            {{ partial "subhead" (dict "title" "Project Launch") }}
-            <div class="news__normal-headline">
-              <a href="">
+          <a href="" class="news__normal-inner" data-no-flux>
+            <span class="news__normal-preview">
+              <img src="/temp/reinvent.jpg" alt="">
+            </span>
+            <span class="news__normal-body">
+              {{ partial "subhead" (dict "title" "Project Launch") }}
+              <span class="news__normal-headline">
+                <span class="news__normal-headline-copy">
+                  <span>
+                    Amazon Elastic Container Service for Kubernetes &amp; AWS Fargate announced at AWS re:Invent 2017
+                  </span>
+                </span>
                 Amazon Elastic Container Service for Kubernetes &amp; AWS Fargate announced at AWS re:Invent 2017
-              </a>
-            </div>
-            {{ partial "news-info" (dict "date" "Nov 29, 2017" "author" "L+R") }}
-          </div>
+              </span>
+              {{ partial "news-info" (dict "date" "Nov 29, 2017" "author" "L+R") }}
+            </span>
+          </a>
         </div>
         <div class="news__list-item news__social">
-          <div class="news__social-image"></div>
-          <div class="news__social-link">
-            <a href="">@levinriegner</a>
-          </div>
+          <a href="" class="news__social-inner" data-no-flux>
+            <span class="news__social-media">
+              <img src="/temp/soho.jpg" alt="">
+            </span>
+            <span class="news__social-link">
+              <span class="news__social-link-copy">
+                <span>@levinriegner</span>
+              </span>
+              @levinriegner
+            </span>
+          </a>
         </div>
         <div class="news__list-item news__social">
-          <div class="news__social-image"></div>
-          <div class="news__social-link">
-            <a href="">@levinriegner</a>
-          </div>
+          <a href="" class="news__social-inner" data-no-flux>
+            <span class="news__social-media">
+              <img src="/temp/three.jpg" alt="">
+            </span>
+            <span class="news__social-link">
+              <span class="news__social-link-copy">
+                <span>@levinriegner</span>
+              </span>
+              @levinriegner
+            </span>
+          </a>
         </div>
-        <div class="news__list-item news__announcement -text-first">
+        <div class="news__list-item news__announcement -image-first" style="background-image: url('/temp/party.jpg');">
           <div class="news__announcement-body">
             {{ partial "subhead" (dict "title" "🍻") }}
             <div class="news__announcement-headline">
-              2017 Holiday Party — Brooklyn, New York — 5th&nbsp;Annual
+              2017 Holiday Party — <br>Brooklyn, New York — <br>5th&nbsp;Annual
             </div>
           </div>
-          <div class="news__announcement-preview"></div>
         </div>
         <div class="news__list-item news__social">
-          <div class="news__social-post">
-            We will be attending #TechDay in Los Angeles on Sep 27th. Excited to meet with current and future partners at #SiliconBeach's leading #tech event. #techdaytalks
-          </div>
-          <div class="news__social-link">
-            <a href="">@levinriegner</a>
-          </div>
+          <a href="" class="news__social-inner" data-no-flux>
+            <span class="news__social-media">
+              <p>We will be attending #TechDay in Los Angeles on Sep 27th. Excited to meet with current and future partners at #SiliconBeach's leading #tech event. #techdaytalks</p>
+            </span>
+            <span class="news__social-link">
+              <span class="news__social-link-copy">
+                <span>@levinriegner</span>
+              </span>
+              @levinriegner
+            </span>
+          </a>
         </div>
         <div class="news__list-item news__normal">
-          <div class="news__normal-preview"></div>
-          <div class="news__normal-body">
-            {{ partial "subhead" (dict "title" "Our Team") }}
-            <div class="news__normal-headline">
-              <a href="">
+          <a href="" class="news__normal-inner" data-no-flux>
+            <span class="news__normal-preview">
+              <img src="/temp/chicago.jpg" alt="">
+            </span>
+            <span class="news__normal-body">
+              {{ partial "subhead" (dict "title" "Our Team") }}
+              <span class="news__normal-headline">
+                <span class="news__normal-headline-copy">
+                  <span>
+                    L+R Senior Designer, Chris Martiníe named in GDUSA’s “People to Watch in 2018”
+                  </span>
+                </span>
                 L+R Senior Designer, Chris Martiníe named in GDUSA’s “People to Watch in 2018”
-              </a>
-            </div>
-            {{ partial "news-info" (dict "date" "Feb 13, 2018" "author" "L+R") }}
-          </div>
+              </span>
+              {{ partial "news-info" (dict "date" "Feb 13, 2018" "author" "L+R") }}
+            </span>
+          </a>
         </div>
         <div class="news__list-item news__normal">
-          <div class="news__normal-preview"></div>
-          <div class="news__normal-body">
-            {{ partial "subhead" (dict "title" "Project Launch") }}
-            <div class="news__normal-headline">
-              <a href="">
+          <a href="" class="news__normal-inner" data-no-flux>
+            <span class="news__normal-preview">
+              <img src="/temp/fest.jpg" alt="">
+            </span>
+            <span class="news__normal-body">
+              {{ partial "subhead" (dict "title" "Project Launch") }}
+              <span class="news__normal-headline">
+                <span class="news__normal-headline-copy">
+                  <span>
+                    Dig – The dog person’s dating app launched
+                  </span>
+                </span>
                 Dig – The dog person’s dating app launched
-              </a>
-            </div>
-            {{ partial "news-info" (dict "date" "Mar 29, 2018" "author" "Meredith") }}
-          </div>
+              </span>
+              {{ partial "news-info" (dict "date" "Mar 29, 2018" "author" "Meredith") }}
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="news__preloader">
+        <div class="news__preloader-pluses">
+          <i></i>
+          <i></i>
+          <i></i>
         </div>
       </div>
     </div>
