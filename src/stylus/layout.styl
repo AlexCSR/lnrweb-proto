@@ -19,6 +19,12 @@ webfont('Ogg', 'Ogg-Roman')
   to
     transform rotate(360deg)
 
+@keyframes t
+  from
+    transform translateX(0)
+  to
+    transform translateX(-200%)
+
 html,
 body
   background-color #fff
@@ -63,8 +69,6 @@ a
 
 .main
   background-color #fff 
-  position relative
-  z-index 2
   transition transform $speed * 2
     
 .container

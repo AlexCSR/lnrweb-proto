@@ -1,16 +1,20 @@
 $ns = ".news"
+$searchOverlaySpeed = $speed * 3
 
 {$ns}
   padding-top 133px
   &__search
     margin-bottom 24px
+    &-toggler
+      position relative
     &-handler
       display inline-block
       vertical-align top
+      position relative
       height 35px
       border-radius 17.5px
       box-shadow 3px 5px 14px rgba(#000, 0.06) 
-      border none
+      border 1px solid #fff
       background none
       color rgba(#000, 0.4) 
       text-transform uppercase
@@ -19,8 +23,8 @@ $ns = ".news"
       font-weight 600
       padding 0 18px 2px
       box-sizing border-box
-      transition-property box-shadow, color
-      transition-duration $speed 
+      transition-property box-shadow, color, opacity, visibility
+      transition-duration $speed
       .ico
         width 12px
         height 12px
@@ -34,6 +38,91 @@ $ns = ".news"
         color #000
         &:not(:active)
           box-shadow 3px 5px 20px rgba(#000, 0.15)
+      &.-opened
+        position absolute
+        top 0
+        left 0
+        opacity 0
+        visibility hidden
+    &-overlay
+      position fixed
+      z-index 110
+      top 0
+      left 0
+      width 100% 
+      height 100% 
+      opacity 0
+      visibility hidden
+      background-color #160dfc 
+      transition-property opacity, visibility 
+      transition-duration $searchOverlaySpeed
+      padding-top 281px
+      box-sizing border-box
+      &-form
+        position relative
+        opacity 0
+        transform translateY(20px)
+        transition-property transform, opacity
+        transition-duration $searchOverlaySpeed 
+        transition-delay $searchOverlaySpeed
+        &-placeholder
+          display block
+          transition-property opacity, visibility 
+          transition-duration $speed * 1.5
+          transition-timing-function linear 
+          +b($m)
+            height 49px
+        input
+          display block
+          position absolute
+          left 0
+          width 100% 
+          border none
+          background none
+          color #fff 
+          font-family $SharpSans
+          font-weight 600  
+          letter-spacing -0.25px 
+          +a($m)
+            height 120px
+            font-size 90px
+            top -30px
+          +b($m)
+            height 84px
+            font-size 63px
+            top -21px
+        &.-filled &-placeholder
+          visibility hidden
+          opacity 0
+        &.-filled + {$ns}__search-overlay-tip
+            opacity 1
+            transform none
+      &-tip
+        opacity 0
+        transform translateY(20px)
+        transition-property transform, opacity
+        transition-duration $searchOverlaySpeed
+        font-size 15px
+        line-height 21px
+        color rgba(#fff, 0.75)
+        padding-top 31px
+    &.-active &
+      &-handler
+        z-index 120
+        color #fff
+        box-shadow none
+        &.-closed
+          opacity 0
+          visibility hidden
+        &.-opened
+          opacity 1
+          visibility visible
+      &-overlay
+        opacity 0.95 
+        visibility visible
+        &-form
+          opacity 1
+          transform none
   &__list
     +a($t)
       display flex
@@ -174,7 +263,8 @@ $ns = ".news"
         font-size 23px
         line-height 35px
     &.-text-first
-      background-position right center
+      +a($t)
+        background-position right center
       {$ns}
         &__announcement
           &-body

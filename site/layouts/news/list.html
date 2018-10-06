@@ -3,12 +3,31 @@
   <div class="news">
     <div class="container">
       <div class="news__search">
-        <button type="button" class="news__search-handler">
-          {{ partial "svg" (dict "glyph" "search") }}
-          <span class="news__search-handler-value">
-            Search
-          </span>
-        </button>
+        <div class="news__search-toggler">
+          <button type="button" class="news__search-handler -closed">
+            {{ partial "svg" (dict "glyph" "search") }}
+            <span class="news__search-handler-value">
+              Search
+            </span>
+          </button>
+          <button type="button" class="news__search-handler -opened">
+            {{ partial "svg" (dict "glyph" "cross") }}
+            <span class="news__search-handler-value">
+              Close
+            </span>
+          </button>
+        </div>
+        <div class="news__search-overlay">
+          <div class="container">
+            <form action="" class="news__search-overlay-form">
+              <img src="/img/news/search-placeholder.svg" alt="Search" class="news__search-overlay-form-placeholder">
+              <input type="text" name="query">
+            </form>
+            <div class="news__search-overlay-tip">
+              Press enter to search
+            </div>
+          </div>
+        </div>
       </div>
       <div class="news__list">
         <div class="news__list-item news__pinned" style="background-color: #0D0D0D; background-image: url('/temp/clutch.jpg');">
