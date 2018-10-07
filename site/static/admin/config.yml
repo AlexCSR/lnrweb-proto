@@ -116,7 +116,13 @@ collections:
       # - {label: "Author", name: "author", widget: "relation", collection: "authors", searchFields: ["title"], valueField: "title"}
       - {label: "Author", name: "author", widget: "select", options: ["L+R", "Meredith", "Julia Keller", "Roberto Ranucci"], default: "L+R"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Preview image", name: "preview_image", widget: "image"}
+      - label: "Preview image"
+        name: "preview_image"
+        widget: "object"
+        fields:
+          - {label: "1x", name: "1x", widget: "image"}
+          - {label: "2x (optional)", name: "2x", widget: "image", required: false}
+          - {label: "3x (optional)", name: "3x", widget: "image", required: false}
       - {label: "Story image", name: "story_image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
       - label: "Example"

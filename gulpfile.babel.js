@@ -25,37 +25,61 @@ if (process.env.DEBUG) {
 
 gulp.task('hugo', (cb) => buildSite(cb));
 gulp.task('hugo-preview', (cb) => buildSite(cb, ['--buildDrafts', '--buildFuture']));
-gulp.task('build', ['copy', 'css', 'js', 'hugo']);
-gulp.task('build-preview', ['copy', 'css', 'js', 'hugo-preview']);
+gulp.task('build', ['copy', 'stylus', 'js', 'hugo']);
+gulp.task('build-preview', ['copy', 'stylus', 'js', 'hugo-preview']);
+
+// gulp.task('stylus', () => {
+//   const autoload = ['rupture', 'vars'];
+
+//   return gulp.src(`./src/stylus/**/!(${autoload.join('|')}).styl`)
+//     .pipe($.plumber())
+//     .pipe($.changedInPlace({
+//       firstPass: true,
+//     }))
+//     .pipe($.stylus({
+//       import: autoload.map(filename => `${__dirname}/src/stylus/${filename}.styl`),
+//     }))
+//     .pipe($.autoprefixer({
+//       browsers: ['> 1%', 'last 5 versions', 'Android >= 3', 'Firefox ESR', 'Opera 12.1']
+//     }))
+//     .pipe(gulp.dest('./dist/css'))
+//     .pipe(browserSync.stream());
+// });
 
 gulp.task('stylus', () => {
-  const autoload = ['rupture', 'vars'];
-
-  return gulp.src(`./src/stylus/**/!(${autoload.join('|')}).styl`)
+  return gulp.src([
+    './src/stylus/reset.styl',
+    './src/stylus/layout.styl',
+    './src/stylus/components/*.styl',
+    './src/stylus/pages/*.styl',
+  ])
     .pipe($.plumber())
-    .pipe($.changedInPlace({
-      firstPass: true,
-    }))
+    .pipe($.concat('main.styl'))
+    // .pipe($.changedInPlace({
+    //   firstPass: true,
+    // }))
     .pipe($.stylus({
-      import: autoload.map(filename => `${__dirname}/src/stylus/${filename}.styl`),
+      import: [
+        `${__dirname}/src/stylus/rupture.styl`,
+        `${__dirname}/src/stylus/vars.styl`,
+      ],
     }))
     .pipe($.autoprefixer({
       browsers: ['> 1%', 'last 5 versions', 'Android >= 3', 'Firefox ESR', 'Opera 12.1']
     }))
+    .pipe($.groupCssMediaQueries())
+    .pipe($.cssnano({
+      zindex: false,
+      reduceIdents: {
+        keyframes: false
+      },
+      discardUnused: {
+        keyframes: false
+      }
+    }))
     .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.stream());
 });
-
-gulp.task('css', () => (
-  gulp.src('./src/css/*.css')
-    .pipe(postcss([
-      cssImport({from: './src/css/main.css'}),
-      cssnext(),
-      cssnano(),
-    ]))
-    .pipe(gulp.dest('./dist/css'))
-    .pipe(browserSync.stream())
-));
 
 gulp.task('js', (cb) => {
   const myConfig = Object.assign({}, webpackConfig);
@@ -113,7 +137,7 @@ gulp.task('copy', () => {
   });
 });
 
-gulp.task('server', ['hugo', 'stylus', 'css', 'js', 'sprite', 'copy'], () => {
+gulp.task('server', ['hugo', 'stylus', 'js', 'sprite', 'copy'], () => {
   browserSync.init({
     port: 9003,
     reloadDebounce: 200,
@@ -125,7 +149,6 @@ gulp.task('server', ['hugo', 'stylus', 'css', 'js', 'sprite', 'copy'], () => {
   });
   gulp.watch('./src/js/**/*.js', ['js']);
   gulp.watch('./src/stylus/**/*.styl', ['stylus']);
-  gulp.watch('./src/css/**/*.css', ['css']);
   gulp.watch('./site/static/img/icons/*.svg', ['sprite']);
   gulp.watch('./site/**/*', ['hugo']);
 });
