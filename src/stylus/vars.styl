@@ -4,6 +4,7 @@ $sans = Arial, sans-serif
 $serif = "Times New Roman", serif
 $SharpSans = "Sharp Sans No1", $sans
 $DrukWide = "Druk Wide", $sans
+$GTAmericaMono = "GT America Mono", $sans
 $Ogg = "Ogg", $serif
 
 // colors
@@ -52,3 +53,15 @@ fluxText()
   animation hoverGradient 2s linear infinite
   -webkit-background-clip text
   -webkit-text-fill-color transparent
+
+addArrow()
+  border none
+  &:after
+    content "→" 
+    display inline-block
+    vertical-align middle
+    margin-left 6px
+    transition transform $speed linear
+  &:hover:after
+    fluxText()
+    transform translateX(2px)

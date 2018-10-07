@@ -5,6 +5,7 @@ webfont('Sharp Sans No1', 'SharpSansNo1-Semibold', 600)
 webfont('Sharp Sans No1', 'SharpSansNo1-Bold', 700)
 webfont('Sharp Sans No1', 'SharpSansNo1-Extrabold', 800)
 webfont('Druk Wide', 'DrukWide-Bold', 700)
+webfont('GT America Mono', 'gt-america-mono-regular-italic', 400, 'italic')
 webfont('Ogg', 'Ogg-Roman')
 
 @keyframes hoverGradient
@@ -54,6 +55,8 @@ a
     &:hover
       fluxText()
       border-bottom-width 0
+  &[data-with-arrow]
+    addArrow()
 
 .wrapper
   width 100% 

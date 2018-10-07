@@ -1,9 +1,13 @@
 ;(function () {
-  const $search = document.querySelector('.news__search');
-  const $searchForm = document.querySelector('.news__search-overlay-form');
-  const $searchInput = document.querySelector('.news__search-overlay-form input');
-  const $searchOpenButton = document.querySelector('.news__search-handler.-closed');
-  const $searchCloseButton = document.querySelector('.news__search-handler.-opened');
+  const $search = document.querySelector('.news-list__search');
+  const $searchForm = document.querySelector('.news-list__search-overlay-form');
+  const $searchInput = document.querySelector('.news-list__search-overlay-form input');
+  const $searchOpenButton = document.querySelector('.news-list__search-handler.-closed');
+  const $searchCloseButton = document.querySelector('.news-list__search-handler.-opened');
+
+  if (!$search) {
+    return;
+  }
 
   let isSearchOpened = false;
   let isInputFilled = false;

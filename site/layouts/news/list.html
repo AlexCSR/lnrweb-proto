@@ -1,58 +1,58 @@
 {{ define "main" }}
-  <link rel="stylesheet" href="/css/pages/news.css">
-  <div class="news">
+  <link rel="stylesheet" href="/css/pages/news-list.css">
+  <div class="news-list">
     <div class="container">
-      <div class="news__search">
-        <div class="news__search-toggler">
-          <button type="button" class="news__search-handler -closed">
+      <div class="news-list__search">
+        <div class="news-list__search-toggler">
+          <button type="button" class="news-list__search-handler -closed">
             {{ partial "svg" (dict "glyph" "search") }}
-            <span class="news__search-handler-value">
+            <span class="news-list__search-handler-value">
               Search
             </span>
           </button>
-          <button type="button" class="news__search-handler -opened">
+          <button type="button" class="news-list__search-handler -opened">
             {{ partial "svg" (dict "glyph" "cross") }}
-            <span class="news__search-handler-value">
+            <span class="news-list__search-handler-value">
               Close
             </span>
           </button>
         </div>
-        <div class="news__search-overlay">
+        <div class="news-list__search-overlay">
           <div class="container">
-            <form action="" class="news__search-overlay-form">
-              <img src="/img/news/search-placeholder.svg" alt="Search" class="news__search-overlay-form-placeholder">
+            <form action="" class="news-list__search-overlay-form">
+              <img src="/img/news/search-placeholder.svg" alt="Search" class="news-list__search-overlay-form-placeholder">
               <input type="text" name="query">
             </form>
-            <div class="news__search-overlay-tip">
+            <div class="news-list__search-overlay-tip">
               Press enter to search
             </div>
           </div>
         </div>
       </div>
-      <div class="news__list">
-        <div class="news__list-item news__pinned" style="background-color: #0D0D0D; background-image: url('/temp/clutch.jpg');">
-          <div class="news__pinned-body">
+      <div class="news-list__list">
+        <div class="news-list__list-item news-list__pinned" style="background-color: #0D0D0D; background-image: url('/temp/clutch.jpg');">
+          <div class="news-list__pinned-body">
             {{ partial "subhead" (dict "title" "Our Team") }}
-            <div class="news__pinned-headline">
+            <div class="news-list__pinned-headline">
               <a href="">
                 L+R named as one of the Top Creative, Design, and Development Companies in&nbsp;New York City for 2018
               </a>
             </div>
             {{ partial "news-info" (dict "date" "Mar 29, 2018" "author" "Meredith") }}
-            <div class="news__pinned-more">
+            <div class="news-list__pinned-more">
               <a href="">Read More</a>
             </div>
           </div>
         </div>
-        <div class="news__list-item news__normal">
-          <a href="" class="news__normal-inner" data-no-flux>
-            <span class="news__normal-preview">
+        <div class="news-list__list-item news-list__normal">
+          <a href="" class="news-list__normal-inner" data-no-flux>
+            <span class="news-list__normal-preview">
               <img src="/temp/news-1.jpg" alt="">
             </span>
-            <span class="news__normal-body">
+            <span class="news-list__normal-body">
               {{ partial "subhead" (dict "title" "Design Teaching") }}
-              <span class="news__normal-headline">
-                <span class="news__normal-headline-copy">
+              <span class="news-list__normal-headline">
+                <span class="news-list__normal-headline-copy">
                   <span>
                     The search for alternatives: L+R’s Director of Aesthetics, Ryan Riegner, introduces systems and tools for alternate ideation
                   </span>
@@ -63,15 +63,15 @@
             </span>
           </a>
         </div>
-        <div class="news__list-item news__normal">
-          <a href="" class="news__normal-inner" data-no-flux>
-            <span class="news__normal-preview">
+        <div class="news-list__list-item news-list__normal">
+          <a href="" class="news-list__normal-inner" data-no-flux>
+            <span class="news-list__normal-preview">
               <img src="/temp/news-2.jpg" alt="">
             </span>
-            <span class="news__normal-body">
+            <span class="news-list__normal-body">
               {{ partial "subhead" (dict "title" "Our Team") }}
-              <span class="news__normal-headline">
-                <span class="news__normal-headline-copy">
+              <span class="news-list__normal-headline">
+                <span class="news-list__normal-headline-copy">
                   <span>
                     L+R Senior Designer, Chris Martiníe named in GDUSA’s “People to Watch in 2018”
                   </span>
@@ -82,15 +82,15 @@
             </span>
           </a>
         </div>
-        <div class="news__list-item news__normal">
-          <a href="" class="news__normal-inner" data-no-flux>
-            <span class="news__normal-preview">
+        <div class="news-list__list-item news-list__normal">
+          <a href="" class="news-list__normal-inner" data-no-flux>
+            <span class="news-list__normal-preview">
               <img src="/temp/news-3.jpg" alt="">
             </span>
-            <span class="news__normal-body">
+            <span class="news-list__normal-body">
               {{ partial "subhead" (dict "title" "Project Launch") }}
-              <span class="news__normal-headline">
-                <span class="news__normal-headline-copy">
+              <span class="news-list__normal-headline">
+                <span class="news-list__normal-headline-copy">
                   <span>
                     Dig – The dog person’s dating app launched
                   </span>
@@ -101,23 +101,23 @@
             </span>
           </a>
         </div>
-        <div class="news__list-item news__announcement -text-first" style="background-image: url('/temp/2017.jpg');">
-          <div class="news__announcement-body">
+        <div class="news-list__list-item news-list__announcement -text-first" style="background-image: url('/temp/2017.jpg');">
+          <div class="news-list__announcement-body">
             {{ partial "subhead" (dict "title" "😊") }}
-            <div class="news__announcement-headline">
+            <div class="news-list__announcement-headline">
               It's been really great sharing our passion with you. Infinite thanks and gratitude to you all as we transtion into 2017.
             </div>
           </div>
         </div>
-        <div class="news__list-item news__normal">
-          <a href="" class="news__normal-inner" data-no-flux>
-            <span class="news__normal-preview">
+        <div class="news-list__list-item news-list__normal">
+          <a href="" class="news-list__normal-inner" data-no-flux>
+            <span class="news-list__normal-preview">
               <img src="/temp/reinvent.jpg" alt="">
             </span>
-            <span class="news__normal-body">
+            <span class="news-list__normal-body">
               {{ partial "subhead" (dict "title" "Project Launch") }}
-              <span class="news__normal-headline">
-                <span class="news__normal-headline-copy">
+              <span class="news-list__normal-headline">
+                <span class="news-list__normal-headline-copy">
                   <span>
                     Amazon Elastic Container Service for Kubernetes &amp; AWS Fargate announced at AWS re:Invent 2017
                   </span>
@@ -128,62 +128,62 @@
             </span>
           </a>
         </div>
-        <div class="news__list-item news__social">
-          <a href="" class="news__social-inner" data-no-flux>
-            <span class="news__social-media">
+        <div class="news-list__list-item news-list__social">
+          <a href="" class="news-list__social-inner" data-no-flux>
+            <span class="news-list__social-media">
               <img src="/temp/soho.jpg" alt="">
             </span>
-            <span class="news__social-link">
-              <span class="news__social-link-copy">
+            <span class="news-list__social-link">
+              <span class="news-list__social-link-copy">
                 <span>@levinriegner</span>
               </span>
               @levinriegner
             </span>
           </a>
         </div>
-        <div class="news__list-item news__social">
-          <a href="" class="news__social-inner" data-no-flux>
-            <span class="news__social-media">
+        <div class="news-list__list-item news-list__social">
+          <a href="" class="news-list__social-inner" data-no-flux>
+            <span class="news-list__social-media">
               <img src="/temp/three.jpg" alt="">
             </span>
-            <span class="news__social-link">
-              <span class="news__social-link-copy">
+            <span class="news-list__social-link">
+              <span class="news-list__social-link-copy">
                 <span>@levinriegner</span>
               </span>
               @levinriegner
             </span>
           </a>
         </div>
-        <div class="news__list-item news__announcement -image-first" style="background-image: url('/temp/party.jpg');">
-          <div class="news__announcement-body">
+        <div class="news-list__list-item news-list__announcement -image-first" style="background-image: url('/temp/party.jpg');">
+          <div class="news-list__announcement-body">
             {{ partial "subhead" (dict "title" "🍻") }}
-            <div class="news__announcement-headline">
+            <div class="news-list__announcement-headline">
               2017 Holiday Party — <br>Brooklyn, New York — <br>5th&nbsp;Annual
             </div>
           </div>
         </div>
-        <div class="news__list-item news__social">
-          <a href="" class="news__social-inner" data-no-flux>
-            <span class="news__social-media">
+        <div class="news-list__list-item news-list__social">
+          <a href="" class="news-list__social-inner" data-no-flux>
+            <span class="news-list__social-media">
               <p>We will be attending #TechDay in Los Angeles on Sep 27th. Excited to meet with current and future partners at #SiliconBeach's leading #tech event. #techdaytalks</p>
             </span>
-            <span class="news__social-link">
-              <span class="news__social-link-copy">
+            <span class="news-list__social-link">
+              <span class="news-list__social-link-copy">
                 <span>@levinriegner</span>
               </span>
               @levinriegner
             </span>
           </a>
         </div>
-        <div class="news__list-item news__normal">
-          <a href="" class="news__normal-inner" data-no-flux>
-            <span class="news__normal-preview">
+        <div class="news-list__list-item news-list__normal">
+          <a href="" class="news-list__normal-inner" data-no-flux>
+            <span class="news-list__normal-preview">
               <img src="/temp/chicago.jpg" alt="">
             </span>
-            <span class="news__normal-body">
+            <span class="news-list__normal-body">
               {{ partial "subhead" (dict "title" "Our Team") }}
-              <span class="news__normal-headline">
-                <span class="news__normal-headline-copy">
+              <span class="news-list__normal-headline">
+                <span class="news-list__normal-headline-copy">
                   <span>
                     L+R Senior Designer, Chris Martiníe named in GDUSA’s “People to Watch in 2018”
                   </span>
@@ -194,15 +194,15 @@
             </span>
           </a>
         </div>
-        <div class="news__list-item news__normal">
-          <a href="" class="news__normal-inner" data-no-flux>
-            <span class="news__normal-preview">
+        <div class="news-list__list-item news-list__normal">
+          <a href="" class="news-list__normal-inner" data-no-flux>
+            <span class="news-list__normal-preview">
               <img src="/temp/fest.jpg" alt="">
             </span>
-            <span class="news__normal-body">
+            <span class="news-list__normal-body">
               {{ partial "subhead" (dict "title" "Project Launch") }}
-              <span class="news__normal-headline">
-                <span class="news__normal-headline-copy">
+              <span class="news-list__normal-headline">
+                <span class="news-list__normal-headline-copy">
                   <span>
                     Dig – The dog person’s dating app launched
                   </span>
@@ -214,8 +214,8 @@
           </a>
         </div>
       </div>
-      <div class="news__preloader">
-        <div class="news__preloader-pluses">
+      <div class="news-list__preloader">
+        <div class="news-list__preloader-pluses">
           <i></i>
           <i></i>
           <i></i>

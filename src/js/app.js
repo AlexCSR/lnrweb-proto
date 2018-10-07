@@ -2,7 +2,8 @@ require('./document');
 require('./components/header');
 // require('./pages/landing');
 require('./pages/work');
-require('./pages/news'); 
+require('./pages/news-list');
+require('./pages/news-single');
 
 // JS Goes here - ES6 supported
 if (window.netlifyIdentity) {
