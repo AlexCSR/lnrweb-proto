@@ -1,6 +1,6 @@
 ---
-kind: normal
 basename: news-single
+kind: normal
 title: Test article
 description: desc
 category: Event
@@ -23,5 +23,5 @@ test!
 >
 > **Me**\
 > Manager of the world
->
->
+
+![](/img/reinvent.jpg)
