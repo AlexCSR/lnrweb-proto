@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="/css/pages/news-single.css">
   <div class="news-single">
     <div class="news-single__main">
-      <div class="news-single__main-cover -fixed" style="background-image: url('{{ .Params.storyImage }}');"></div>
+      <div class="news-single__main-cover -fixed" style="background-image: url('{{ .Params.story_image }}');"></div>
       <div class="news-single__main-article">
         <div class="news-single__main-article-heading">
           {{ partial "subhead" (dict "title" .Params.category) }}
@@ -14,7 +14,7 @@
         <div class="news-single__main-article-body">
           {{ .Content }}
         </div>
-        {{ partial "product-example" }}
+        {{ partial "product-example" (dict "context" .Params.example) }}
       </div>
     </div>
     <div class="container">
@@ -90,7 +90,7 @@
             <span class="news-single__nav-block-link-arrow">
               ←&nbsp;&nbsp;Prev Post
             </span>
-            <span class="news-single__nav-block-link-preview" style="background-image: url('{{ .PrevInSection.Params.previewImage }}');">
+            <span class="news-single__nav-block-link-preview" style="background-image: url('{{ .PrevInSection.Params.preview_image }}');">
               <span class="news-single__nav-block-link-preview-title">
                 {{ .PrevInSection.Title }}
               </span>
@@ -104,7 +104,7 @@
             <span class="news-single__nav-block-link-arrow">
               Next Post&nbsp;&nbsp;→
             </span>
-            <span class="news-single__nav-block-link-preview" style="background-image: url('{{ .NextInSection.Params.previewImage }}');">
+            <span class="news-single__nav-block-link-preview" style="background-image: url('{{ .NextInSection.Params.preview_image }}');">
               <span class="news-single__nav-block-link-preview-title">
                 {{ .NextInSection.Title }}
               </span>

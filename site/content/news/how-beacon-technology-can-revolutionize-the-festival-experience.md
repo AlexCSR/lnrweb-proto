@@ -5,8 +5,8 @@ category: "Our Team"
 author: "Meredith"
 date: 2017-10-05T15:04:10.000Z
 
-previewImage: "/temp/fest.jpg"
-storyImage: "http://cdn.shiflett.org/images/pawnee-lake.jpg"
+preview_image: "/temp/fest.jpg"
+story_image: "http://cdn.shiflett.org/images/pawnee-lake.jpg"
 
 kind: "normal"
 basename: "news-single"

@@ -107,6 +107,8 @@ collections:
     create: true
     delete: true
     fields:
+      - {label: "Basename", name: "basename", widget: "hidden", default: "news-single"}
+      - {label: "Kind", name: "kind", widget: "hidden", default: "normal"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "string"}
       - {label: "Keywords", name: "keywords", widget: "string", required: false}
@@ -114,8 +116,8 @@ collections:
       # - {label: "Author", name: "author", widget: "relation", collection: "authors", searchFields: ["title"], valueField: "title"}
       - {label: "Author", name: "author", widget: "select", options: ["L+R", "Meredith", "Julia Keller", "Roberto Ranucci"], default: "L+R"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Preview image", name: "previewImage", widget: "image"}
-      - {label: "Story image", name: "storyImage", widget: "image"}
+      - {label: "Preview image", name: "preview_image", widget: "image"}
+      - {label: "Story image", name: "story_image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
       - label: "Example"
         name: "example"
