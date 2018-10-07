@@ -5,6 +5,16 @@ media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
 collections:
+  # - name: "authors"
+  #   label: "Authors"
+  #   label_singular: "Author"
+  #   folder: "site/content/authors"
+  #   create: true
+  #   delete: true
+  #   fields:
+  #     - {label: "Author name", name: "title", widget: "string"}
+  #   editor:
+  #     preview: false
   - name: "pages"
     label: "Pages"
     files:
@@ -90,3 +100,33 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Images", name: "body", widget: "markdown"}
+  - name: "news"
+    label: "News"
+    label_singular: "News post"
+    folder: "site/content/news"
+    create: true
+    delete: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Keywords", name: "keywords", widget: "string", required: false}
+      - {label: "Category", name: "category", widget: "select", options: ["Our Team", "Event", "Design Teaching", "Project Launch", "Project Update", "Client Update", "Partnership"]}
+      # - {label: "Author", name: "author", widget: "relation", collection: "authors", searchFields: ["title"], valueField: "title"}
+      - {label: "Author", name: "author", widget: "select", options: ["L+R", "Meredith", "Julia Keller", "Roberto Ranucci"], default: "L+R"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Preview image", name: "previewImage", widget: "image"}
+      - {label: "Story image", name: "storyImage", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Example"
+        name: "example"
+        required: false
+        widget: "object"
+        fields:
+          - {label: "Headline (first line)", name: "heading", widget: "string"}
+          - {label: "Sub-headline (second line)", name: "subheading", widget: "string"}
+          - label: "Link"
+            name: "link"
+            widget: "list"
+            fields:
+              - {label: "Reference (href attribute)", name: "href", widget: "string"}
+              - {label: "Anchor (link text)", name: "anchor", widget: "string"}
