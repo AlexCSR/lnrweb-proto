@@ -8,7 +8,7 @@ author: L+R
 date: 2018-10-07T15:58:08.158Z
 preview_image: /img/reinvent.jpg
 story_image: /img/pawnee-lake.jpg
-example:
+afterword:
   heading: Good app
   link:
     - anchor: '##'

@@ -50,7 +50,7 @@ gulp.task('stylus', () => {
   return gulp.src([
     './src/stylus/reset.styl',
     './src/stylus/layout.styl',
-    './src/stylus/components/*.styl',
+    './src/stylus/partials/*.styl',
     './src/stylus/pages/*.styl',
   ])
     .pipe($.plumber())

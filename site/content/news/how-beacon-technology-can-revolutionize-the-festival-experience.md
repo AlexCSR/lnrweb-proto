@@ -8,6 +8,15 @@ date: 2017-10-05T15:04:10.000Z
 preview_image: "/temp/fest.jpg"
 story_image: "http://cdn.shiflett.org/images/pawnee-lake.jpg"
 
+afterword:
+  heading: Are you inspired to take action?
+  subheading: Download the app
+  link:
+    - anchor: iOS
+      href: "#"
+    - anchor: Android
+      href: "#"
+
 kind: "normal"
 basename: "news-single"
 ---

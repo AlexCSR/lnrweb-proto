@@ -1,0 +1,100 @@
+$ns = ".nav"
+$mobileMenuHeight = 235px // 195px
+
+{$ns}
+  position fixed
+  overflow hidden
+  z-index 3
+  top 0
+  left 0
+  width 100%
+  padding-top 26px
+  box-sizing border-box
+  height $mobileMenuHeight
+  opacity 0
+  visibility hidden
+  transition-property opacity, visibility
+  transition-duration $speed * 2 
+  +a($m)
+    display none
+  .page-index &,
+  .page-404 &
+    display block
+    +a(960px)
+      display none
+  &__bg
+    display block
+    position absolute
+    overflow hidden
+    z-index 1
+    top 50%
+    left 50%
+    width 125%
+    transform translate(-50%, -50%) rotate(45deg)
+    &:before
+      content "" 
+      display block
+      padding-top 100% 
+    &-gradient
+      position absolute
+      top 0
+      left 0
+      width 100% 
+      height 100% 
+      animation workCasesGradient 10s linear infinite forwards
+      background-color #00f 
+      i
+        display block
+        position absolute
+        top 0
+        width 100% 
+        height 100% 
+        background-image linear-gradient(-90deg, #0000FF 0%, #6701CF 18%, #FF0000 38%, #FF9B00 57%, #FFF001 79%, #00D700 100%)
+        &:nth-child(1)
+          left 0
+        &:nth-child(2)
+          left 100%
+          transform rotate(180deg)
+        &:nth-child(3)
+          left 200%
+  &__item
+    font-weight 600 
+    font-size 18px
+    line-height 1
+    opacity 0
+    transform translateY(15px)
+    transition-property opacity, transform
+    transition-duration $speed * 2
+    position relative
+    z-index 2
+    a
+      border none
+      display block
+      text-align center
+      color #fff
+      padding 13px 0 14px 
+  &.-active
+    opacity 1
+    visibility visible
+  &.-active &
+    &__bg
+      display block
+    &__item
+      opacity 1
+      transform none
+      transition-delay $speed 
+  &.-fade-out + .wrapper .header,
+  &.-active + .wrapper .header
+    transition transform $speed * 2
+  &.-active + .wrapper .header
+    transform translateY($mobileMenuHeight) !important // mobile header padding top
+  &.-active + .wrapper .main
+    transform translateY($mobileMenuHeight)
+    .header__menu-burger
+      i
+        &:nth-child(1)
+          transform rotate(225deg) translate(-4px, 4px)
+        &:nth-child(2)
+          opacity 0
+        &:nth-child(3)
+          transform rotate(-225deg) translate(3px, 3px)

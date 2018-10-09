@@ -33,13 +33,11 @@
           <div class="news-list__pinned-body">
             {{ partial "subhead" (dict "title" "Our Team") }}
             <div class="news-list__pinned-headline">
-              <a href="">
-                L+R named as one of the Top Creative, Design, and Development Companies in&nbsp;New York City for 2018
-              </a>
+              L+R named as one of the Top Creative, Design, and Development Companies in&nbsp;New York City for 2018
             </div>
             {{ partial "news-info" (dict "date" "Mar 29, 2018" "author" "Meredith") }}
             <div class="news-list__pinned-more">
-              <a href="">Read More</a>
+              <a href="" data-no-flux>Read More</a>
             </div>
           </div>
         </div>
@@ -213,13 +211,18 @@
           </a>
         </div>
       </div>
-      <div class="news-list__preloader">
-        <div class="news-list__preloader-pluses">
-          <i></i>
-          <i></i>
-          <i></i>
-        </div>
-      </div>
+      {{ if gt .Paginator.TotalPages 1 }}
+        {{ if .Paginator.HasNext }}
+          <div class="news-list__preloader">
+            <a href="{{ .Paginator.Next.URL }}" class="news-list__preloader-next"></a>
+            <div class="news-list__preloader-pluses">
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+          </div>
+        {{ end }}
+      {{ end }}
     </div>
   </div>
 <!--

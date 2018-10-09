@@ -1,12 +1,12 @@
 {{ with .context }}
-  <div class="product-example">
-    <div class="product-example__heading">
+  <div class="afterword">
+    <div class="afterword__heading">
       {{ .heading }}
     </div>
-    <div class="product-example__subheading">
+    <div class="afterword__subheading">
       {{ .subheading }}
     </div>
-    <div class="product-example__links">
+    <div class="afterword__links">
       {{ range .link }}
         <a href="{{ .href }}" data-with-arrow>{{ .anchor }}</a>
       {{ end }}

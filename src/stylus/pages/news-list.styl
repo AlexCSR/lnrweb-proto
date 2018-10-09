@@ -153,8 +153,9 @@ $searchOverlaySpeed = $speed * 3
     color #fff 
     +btw($t, $d)
       background-size 56.6142% auto
-    +a($t)
+    +a($sd)
       min-height 600px
+    +a($t)
       background-position right center
     +btw($m, $t)
       background-size auto 414px
@@ -206,8 +207,6 @@ $searchOverlaySpeed = $speed * 3
         font-size 25px
         line-height 36px
         margin-bottom 7px
-      a
-        border none 
     &-more
       +b($t)
         display none
@@ -224,10 +223,8 @@ $searchOverlaySpeed = $speed * 3
         transition-property color, background-color
         transition-duration $speed
         &:hover
-          animation none
           background #fff 
           color #000
-          -webkit-text-fill-color currentColor
         &:active
           color rgba(#000, 0.4)
   &__announcement
