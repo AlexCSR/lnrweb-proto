@@ -30,7 +30,9 @@
         {{ block "main" . }}{{ end }}
       </main>
     </div>
-    {{ partial "footer" . }}
+    {{ if ne .Params.basename "landing" }}
+      {{ partial "footer" . }}
+    {{ end }}
     <script src="/app.js"></script>
     <script src="//pp"></script>
   </body>

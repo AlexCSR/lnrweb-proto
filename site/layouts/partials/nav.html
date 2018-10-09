@@ -7,7 +7,7 @@
     </div>
   </div>
   {{ range $.Site.Data.menu }}
-    <div class="nav__item">
+    <div class="nav__item{{ if eq $.Page.Params.basename (lower .title) }} -active{{ end }}">
       <a
         href="{{ .link }}"
         onclick="window.mixpanel && mixpanel.track('{{ lower .title }}')"
