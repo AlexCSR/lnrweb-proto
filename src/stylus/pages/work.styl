@@ -258,9 +258,11 @@ $ns = ".work"
       color #fff 
       border-radius 3px
       position relative
-      +a($m)
+      +a($t)
         display flex
         padding 107px 104px 0 0
+      +btw($m, $t)
+        padding 75px 50px 0
       &-spine
         position absolute
         bottom 100% 
@@ -298,15 +300,21 @@ $ns = ".work"
       font-family $SharpSans
       font-weight 500
       white-space nowrap
+      +a($t)
+        padding 2px 104px 0
+      +btw($m, $t)
+        padding-bottom 50px
       +a($m)
         font-size 60px
-        padding 2px 104px 0
       +b($m)
         font-size 40px
         padding 50px 26px 0 
       span
         font-family $Ogg 
-        margin 0 0.105em 0 -0.105em
+        +a($sd)
+          margin 0 0.105em 0 -0.105em
+        +btw($t, $sd)
+          display block
     &-info
       +b($m)
         padding 34px 28px 0
@@ -423,7 +431,7 @@ $ns = ".work"
         +a($m)
           height 99px
         +b($m)
-          height 105px
+          height 80px
         img
           position relative
           top 1px
