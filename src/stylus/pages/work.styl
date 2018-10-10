@@ -14,15 +14,19 @@ $ns = ".work"
     transform translateX(0.01%)
 
 {$ns}
-  // padding-top 226px @ https://trello.com/c/7F3I5KNt
   padding-top 141px 
   &__cases
-    padding-bottom 115px
+    +a($m)
+      padding-bottom 115px
+    +b($m)
+      padding-bottom 75px
+    .subhead
+      margin-bottom 23px
     &-item
       +a($m)
         margin 23px 0 30px
       +b($m)
-        margin 23px 0
+        margin 20px 0
       &-content
         position relative
         overflow hidden
@@ -147,23 +151,28 @@ $ns = ".work"
             p
               opacity 1
   &__featured
-    padding-bottom 37px
+    +a($m)
+      padding-bottom 37px
+    +b($m)
+      padding-bottom 29px
     .subhead
-      padding-bottom 50px
+      margin-bottom 28px
     &-list
-      display flex
-      flex-wrap wrap
-      justify-content space-between
-      align-items flex-end
+      +a($m)
+        display flex
+        flex-wrap wrap
+        justify-content space-between
+        align-items flex-end
     &-item
       position relative
-      margin-bottom 122px
-      &:nth-child(4n-3),
-      &:nth-child(4n)
-        width 49.5268%
-      &:nth-child(4n-2),
-      &:nth-child(4n-1)
-        width 41.1672%
+      +a($m)
+        margin-bottom 122px
+        &:nth-child(4n-3),
+        &:nth-child(4n)
+          width 49.5268%
+        &:nth-child(4n-2),
+        &:nth-child(4n-1)
+          width 41.1672%
       &-preview
         padding-bottom 15px
         img
@@ -182,10 +191,30 @@ $ns = ".work"
         line-height 24px
   &__clients
     background-color #fafafa
-    padding 143px 0 122px
-    margin-bottom 136px
+    position relative
+    +a($m)
+      padding 143px 0 122px
+      margin-bottom 136px
+    +b($m)
+      padding 112px 0 80px
+      margin-bottom -12px
+    &:after
+      content ""
+      display block
+      position absolute
+      bottom 0
+      right 0
+      left 0
+      background linear-gradient(to bottom, #fafafa 0%, #fff 100%)
+      +a($m)
+        height 135px
+      +b($m)
+        height 85px
     .subhead
-      padding-bottom 62px
+      +a($m)
+        padding-bottom 62px
+      +b($m)
+        margin-bottom 60px
     &-list
       display flex
       flex-wrap wrap
@@ -229,16 +258,22 @@ $ns = ".work"
       color #fff 
       border-radius 3px
       position relative
-      display flex
-      padding 107px 104px 0 0
+      +a($m)
+        display flex
+        padding 107px 104px 0 0
       &-spine
         position absolute
         bottom 100% 
-        left 94px
         background-color #0f1010 
-        width 314px
-        height 13px
         border-radius 3px 3px 0 0
+        +a($m)
+          width 314px
+          height 13px
+          left 94px
+        +b($m)
+          width 169px
+          height 9px
+          left 27px
         &:before,
         &:after
           content "" 
@@ -263,16 +298,23 @@ $ns = ".work"
       font-family $SharpSans
       font-weight 500
       white-space nowrap
-      padding 2px 104px 0
       +a($m)
         font-size 60px
+        padding 2px 104px 0
       +b($m)
         font-size 40px
+        padding 50px 26px 0 
       span
         font-family $Ogg 
         margin 0 0.105em 0 -0.105em
+    &-info
+      +b($m)
+        padding 34px 28px 0
     &-about
-      padding-bottom 56px
+      +a($m)
+        padding-bottom 56px
+      +b($m)
+        padding-bottom 50px
     &-form
       width 100% 
       position relative
@@ -377,8 +419,11 @@ $ns = ".work"
         line-height 24px
         text-align left
         visibility hidden
-        height 99px
         box-sizing border-box
+        +a($m)
+          height 99px
+        +b($m)
+          height 105px
         img
           position relative
           top 1px
@@ -432,13 +477,25 @@ $ns = ".work"
         &-form
           opacity 1
   &__contact
-    padding 215px 0 
+    +a($m)
+      padding 215px 0 
+    +b($m)
+      padding 78px 0 97px 
     &-text
       margin auto
-      max-width 842px
       font-weight 300 
-      font-size 40px
-      line-height 52px
       color #a4a4a4 
+      +a($m)
+        max-width 842px
+        font-size 40px
+        line-height 52px
+      +b($m)
+        font-size 30px
+        line-height 40px
+        br
+          display none
+        p
+          display inline
       a
-        font-weight 500 
+        font-weight 500
+        white-space nowrap
