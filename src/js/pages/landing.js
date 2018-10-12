@@ -126,6 +126,7 @@ function drawText(onlyUI, onlyBlack, onlyWhite) {
     if (!onlyUI) {
         pos = [window.innerWidth / 2 - 1268 / 2 + 30, 48 + 12.5];
         posSlogan = [window.innerWidth / 2 - 1268 / 2 + 269, 62];
+        posError = [window.innerWidth / 2, Math.round(window.innerHeight * 0.78)];
 
         if (window.innerWidth > 767 && window.innerWidth <= 1439) {
             pos = [window.innerWidth * 0.091146 + 30, 48 + 12.5];
@@ -147,6 +148,13 @@ function drawText(onlyUI, onlyBlack, onlyWhite) {
         // pos = onPhone ? [55, 38] : [80, 48];
         addRaster('logo', pos, logoScale, onlyBlack, onlyWhite);
         addRaster('slogan', posSlogan, 1, onlyBlack, onlyWhite);
+        if (window.innerWidth > 767) {
+            addRaster('errorLarge', posError, 1, onlyBlack, onlyWhite);
+        } else if (window.innerWidth > 500 && window.innerWidth <= 767) {
+            addRaster('errorMiddle', posError, 1, onlyBlack, onlyWhite);
+        } else {
+            addRaster('errorSmall', posError, 1, onlyBlack, onlyWhite);
+        }
  
         var sc = Math.min(view.bounds.size.height / 1500, view.bounds.size.width / 1700);
         // if(retina) sc/=2;
@@ -161,10 +169,35 @@ function drawText(onlyUI, onlyBlack, onlyWhite) {
         addRaster('strategyAesthetics', pos, sc, onlyBlack, onlyWhite);
     }
     if (!onlyUI && !onlyBlack) {
-        if (!onPhone) {
-            group1 = new Group(path, blackBox, rastWhite['logo'], rastWhite['strategyAesthetics'], rastWhite['slogan']);
+        var errorRaster;
+
+        if (window.innerWidth > 767) {
+            errorRaster = rastWhite['errorLarge'];
+        } else if (window.innerWidth > 500 && window.innerWidth <= 767) {
+            errorRaster = rastWhite['errorMiddle'];
         } else {
-            group1 = new Group(path, blackBox, rastWhite['logo'], rastWhite['strategyAesthetics'], rastWhite['slogan']);
+            errorRaster = rastWhite['errorSmall'];
+        }
+
+
+        if (!onPhone) {
+            group1 = new Group(
+                path,
+                blackBox,
+                rastWhite['logo'],
+                rastWhite['strategyAesthetics'],
+                rastWhite['slogan'],
+                errorRaster
+            );
+        } else {
+            group1 = new Group(
+                path,
+                blackBox,
+                rastWhite['logo'],
+                rastWhite['strategyAesthetics'],
+                rastWhite['slogan'],
+                errorRaster
+            );
         }
     } else {
         if (!onPhone) {
@@ -285,20 +318,12 @@ function updateWave(path) {
     var force = 1 - values.friction * values.timeStep * values.timeStep;
     var allUp = true;
     var $header = $('.header');
-    var $error = $('.home__error');
 
     if ($header.length) {
         if (path.segments[8]._point._y > $('.header__menu').offset().top) {
             $header.removeClass('-white');
         } else {
             $header.addClass('-white');
-        }
-    }
-    if ($error.length) {
-        if (path.segments[8]._point._y > $error.offset().top) {
-            $error.addClass('-black');
-        } else {
-            $error.removeClass('-black');
         }
     }
 

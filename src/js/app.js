@@ -1,7 +1,6 @@
 require('./document');
 require('./partials/nav');
 require('./partials/header');
-// require('./pages/landing');
 require('./pages/work');
 require('./pages/news-list');
 require('./pages/news-single');

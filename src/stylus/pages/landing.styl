@@ -1,4 +1,28 @@
-.page-landing
+$ns = "landing"
+
+.page-{$ns}
   .wrapper
     +a($m)
       margin-bottom 0
+  .main
+    position fixed
+    top 0
+    left 0
+    width 100% 
+    height 100% 
+
+.{$ns}
+  &__canvas
+    position fixed
+    top 0
+    left 0
+    width 100% 
+    height 100% 
+    z-index -100
+    animation 10s rotateColor linear infinite
+    canvas
+      display block
+      width 100% 
+      height 100% 
+  &__rasters
+    display none

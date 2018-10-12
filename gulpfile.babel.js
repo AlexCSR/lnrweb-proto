@@ -132,8 +132,11 @@ gulp.task('sprite', () => {
 gulp.task('copy', () => {
   return del([
     `${__dirname}/dist/fonts`,
+    `${__dirname}/dist/js`,
   ]).then(() => {
     gulp.src('./src/fonts/**/*.*').pipe(gulp.dest('./dist/fonts'));
+    gulp.src('./src/js/**/*.*').pipe(gulp.dest('./dist/js'));
+    browserSync.reload();
   });
 });
 
@@ -147,7 +150,7 @@ gulp.task('server', ['hugo', 'stylus', 'js', 'sprite', 'copy'], () => {
       baseDir: './dist'
     }
   });
-  gulp.watch('./src/js/**/*.js', ['js']);
+  gulp.watch('./src/js/**/*.js', ['js', 'copy']);
   gulp.watch('./src/stylus/**/*.styl', ['stylus']);
   gulp.watch('./site/static/img/icons/*.svg', ['sprite']);
   gulp.watch('./site/**/*', ['hugo']);
