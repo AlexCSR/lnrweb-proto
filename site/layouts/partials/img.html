@@ -3,17 +3,19 @@
 {{- $original := index ($media.Match (printf "%s" .src)) 0 -}}
 
 {{- range $i, $val := (seq .density) -}}
-  {{- $currentSize := math.Round (div $original.Width $val) -}}
+  {{- $currentSize := math.Round (div (int $original.Width) (int $val)) -}}
   {{- $currentDensity := (sub $.density $i) -}}
   {{- $currentSrc := newScratch -}}
 
   {{- if eq $i 0 -}}
     {{- $currentSrc.Add "url" $.src -}}
   {{- else -}}
-    {{- $currentSrc.Add "url" ($original.Resize (printf "%sx Lanczos" (string $currentSize))).RelPermalink -}}
+    {{- $resized := $original.Resize (printf "%sx Lanczos" (string $currentSize)) -}}
+    {{- $currentSrc.Add "url" $resized.RelPermalink -}}
   {{- end -}}
 
   {{- $scratch.Add "srcset" (slice (printf "%s %sx" ($currentSrc.Get "url") (string $currentDensity))) -}}
+
 {{- end -}}
 
 <img
