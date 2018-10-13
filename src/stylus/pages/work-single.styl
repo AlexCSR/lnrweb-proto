@@ -1,10 +1,141 @@
-.work-single
+$ns = ".work-single"
+
+{$ns}
   padding-top 184px
   h1
     font-weight 600
-    font-size 60px
-    line-height 65px
-    letter-spacing 0.47px
+    color $black
     padding 0
     margin 0
-    color #000
+    +a($d)
+      font-size 60px
+      line-height 1.09em
+      letter-spacing 0.47px
+    +btw($t, $d)
+      font-size 45px
+      line-height 51px
+      letter-spacing 0.35px
+    +btw($m, $t)
+      font-size 38px
+      line-height 51px
+      letter-spacing 0.3px
+    +b($m)
+      font-size 30px
+      line-height 40px
+      letter-spacing 0.27px
+  h2
+    font-family $Ogg
+    font-weight normal
+    color $black
+    padding 0
+    margin 0
+    +a($t)
+      font-size 40px
+      line-height 1.3em
+    +btw($m, $t)
+      font-size 34px
+      line-height 52px
+    +b($m)
+      font-size 28px
+      line-height 31px
+    + h4
+      +a($m)
+        padding-top 6px
+      +b($m)
+        padding-top 2px
+  h3
+    font-weight 500
+    color $black
+    padding 0
+    margin 0
+    +a($d)
+      font-size 40px
+      line-height 1.3em
+    +btw($t, $d)
+      font-size 32px
+      line-height 42px
+    +btw($m, $t)
+      font-size 28px
+      line-height 38px
+    +b($m)
+      font-size 24px
+      line-height 31px
+  h4
+    font-weight 300
+    color $lightgray
+    padding 0
+    margin 0
+    +a($t)
+      font-size 40px
+      line-height 1.3em
+    +btw($m, $t)
+      font-size 34px
+      line-height 41px
+    +b($m)
+      font-size 28px
+      line-height 32px
+    img
+      display inline-block
+      vertical-align middle
+      margin 0 13px 0 4px 
+  h5
+    font-weight 600
+    color $black
+    padding 0
+    +a($m)
+      font-size 22px
+      line-height 1.636364em
+      margin 1.7em 0 
+    +b($m)
+      font-size 18px
+      line-height 27px
+      margin 27px 0
+  &__header
+    display flex
+    margin-bottom 149px
+    &-main
+      flex 1 1 auto
+      padding-right 25px
+    &-aside
+      flex 0 0 auto
+      width 202px
+      padding-left 11px
+      &-block
+        & + &
+          margin-top 47px
+        .subhead
+          margin-bottom 13px
+        img
+          display block
+          margin-top 19px 
+        p
+          font-size 15px
+          line-height 21px
+          color $gray 
+          margin-bottom 28px
+          a
+            color currentColor
+            &:after
+              color $black
+  &__text
+    display flex
+    padding 0 7.8% 
+    &-column
+      width 50%
+      padding 0 7px 
+      box-sizing border-box
+      &:last-child
+        padding-top 13px
+      p
+        letter-spacing 0.1px
+        +a($m)
+          margin 1.8em 0
+        +b($m)
+          margin 27px 0 
+        b
+          color $black
+          font-weight 600 
+      > :first-child
+        margin-top 0 !important
+      > :last-child
+        margin-bottom 0 !important 

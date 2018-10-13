@@ -1,0 +1,38 @@
+{{- $scratch := newScratch -}}
+{{- $media := .context.Resources -}}
+{{- $original := index ($media.Match (printf "%s" .src)) 0 -}}
+{{- $id := (printf "image-%s" (md5 $original.Name)) -}}
+
+{{- range $i, $val := (seq .density) -}}
+  {{- $currentSize := math.Round (div (int $original.Width) (int $val)) -}}
+  {{- $currentDensity := (sub $.density $i) -}}
+
+  {{- if eq $i 0 -}}
+    {{- $scratch.SetInMap "src" (string $currentDensity) $.src -}}
+  {{- else -}}
+    {{- $resized := $original.Resize (printf "%sx Lanczos" (string $currentSize)) -}}
+    {{- $scratch.SetInMap "src" (string $currentDensity) $resized.RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+
+<div class="cover" id="{{ $id }}">
+  <style>
+    #{{ $id }} {
+      background-image: url("{{ index ($scratch.Get "src") "1" }}");
+    }
+    {{ if isset ($scratch.Get "src") "2" }}
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 192dpi) {
+      #{{ $id }} {
+        background-image: url("{{ index ($scratch.Get "src") "2" }}");
+      }
+    }
+    {{ end }}
+    {{ if isset ($scratch.Get "src") "3" }}
+    @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (min-resolution: 3dppx), only screen and (min-resolution: 288dpi) {
+      #{{ $id }} {
+        background-image: url("{{ index ($scratch.Get "src") "3" }}");
+      }
+    }
+    {{ end }}
+  </style>
+</div>

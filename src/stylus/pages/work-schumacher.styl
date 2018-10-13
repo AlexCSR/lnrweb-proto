@@ -1,0 +1,112 @@
+$ns = ".work-schumacher"
+
+{$ns}
+  &__image
+    img
+      display block
+      position relative
+      left 50%
+      transform translateX(-50%)
+    &.-intro
+      .cover
+        +a($hd)
+          height 1100px 
+        +btw($d, $hd)
+          height 800px
+        +btw($t, $d)
+          height 680px
+        +btw($m, $t)
+          height 500px
+        +b($m)
+          height 560px
+    &.-background
+      .cover
+        +a($t)
+          height 1017px
+        +btw($m, $t)
+          height 814px
+        +btw(480px, $m)
+          height 553px
+        +b(480px)
+          height 404px
+    &.-solution
+      .cover
+        background-position top center 
+        +a($hd)
+          height 1500px 
+        +btw($d, $hd)
+          height 940px
+        +btw($t, $d)
+          height 670px
+        +btw($m, $t)
+          height 670px
+        +b($m)
+          height 560px
+    &.-experience
+      img
+        +a($d)
+          width 82% 
+          margin-left -5px
+        +btw($t, $d)
+          width 92.5% 
+        +btw($m, $t)
+          width 98%
+        +b($m)
+          height 670px
+          margin-left -177px
+        +b(374px)
+          margin-left -180px 
+    &.-filters
+      img
+        +a($d)
+          width 88% 
+        +btw($t, $d)
+          width 92.5% 
+        +btw($m, $t)
+          width 98%
+        +b($m)
+          height 780px
+    &.-search
+      img
+        +a($d)
+          width 81% 
+          margin-left 26px
+        +btw($t, $d)
+          width 134% 
+        +btw($m, $t)
+          width 145%
+        +b($m)
+          height 740px
+          margin-left 40px
+    &.-showcase
+      img
+        +a($d)
+          height 800px
+        +btw($t, $d)
+          height 639px
+        +b($t)
+          width 100%
+  &__text
+    &.-assignment
+      margin 268px 0 272px
+    &.-background
+      margin 267px 0 143px
+    &.-challenge
+      margin 267px 0 259px
+    &.-breakthrough
+      margin 259px 0 242px
+    &.-solution
+      margin 242px 0 145px 
+    &.-experience
+      margin 266px 0 261px 
+    &.-filters
+      margin 248px 0 253px
+    &.-search
+      margin 376px 0 159px
+    &.-showcase
+      margin 280px 0 142px
+    &.-strategy
+      margin 280px 0 142px
+  &__quote
+    height 568px
+    background-color #fff7b1
