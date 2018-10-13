@@ -4,7 +4,7 @@ import imagesLoaded from '../libs/imagesloaded.pkgd.min';
   // featured
   document.addEventListener('DOMContentLoaded', function () {
     var TIMEOUT = 750;
-    var className = 'work__featured-item-preview';
+    var className = 'work-list__featured-item-preview';
     var previews = document.getElementsByClassName(className);
     var isScrolling = false;
     var autochange;
@@ -76,7 +76,7 @@ import imagesLoaded from '../libs/imagesloaded.pkgd.min';
 
   // clients
   document.addEventListener('DOMContentLoaded', function () {
-    var clients = document.getElementsByClassName('work__clients-item');
+    var clients = document.getElementsByClassName('work-list__clients-item');
     var changed = [];
     var lastIndex = -1;
 
@@ -113,16 +113,16 @@ import imagesLoaded from '../libs/imagesloaded.pkgd.min';
 
   // brief
   document.addEventListener('DOMContentLoaded', function () {
-    var $form = document.querySelector('.work__brief-form');
+    var $form = document.querySelector('.work-list__brief-form');
 
     if (!$form) {
       return;
     }
 
-    var $input = $form.querySelector('.work__brief-form input');
-    var $button = document.querySelector('.work__brief-form-button');
-    var $error = document.querySelector('.work__brief-form-error');
-    var $message = document.querySelector('.work__brief-form-error-message');
+    var $input = $form.querySelector('.work-list__brief-form input');
+    var $button = document.querySelector('.work-list__brief-form-button');
+    var $error = document.querySelector('.work-list__brief-form-error');
+    var $message = document.querySelector('.work-list__brief-form-error-message');
 
     function handleFocus() {
       $form.classList.add('-focused');

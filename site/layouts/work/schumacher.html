@@ -1,0 +1,33 @@
+{{ define "main" }}
+  <div class="work-single work-schumacher">
+    <div class="work-single__header">
+      <div class="container">
+        <div class="work-single__header-main">
+          {{ partial "subhead" (dict "title" "Case File" "value" "Declassified") }}
+          <h1>A two hundred year old textile manufacturer digitizes their customer experience</h1>
+        </div>
+        <div class="work-single__header-aside">
+          <div class="work-single__header-aside-block">
+            {{ partial "subhead" (dict "title" "Client") }}
+            {{ partial "img" (dict "context" . "src" "images/logo.png" "density" 3 "alt" "Schumacher") }}
+          </div>
+          <div class="work-single__header-aside-block">
+            {{ partial "subhead" (dict "title" "Services") }}
+            <p>Digital Product Development</p>
+            <p>Applied Innovation</p>
+          </div>
+        </div>
+        <div class="work-single__header-aside">
+          <div class="work-single__header-aside-block">
+            {{ partial "subhead" (dict "title" "Highlights") }}
+            <p>54+ 5-star reviews on the Apple App Store</p>
+            <p>Gold Award Winner for Mobile App 2016 by W3</p>
+            <p>
+              <a href="" data-with-arrow>Special Feature on Luxury Daily</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }}
