@@ -148,12 +148,14 @@ function drawText(onlyUI, onlyBlack, onlyWhite) {
         // pos = onPhone ? [55, 38] : [80, 48];
         addRaster('logo', pos, logoScale, onlyBlack, onlyWhite);
         addRaster('slogan', posSlogan, 1, onlyBlack, onlyWhite);
-        if (window.innerWidth > 767) {
-            addRaster('errorLarge', posError, 1, onlyBlack, onlyWhite);
-        } else if (window.innerWidth > 500 && window.innerWidth <= 767) {
-            addRaster('errorMiddle', posError, 1, onlyBlack, onlyWhite);
-        } else {
-            addRaster('errorSmall', posError, 1, onlyBlack, onlyWhite);
+        if ($('.landing.-error').length) {
+            if (window.innerWidth > 767) {
+                addRaster('errorLarge', posError, 1, onlyBlack, onlyWhite);
+            } else if (window.innerWidth > 500 && window.innerWidth <= 767) {
+                addRaster('errorMiddle', posError, 1, onlyBlack, onlyWhite);
+            } else {
+                addRaster('errorSmall', posError, 1, onlyBlack, onlyWhite);
+            }
         }
  
         var sc = Math.min(view.bounds.size.height / 1500, view.bounds.size.width / 1700);
