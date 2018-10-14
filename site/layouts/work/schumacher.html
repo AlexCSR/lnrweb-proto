@@ -1,7 +1,7 @@
 {{ define "main" }}
   <div class="work-single work-schumacher">
-    <div class="container">
-      <div class="work-single__header">
+    <div class="work-single__header">
+      <div class="container">
         <div class="work-single__header-main">
           {{ partial "subhead" (dict "title" "Case File" "value" "Declassified") }}
           <h1>A two hundred year old textile manufacturer digitizes their customer experience</h1>
@@ -32,8 +32,8 @@
     <div class="work-schumacher__image -intro">
       {{ partial "cover" (dict "context" . "src" "images/intro.jpg" "density" 2) }}
     </div>
-    <div class="container">
-      <div class="work-schumacher__text -assignment">
+    <div class="work-schumacher__text -assignment">
+      <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column">
             <h2>Assignment</h2>
@@ -44,10 +44,24 @@
           </div>
         </div>
       </div>
-      <div class="work-schumacher__quote -assignment">
-
+    </div>
+    <div class="work-schumacher__quote -assignment">
+      <div class="container">
+        {{ partial "cover" (dict "context" . "src" "images/assignment.jpg" "density" 2) }}
+        <div class="work-single__quote">
+          <div class="work-single__quote-text">
+            “…an amazing app that not only looks beautiful, but also functions beautifully.”
+          </div>
+          <div class="work-single__quote-cite">
+            <b>Aaron Buckland</b><br>
+            Senior Product Manager<br>
+            at F. Schumacher &amp; Co.
+          </div>
+        </div>
       </div>
-      <div class="work-schumacher__text -background">
+    </div>
+    <div class="work-schumacher__text -background">
+      <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column">
             <h2>Background</h2>
@@ -62,8 +76,8 @@
     <div class="work-schumacher__image -background">
       {{ partial "cover" (dict "context" . "src" "images/background.jpg" "density" 2) }}
     </div>
-    <div class="container">
-      <div class="work-schumacher__text -challenge">
+    <div class="work-schumacher__text -challenge">
+      <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column">
             <h2>Challenge</h2>
@@ -75,7 +89,9 @@
           </div>
         </div>
       </div>
-      <div class="work-schumacher__text -breakthrough">
+    </div>
+    <div class="work-schumacher__text -breakthrough">
+      <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column">
             <h2>Breakthrough</h2>
@@ -86,7 +102,9 @@
           </div>
         </div>
       </div>
-      <div class="work-schumacher__text -solution">
+    </div>
+    <div class="work-schumacher__text -solution">
+      <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column"></div>
           <div class="work-single__text-column">
@@ -98,8 +116,8 @@
     <div class="work-schumacher__image -solution">
       {{ partial "cover" (dict "context" . "src" "images/solution.jpg" "density" 2) }}
     </div>
-    <div class="container">
-      <div class="work-schumacher__text -experience">
+    <div class="work-schumacher__text -experience">
+      <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column">
             <h2>Work</h2>
@@ -114,8 +132,8 @@
     <div class="work-schumacher__image -experience">
       {{ partial "img" (dict "context" . "src" "images/experience.jpg" "density" 2) }}
     </div>
-    <div class="container">
-      <div class="work-schumacher__text -filters">
+    <div class="work-schumacher__text -filters">
+      <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column"></div>
           <div class="work-single__text-column">
@@ -127,8 +145,8 @@
     <div class="work-schumacher__image -filters">
       {{ partial "img" (dict "context" . "src" "images/filters.jpg" "density" 2) }}
     </div>
-    <div class="container">
-      <div class="work-schumacher__text -search">
+    <div class="work-schumacher__text -search">
+      <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column">
             <h4>Comprehensive <br class="hidden-b-t">Product Search</h4>
@@ -143,8 +161,8 @@
     <div class="work-schumacher__image -search">
       {{ partial "img" (dict "context" . "src" "images/search.jpg" "density" 2) }}
     </div>
-    <div class="container">
-      <div class="work-schumacher__text -showcase">
+    <div class="work-schumacher__text -showcase">
+      <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column">
             <h4>Showroom to&nbsp;digital showcase</h4>
@@ -158,19 +176,109 @@
     <div class="work-schumacher__image -showcase">
       {{ partial "img" (dict "context" . "src" "images/showcase.jpg" "density" 2) }}
     </div>
-    <div class="container">
-      <div class="work-schumacher__text -strategy">
+    <div class="work-schumacher__text -strategy">
+      <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column">
-            <h2>Data Strategy</h2>
+            <div class="work-single__text-corner -top-left">
+              <img src="images/strategy-top-left.svg" alt="">
+            </div>
+            <h2>
+              Data Strategy
+              <div class="work-single__text-triangle"></div>
+            </h2>
           </div>
           <div class="work-single__text-column">
+            <div class="work-single__text-corner -top-right">
+              <img src="images/strategy-top-right.svg" alt="">
+            </div>
+            <div class="work-single__text-triangle"></div>
             <p>Our analytics platform continues to&nbsp;build insights and allow for analysis of&nbsp;how users are behaving within the app to&nbsp;optimize for usability and business goals.</p>
+          </div>
+          <div class="work-single__text-corner -bottom">
+            <img src="images/strategy-bottom.svg" alt="">
           </div>
         </div>
       </div>
-      <div class="work-schumacher__quote -strategy">
-
+    </div>
+    <div class="work-schumacher__quote -strategy">
+      <div class="container">
+        <img src="images/strategy-quote.svg" alt="">
+        <div class="work-single__quote">
+          <div class="work-single__quote-text">
+            “Our clients not only love using&nbsp;it, but for many it&nbsp;has become an&nbsp;essential tool.”
+          </div>
+          <div class="work-single__quote-cite">
+            <b>Aaron Buckland</b><br>
+            Senior Product Manager<br>
+            at F. Schumacher &amp; Co.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="work-single__outcomes">
+      <div class="container">
+        <div class="work-single__outcomes-headline">
+          <h2>Outcomes</h2>
+        </div>
+        <div class="work-single__outcomes-content">
+          <div class="work-single__outcomes-block">
+            <div class="work-single__outcomes-block-title">4000+ Product Searches</div>
+            <div class="work-single__outcomes-block-value">In-app per month</div>
+          </div>
+          <div class="work-single__outcomes-block">
+            <div class="work-single__outcomes-block-title">2016 Gold Award</div>
+            <div class="work-single__outcomes-block-value">GDUSA</div>
+          </div>
+          <div class="work-single__outcomes-block">
+            <div class="work-single__outcomes-block-title">
+              54+
+              {{ partial "svg" (dict "glyph" "star") }}
+              {{ partial "svg" (dict "glyph" "star") }}
+              {{ partial "svg" (dict "glyph" "star") }}
+              {{ partial "svg" (dict "glyph" "star") }}
+              {{ partial "svg" (dict "glyph" "star") }}
+            </div>
+            <div class="work-single__outcomes-block-value">Apple App Store</div>
+          </div>
+          <div class="work-single__outcomes-block">
+            <div class="work-single__outcomes-block-title">Special feature</div>
+            <div class="work-single__outcomes-block-value">
+              <a href="https://www.luxurydaily.com/schumacher-eases-design-process-with-trade-first-mobile-touchpoint/" target="_blank" rel="noopener noreferrer" data-with-arrow>Luxury Daily</a>
+            </div>
+          </div>
+          <div class="work-single__outcomes-block">
+            <div class="work-single__outcomes-block-title">Worldwide showrooms</div>
+            <div class="work-single__outcomes-block-value">App deployment</div>
+          </div>
+          <div class="work-single__outcomes-block">
+            <div class="work-single__outcomes-block-title">310% Increase</div>
+            <div class="work-single__outcomes-block-value">Mobile orders</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="work-single__afterwords">
+      <div class="container">
+        <div class="work-single__afterwords-block">
+          <div class="afterword">
+            <div class="afterword__icon">
+              {{ partial "img" (dict "context" . "src" "images/app-icon.png" "density" 3 "alt" "Schumacher App") }}
+            </div>
+            <div class="afterword__subheading">Download app</div>
+            <div class="afterword__links">
+              <a href="" data-with-arrow>iOS</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-single__afterwords-block">
+          <div class="afterword">
+            <div class="afterword__heading">Looking for a&nbsp;solution like this?</div>
+            <div class="afterword__subheading">
+              <a href="">Contact us</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

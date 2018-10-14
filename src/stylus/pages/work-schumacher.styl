@@ -35,7 +35,7 @@ $ns = ".work-schumacher"
         +a($hd)
           height 1500px 
         +btw($d, $hd)
-          height 940px
+          height 942px
         +btw($t, $d)
           height 670px
         +btw($m, $t)
@@ -106,7 +106,48 @@ $ns = ".work-schumacher"
     &.-showcase
       margin 280px 0 142px
     &.-strategy
-      margin 280px 0 142px
+      padding 390px 0 401px
+      .container
+        position relative
+      .work-single__text-triangle
+        border-top-color #fff7b1 
   &__quote
-    height 568px
-    background-color #fff7b1
+    .container
+      height 568px
+      background-color #fff7b1
+      color #000
+      position relative
+      display flex
+      align-items center
+    .cover
+      position absolute
+      top 0
+      left 0
+      right 0
+      bottom 0
+      z-index 1
+    .work-single__quote
+      position relative
+      z-index 2
+    &.-assignment
+      .work-single__quote
+        padding-left 8.3%
+        width 48%
+        &-text
+          padding-bottom 74px
+        &-cite
+          margin 0 0 6px 53px
+    &.-strategy
+      img
+        display block
+        position absolute
+        top 50%
+        left 4.7%
+        transform translateY(-50%)
+      .work-single__quote
+        padding-left 50.5%
+        width 43%
+        &-text
+          padding-bottom 74px
+        &-cite
+          margin 0 0 22px 53px
