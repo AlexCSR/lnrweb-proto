@@ -1,11 +1,12 @@
 {{- $scratch := newScratch -}}
 {{- $media := .context.Resources -}}
 {{- $original := index ($media.Match (printf "%s" .src)) 0 -}}
+{{- $baseWidth := (div $original.Width .density) -}}
 {{- $id := (printf "image-%s" (md5 $original.Name)) -}}
 
 {{- range $i, $val := (seq .density) -}}
-  {{- $currentSize := math.Round (div (int $original.Width) (int $val)) -}}
   {{- $currentDensity := (sub $.density $i) -}}
+  {{- $currentSize := (mul (int $currentDensity) (int $baseWidth)) -}}
 
   {{- if eq $i 0 -}}
     {{- $scratch.SetInMap "src" (string $currentDensity) $.src -}}

@@ -91,16 +91,28 @@ $ns = ".work-single"
       line-height 27px
       margin 27px 0
   &__header
-    margin-bottom 149px
+    +a($sd)
+      margin-bottom 149px
+    +b($sd)
+      margin-bottom 161px
     .container
       display flex
     &-main
       flex 1 1 auto
-      padding-right 25px
+      +a($sd)
+        padding-right 25px
+      +b($sd)
+        padding-right 50px
     &-aside
       flex 0 0 auto
-      width 202px
       padding-left 11px
+      +a($sd)
+        width 202px
+      +b($sd)
+        width 158px 
+      &:last-child
+        +b($sd)
+          display none
       &-block
         & + &
           margin-top 47px
@@ -120,24 +132,36 @@ $ns = ".work-single"
               color $black
   &__text
     display flex
-    padding 0 7.8% 
+    +a($sd)
+      padding 0 7.8% 
     &-column
       width 50%
-      padding 0 7px 
       position relative
-      box-sizing border-box
+      +a($sd)
+        box-sizing border-box
+        padding 0 7px 
       &:nth-child(1)
+        +b($sd)
+          padding-right 5px
         {$ns}__text-triangle
           top 100% 
           left 50%
           transform translateX(-50%)
-          margin-top 184px
+          +a($d)
+            margin-top 184px
+          +b($d)
+            margin 220px 0 0 -15px
       &:nth-child(2)
         padding-top 13px
+        +b($sd)
+          padding-left 5px
         {$ns}__text-triangle
           bottom 100% 
           left 0
-          margin 0 0 18px 6px
+          +a($sd)
+            margin 0 0 18px 6px
+          +b($sd)
+            margin 0 0 18px -3px
       h2
         display inline-block
         vertical-align top 
@@ -165,16 +189,27 @@ $ns = ".work-single"
       &.-top-left
         bottom 100% 
         left 0
-        margin 0 0 112px 16px
+        +a($sd)
+          margin 0 0 112px 16px
+        +b($sd)
+          margin 0 0 112px 2px
       &.-top-right
         bottom 100% 
-        left 50%
-        transform translateX(-50%)
-        margin 0 0 37px 14px 
+        +a($sd)
+          left 50%
+          transform translateX(-50%)
+          margin 0 0 37px 14px 
+        +b($sd)
+          right -4px
+          margin-bottom 37px
       &.-bottom
-        top 100% 
-        right 7.8%
-        margin 92px 18px 0 0 
+        +a($d)
+          right 7.8%
+          top 100% 
+          margin 92px 18px 0 0 
+        +b($d)
+          left 42.3%
+          bottom 150px
     &-triangle
       display block
       position absolute
@@ -186,8 +221,12 @@ $ns = ".work-single"
   &__quote
     &-text
       font-family $Ogg
-      font-size 49px
-      line-height 67px 
+      +a($d)
+        font-size 49px
+        line-height 67px 
+      +b($d)
+        font-size 44px
+        line-height 60px
     &-cite
       font-size 17px
       line-height 26px
@@ -205,27 +244,43 @@ $ns = ".work-single"
           margin 0 20px 2px 0
           background-color currentColor
   &__outcomes
-    margin 266px 0 225px
+    +a($sd)
+      margin 266px 0 225px
+    +b($sd)
+      margin 266px 0 228px
     .container
       display flex
       justify-content space-between
-      padding 0 0 0 7.3%
+      +a($d)
+        padding-left 105px
+      +btw($sd, $d)
+        padding-left 7.3%
     &-content
       display flex
       flex-wrap wrap
-      width 72.4%
       padding-top 22px
+      +a($sd)
+        width 72.4%
+      +b($sd)
+        width 49.4% 
     &-block
       font-size 17px
       line-height 21px
-      width 38%
       box-sizing border-box
       padding 0 10px 52px 0
-      &:nth-child(3n)
-        width 24%
+      +a($sd)
+        width 38%
+        &:nth-child(3n)
+          width 24%
+      +b($sd)
+        &:nth-child(2n-1)
+          width 61.8% 
+        &:nth-child(2n)
+          width 38.2%
       &-title
         color $black 
         padding-bottom 3px
+        white-space nowrap
         .ico
           display inline-block
           vertical-align baseline
@@ -249,13 +304,24 @@ $ns = ".work-single"
       display flex
       align-items center
       width 50%
-      height 500px
       padding-bottom 34px
       box-sizing border-box
+      +a($sd)
+        height 500px
+      +b($sd)
+        height 349px
+      &:first-child
+        .afterword
+          +btw($sd, $d)
+            padding-left 17.6%
       & + &
         border-left 1px solid rgba(#bfbfbf, 0.25)
+        .afterword
+          +b($d)
+            padding-left 23.4% 
     .afterword
-      padding-left 26%
+      +a($d)
+        padding-left 26%
       &__heading,
       &__subheading
         font-size 40px
