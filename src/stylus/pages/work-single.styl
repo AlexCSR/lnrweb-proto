@@ -1,7 +1,10 @@
 $ns = ".work-single"
 
 {$ns}
-  padding-top 184px
+  +a($t)
+    padding-top 184px
+  +b($t)
+    padding-top 155px
   h1
     font-weight 600
     color $black
@@ -93,16 +96,20 @@ $ns = ".work-single"
   &__header
     +a($sd)
       margin-bottom 149px
-    +b($sd)
+    +btw($t, $sd)
       margin-bottom 161px
+    +b($t)
+      margin-bottom 94px
     .container
-      display flex
+      +a($t)
+        display flex
     &-main
-      flex 1 1 auto
       +a($sd)
         padding-right 25px
-      +b($sd)
+      +btw($t, $sd)
         padding-right 50px
+      +a($t)
+        flex 1 1 auto
     &-aside
       flex 0 0 auto
       padding-left 11px
@@ -110,6 +117,8 @@ $ns = ".work-single"
         width 202px
       +b($sd)
         width 158px 
+      +b($t)
+        display none
       &:last-child
         +b($sd)
           display none
@@ -131,18 +140,22 @@ $ns = ".work-single"
             &:after
               color $black
   &__text
-    display flex
     +a($sd)
       padding 0 7.8% 
+    +a($t)
+      display flex
     &-column
-      width 50%
       position relative
       +a($sd)
         box-sizing border-box
         padding 0 7px 
+      +a($t)
+        width 50%
       &:nth-child(1)
-        +b($sd)
+        +btw($t, $sd)
           padding-right 5px
+        +b($t)
+          margin-bottom 37px
         {$ns}__text-triangle
           top 100% 
           left 50%
@@ -152,9 +165,10 @@ $ns = ".work-single"
           +b($sd)
             margin 79px 0 0 -15px
       &:nth-child(2)
-        padding-top 13px
-        +b($sd)
+        +btw($t, $sd)
           padding-left 5px
+        +a($t)
+          padding-top 13px
         {$ns}__text-triangle
           bottom 100% 
           left 0
