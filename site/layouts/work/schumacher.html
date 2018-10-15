@@ -9,7 +9,7 @@
         <div class="work-single__header-aside">
           <div class="work-single__header-aside-block">
             {{ partial "subhead" (dict "title" "Client") }}
-            {{ partial "img" (dict "context" . "src" "images/logo.png" "density" 3 "alt" "Schumacher") }}
+            {{ partial "img" (dict "context" . "src" "images/logo.png" "density" 3 "attrs" (dict "alt" "Schumacher")) }}
           </div>
           <div class="work-single__header-aside-block">
             {{ partial "subhead" (dict "title" "Services") }}
@@ -174,13 +174,14 @@
       </div>
     </div>
     <div class="work-schumacher__image -showcase">
-      {{ partial "img" (dict "context" . "src" "images/showcase.jpg" "density" 2) }}
+      {{ partial "img" (dict "context" . "src" "images/showcase.jpg" "density" 2 "attrs" (dict "class" "hidden-b-t")) }}
+      {{ partial "img" (dict "context" . "src" "images/showcase-mobile.jpg" "density" 2 "attrs" (dict "class" "hidden-a-t")) }}
     </div>
     <div class="work-schumacher__text -strategy">
       <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column">
-            <div class="work-single__text-corner -top-left">
+            <div class="work-single__text-decorator -top-left">
               <img src="images/strategy-top-left.svg" alt="">
             </div>
             <h2>
@@ -189,13 +190,13 @@
             </h2>
           </div>
           <div class="work-single__text-column">
-            <div class="work-single__text-corner -top-right">
+            <div class="work-single__text-decorator -top-right">
               <img src="images/strategy-top-right.svg" alt="">
             </div>
             <div class="work-single__text-triangle"></div>
             <p>Our analytics platform continues to&nbsp;build insights and allow for analysis of&nbsp;how users are behaving within the app to&nbsp;optimize for usability and business goals.</p>
           </div>
-          <div class="work-single__text-corner -bottom">
+          <div class="work-single__text-decorator -bottom">
             <img src="images/strategy-bottom.svg" alt="">
           </div>
         </div>
@@ -204,6 +205,7 @@
     <div class="work-schumacher__quote -strategy">
       <div class="container">
         <img src="images/strategy-quote.svg" alt="">
+        <img src="images/strategy-quote.svg" class="hidden-a-t" alt="">
         <div class="work-single__quote">
           <div class="work-single__quote-text">
             “Our clients not only love using&nbsp;it, but for many it&nbsp;has become an&nbsp;essential tool.”
@@ -263,7 +265,7 @@
         <div class="work-single__afterwords-block">
           <div class="afterword">
             <div class="afterword__icon">
-              {{ partial "img" (dict "context" . "src" "images/app-icon.png" "density" 3 "alt" "Schumacher App") }}
+              {{ partial "img" (dict "context" . "src" "images/app-icon.png" "density" 3 "attrs" (dict "alt" "Schumacher App")) }}
             </div>
             <div class="afterword__subheading">Download&nbsp;app</div>
             <div class="afterword__links">

@@ -96,7 +96,7 @@ $ns = ".work-schumacher"
           height 639px
           transform translateX(-54.55%)
         +b($t)
-          width 100%
+          width 81.3%
   &__text
     &.-assignment
       +a($sd)
@@ -160,14 +160,16 @@ $ns = ".work-schumacher"
       +btw($t, $sd)
         margin 282px 0 143px 
       +b($t)
-        margin 129px 0 143px 
+        margin 129px 0 101px
     &.-strategy
       +b($d)
         position relative
       +a($sd)
         padding 390px 0 401px
-      +b($sd)
+      +btw($t, $sd)
         padding 390px 0 355px 
+      +b($t)
+        padding 296px 0 329px 
       .container
         +a($d)
           position relative
@@ -227,6 +229,9 @@ $ns = ".work-schumacher"
           +b($t)
             margin-left 57.6%
     &.-strategy
+      .container
+        +b($t)
+          overflow hidden
       img
         display block
         position absolute
@@ -235,15 +240,34 @@ $ns = ".work-schumacher"
         +a($d)
           left 4.7%
           max-width 39.9842%
-        +b($d)
+        +btw($t, $d)
           left 50%
           transform translate(-50%, -50%)
           margin-left -24.5% 
           max-width 46%
+        +b($t)
+          height 90%
+          opacity 0.95 
+          &:nth-child(1)
+            left 0
+            transform translate(-69%, -50%)
+          &:nth-child(2)
+            right 0
+            transform translate(69%, -50%)
       .work-single__quote
-        padding-left 50.5%
-        width 43%
+        +a($t)
+          padding-left 50.5%
+          width 43%
         &-text
-          padding-bottom 74px
+          +a($t)
+            padding-bottom 74px
+          +b($t)
+            margin auto
+            width 68%
+            text-align center
+            padding 2px 0 71px
         &-cite
-          margin 0 0 22px 53px
+          +a($t)
+            margin 0 0 22px 53px
+          +b($t)
+            margin-left 57.9%

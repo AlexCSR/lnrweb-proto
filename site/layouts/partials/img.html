@@ -21,5 +21,9 @@
 <img
   srcset="{{ delimit ($scratch.Get "srcset") ", " }}"
   src="{{ .src }}"
-  alt="{{ .alt }}"
+  {{ range $attrName, $attrValue := .attrs }}
+    {{- if or (ne $attrName "srcset") (ne $attrName "src") -}}
+      {{- $attrName -}}="{{- $attrValue -}}"
+    {{- end -}}
+  {{ end }}
 >

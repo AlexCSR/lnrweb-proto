@@ -157,29 +157,38 @@ $ns = ".work-single"
         +b($t)
           margin-bottom 37px
         {$ns}__text-triangle
-          top 100% 
           left 50%
           transform translateX(-50%)
           +a($sd)
             margin-top 114px
-          +b($sd)
+          +btw($t, $sd)
             margin 79px 0 0 -15px
+          +a($t)
+            top 100% 
+          +b($t)
+            bottom 100%
+            margin 0 0 8px 7px
       &:nth-child(2)
         +btw($t, $sd)
           padding-left 5px
         +a($t)
           padding-top 13px
         {$ns}__text-triangle
-          bottom 100% 
           left 0
           +a($sd)
             margin 0 0 18px 6px
-          +b($sd)
+          +btw($t, $sd)
             margin 0 0 18px -3px
+          +a($t)
+            bottom 100% 
+          +b($t)
+            top 100% 
+            margin 96px 0 0 1px
       h2
-        display inline-block
-        vertical-align top 
-        position relative
+        +a($t)
+          display inline-block
+          vertical-align top 
+          position relative
       h5
         &:first-child
           margin-top 0 !important
@@ -196,7 +205,7 @@ $ns = ".work-single"
           margin-top 0 !important
         &:last-of-type
           margin-bottom 0 !important 
-    &-corner
+    &-decorator
       position absolute
       img
         display block
@@ -205,35 +214,55 @@ $ns = ".work-single"
         left 0
         +a($sd)
           margin 0 0 112px 16px
-        +b($sd)
+        +btw($t, $sd)
           margin 0 0 112px 2px
+        +b($t)
+          margin 0 0 78px 5px 
         + h2
           height 100% 
+        img
+          +b($t)
+            width 244px
       &.-top-right
         bottom 100% 
         +a($sd)
           left 50%
           transform translateX(-50%)
           margin 0 0 37px 14px 
-        +b($sd)
+        +btw($t, $sd)
           right -4px
           margin-bottom 37px
+        +b($t)
+          right -3px
+          margin-bottom 111px
+        img
+          +b($t)
+            width 206px
       &.-bottom
         +a($d)
           right 7.8%
           top 100% 
           margin 92px 18px 0 0 
-        +b($d)
+        +btw($t, $d)
           left 42.3%
           bottom 150px
+        +b($t)
+          left 36.3%
+          bottom 125px 
+        img
+          +b($t)
+            width 654px
     &-triangle
       display block
       position absolute
       width 0
       height 0
       border-style solid
-      border-width 9px 9px 0 9px
       border-color transparent
+      +a($t)
+        border-width 9px 9px 0 9px
+      +b($t)
+        border-width 7px 7px 0 7px
   &__quote
     &-text
       font-family $Ogg
@@ -262,37 +291,46 @@ $ns = ".work-single"
   &__outcomes
     +a($sd)
       margin 266px 0 225px
-    +b($sd)
+    +btw($t, $sd)
       margin 266px 0 228px
+    +b($t)
+      margin 104px 0 97px
     .container
-      display flex
-      justify-content space-between
       +a($d)
         padding-left 105px
       +btw($sd, $d)
         padding-left 7.3%
+      +a($t)
+        display flex
+        justify-content space-between
     &-content
-      display flex
-      flex-wrap wrap
-      padding-top 22px
       +a($sd)
         width 72.4%
       +b($sd)
         width 49.4% 
+      +a($t)
+        display flex
+        flex-wrap wrap
+        padding-top 22px
+      +b($t)
+        padding-top 56px
     &-block
       font-size 17px
       line-height 21px
       box-sizing border-box
-      padding 0 10px 52px 0
       +a($sd)
         width 38%
         &:nth-child(3n)
           width 24%
-      +b($sd)
+      +btw($t, $sd)
         &:nth-child(2n-1)
           width 61.8% 
         &:nth-child(2n)
           width 38.2%
+      +a($t)
+        padding 0 10px 52px 0
+      +b($t)
+        padding-bottom 33px
       &-title
         color $black 
         padding-bottom 3px
@@ -315,29 +353,40 @@ $ns = ".work-single"
   &__afterwords
     border-top 1px solid rgba(#bfbfbf, 0.25)
     .container
-      display flex
+      +a($t)
+        display flex
+      +b($t)
+        width 100% 
     &-block
       display flex
       align-items center
-      width 50%
       padding-bottom 34px
       box-sizing border-box
       +a($sd)
         height 500px
       +b($sd)
         height 349px
+      +a($t)
+        width 50%
       &:first-child
         .afterword
           +btw($sd, $d)
             padding-left 17.6%
       & + &
-        border-left 1px solid rgba(#bfbfbf, 0.25)
+        border-style solid
+        border-color rgba(#bfbfbf, 0.25)
+        +a($t)
+          border-width 0 0 0 1px
+        +b($t)
+          border-width 1px 0 0
         .afterword
-          +b($d)
+          +btw($t, $d)
             padding-left 23.4% 
     .afterword
       +a($d)
         padding-left 26%
+      +b($t)
+        padding 0 30.2%
       &__heading,
       &__subheading
         font-size 40px
