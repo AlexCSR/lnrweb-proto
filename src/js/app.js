@@ -1,6 +1,7 @@
 require('./document');
 require('./partials/nav');
 require('./partials/header');
+require('./partials/progressbar');
 require('./pages/work-list');
 require('./pages/news-list');
 require('./pages/news-single');
