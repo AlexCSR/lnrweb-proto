@@ -31,7 +31,6 @@ $ns = ".work-schumacher"
           height 404px
     &.-solution
       .cover
-        background-position top center 
         +a($hd)
           height 1500px 
         +btw($d, $hd)
@@ -40,8 +39,11 @@ $ns = ".work-schumacher"
           height 670px
         +btw($m, $t)
           height 670px
+        +a($m)
+          background-position top center 
         +b($m)
-          height 560px
+          height 550px
+          background-position 64.5% 0 
     &.-experience
       img
         +a($d)
@@ -57,9 +59,7 @@ $ns = ".work-schumacher"
           margin-left -4px
         +b($m)
           height 670px
-          margin-left -177px
-        +b(374px)
-          margin-left -180px 
+          margin-left 25px
     &.-filters
       img
         +a($d)
@@ -71,7 +71,7 @@ $ns = ".work-schumacher"
         +btw($m, $t)
           width 97.8%
         +b($m)
-          height 780px
+          height 362px
     &.-search
       img
         +a($d)
@@ -86,8 +86,8 @@ $ns = ".work-schumacher"
           width 117.8%
           margin-left 20px
         +b($m)
-          height 740px
-          margin-left 40px
+          height 714px
+          margin-left 38px
     &.-showcase
       img
         +a($d)
@@ -95,72 +95,92 @@ $ns = ".work-schumacher"
         +btw($t, $d)
           height 639px
           transform translateX(-54.55%)
-        +b($t)
+        +btw($m, $t)
           width 81.3%
+        +b($m)
+          width 111.1% 
   &__text
     &.-assignment
       +a($sd)
         margin 268px 0 272px
       +btw($t, $sd)
         margin 306px 0 236px 
-      +b($t)
+      +btw($m, $t)
         margin 106px 0 123px 
+      +b($m)
+        margin 104px 0 117px
     &.-background
       +a($sd)
         margin 267px 0 143px
       +btw($t, $sd)
         margin 267px 0 146px
-      +b($t)
+      +btw($m, $t)
         margin 106px 0 123px 
+      +b($m)
+        margin 107px 0 115px 
     &.-challenge
       +a($sd)
         margin 267px 0 259px
       +btw($t, $sd)
         margin 267px 0 265px 
-      +b($t)
+      +btw($m, $t)
         margin 106px 0 105px 
+      +b($m)
+        margin 103px 0 99px 
     &.-breakthrough
       +a($sd)
         margin 259px 0 242px
       +btw($t, $sd)
         margin 265px 0 253px
-      +b($t)
+      +btw($m, $t)
         margin 105px 0 118px 
+      +b($m)
+        margin 99px 0 105px 
     &.-solution
       +a($sd)
         margin 242px 0 145px 
       +btw($t, $sd)
         margin 242px 0 148px
-      +b($t)
+      +btw($m, $t)
         margin 118px 0 127px 
+      +b($m)
+        margin 105px 0 74px 
     &.-experience
       +a($sd)
         margin 266px 0 261px 
       +btw($t, $sd)
         margin 267px 0 216px
-      +b($t)
+      +btw($m, $t)
         margin 106px 0 218px 
+      +b($m)
+        margin 110px 0 54px
     &.-filters
       +a($sd)
         margin 248px 0 253px
       +btw($t, $sd)
         margin 211px 0 239px 
-      +b($t)
+      +btw($m, $t)
         margin 174px 0 195px
+      +b($m)
+        margin -18px 0 102px 
     &.-search
       +a($sd)
         margin 376px 0 159px
       +btw($t, $sd)
         margin 430px 0 158px 
-      +b($t)
+      +btw($m, $t)
         margin 257px 0 146px 
+      +b($m)
+        margin 101px 0 33px 
     &.-showcase
       +a($sd)
         margin 280px 0 142px
       +btw($t, $sd)
         margin 282px 0 143px 
-      +b($t)
+      +btw($m, $t)
         margin 129px 0 101px
+      +b($m)
+        margin 61px 0 115px 
     &.-strategy
       +b($d)
         position relative
@@ -168,8 +188,10 @@ $ns = ".work-schumacher"
         padding 390px 0 401px
       +btw($t, $sd)
         padding 390px 0 355px 
-      +b($t)
+      +btw($m, $t)
         padding 296px 0 329px 
+      +b($m)
+        padding 193px 0 222px 
       .container
         +a($d)
           position relative
@@ -177,7 +199,6 @@ $ns = ".work-schumacher"
         border-top-color #fff7b1 
   &__quote
     .container
-      min-height 568px
       padding 30px 0 
       box-sizing border-box
       background-color #fff7b1
@@ -189,6 +210,10 @@ $ns = ".work-schumacher"
         width 94.043% 
       +b($t)
         width 92.2% 
+      +a($m)
+        min-height 568px
+      +b($m)
+        min-height 410px
     .cover
       position absolute
       top 0
@@ -216,18 +241,24 @@ $ns = ".work-schumacher"
         &-text
           +a($sd)
             padding-bottom 74px
-          +b($sd)
+          +btw($m, $sd)
             padding-bottom 71px
           +b($t)
             margin auto
-            width 74%
             text-align center
+          +btw($m, $t)
+            width 74%
             padding-top 2px
+          +b($m)
+            width 80%
+            padding 6px 0 74px
         &-cite
           +a($t)
             margin 0 0 6px 53px
-          +b($t)
+          +btw($m, $t)
             margin-left 57.6%
+          +b($m)
+            margin-left 52.5%
     &.-strategy
       .container
         +b($t)
@@ -263,11 +294,17 @@ $ns = ".work-schumacher"
             padding-bottom 74px
           +b($t)
             margin auto
-            width 68%
             text-align center
+          +btw($m, $t)
+            width 68%
             padding 2px 0 71px
+          +b($m)
+            width 80%
+            padding 4px 0 76px 
         &-cite
           +a($t)
             margin 0 0 22px 53px
-          +b($t)
+          +btw($m, $t)
             margin-left 57.9%
+          +b($m)
+            margin-left 52.1%

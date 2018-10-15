@@ -130,7 +130,8 @@
       </div>
     </div>
     <div class="work-schumacher__image -experience">
-      {{ partial "img" (dict "context" . "src" "images/experience.jpg" "density" 2) }}
+      {{ partial "img" (dict "context" . "src" "images/experience.jpg" "density" 2 "attrs" (dict "class" "hidden-b-m")) }}
+      {{ partial "img" (dict "context" . "src" "images/experience-mobile.jpg" "density" 2 "attrs" (dict "class" "hidden-a-m")) }}
     </div>
     <div class="work-schumacher__text -filters">
       <div class="container">
