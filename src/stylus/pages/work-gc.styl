@@ -1,0 +1,121 @@
+$ns = ".work-gc"
+
+{$ns}
+  &__image
+    img
+      display block
+      position relative
+      left 50%
+      transform translateX(-50%)
+    &.-intro
+      .cover
+        +a($hd)
+          height 1100px 
+        +btw($d, $hd)
+          height 800px
+        +btw($t, $d)
+          height 680px
+        +btw($m, $t)
+          height 500px
+        +b($m)
+          height 560px
+  &__text
+    &.-assignment
+      +a($sd)
+        margin 268px 0 272px
+      +btw($t, $sd)
+        margin 306px 0 236px 
+      +btw($m, $t)
+        margin 106px 0 123px 
+      +b($m)
+        margin 104px 0 117px
+    &.-background
+      +a($sd)
+        margin 267px 0 141px
+      +btw($t, $sd)
+        margin 267px 0 146px
+      +btw($m, $t)
+        margin 106px 0 123px 
+      +b($m)
+        margin 107px 0 115px
+    &.-challenge
+      +a($sd)
+        margin 262px 0 259px
+      +btw($t, $sd)
+        margin 267px 0 265px 
+      +btw($m, $t)
+        margin 106px 0 105px 
+      +b($m)
+        margin 103px 0 99px 
+    &.-breakthrough
+      +a($sd)
+        margin 259px 0 242px
+      +btw($t, $sd)
+        margin 265px 0 253px
+      +btw($m, $t)
+        margin 105px 0 118px 
+      +b($m)
+        margin 99px 0 105px
+  &__quote
+    .container
+      padding 30px 0 
+      box-sizing border-box
+      color #fff
+      position relative
+      display flex
+      align-items center
+      +btw($t, $sd)
+        width 94.043% 
+      +b($t)
+        width 92.2% 
+      +a($m)
+        min-height 568px
+      +b($m)
+        min-height 410px
+    .cover
+      position absolute
+      top 0
+      left 0
+      right 0
+      bottom 0
+      z-index 1
+    .work-single__quote
+      position relative
+      z-index 2
+      margin auto
+      &-text
+        text-align center
+    &.-assignment
+      .work-single__quote
+        width 67%
+        &-text
+          +a($sd)
+            padding-bottom 70px
+          +btw($m, $sd)
+            padding-bottom 71px
+        &-cite
+          margin 0 0 12px 50.8%
+  &__background
+    img
+      display block
+      width 100% 
+    .container
+      padding-left 7%
+    &-image
+      flex 0 0 auto
+      padding 5px 6px
+      &.-top-left
+        width 35.47% 
+      &.-top-right
+        width 53.805%
+      &.-bottom-left
+        width 17.31%
+      &.-bottom-center
+        width 53.7%
+      &.-bottom-right
+        width 26.4781%
+    &-top
+      display flex
+      align-items flex-end
+    &-bottom
+      display flex

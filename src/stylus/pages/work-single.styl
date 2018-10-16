@@ -97,7 +97,8 @@ $ns = ".work-single"
       margin 27px 0
   &__header
     +a($sd)
-      margin-bottom 149px
+      margin-bottom 28px
+      min-height 410px
     +btw($t, $sd)
       margin-bottom 161px
     +btw($m, $t)
@@ -141,6 +142,12 @@ $ns = ".work-single"
           margin-bottom 28px
           a
             color currentColor
+            &:not(:last-child)
+              &:after
+                display none
+              &:hover ~ a:last-child:after
+                fluxText()
+                transform translateX(2px)
             &:after
               color $black
   &__text
