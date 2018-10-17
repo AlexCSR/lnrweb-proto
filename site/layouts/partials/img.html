@@ -1,26 +1,31 @@
 {{- $scratch := newScratch -}}
 {{- $media := .context.Resources -}}
 {{- $original := index ($media.Match (printf "%s" .src)) 0 -}}
-{{- $baseWidth := (div $original.Width .density) -}}
 
-{{- range $i, $val := (seq .density) -}}
-  {{- $currentDensity := (sub $.density $i) -}}
-  {{- $currentSize := (mul (int $currentDensity) (int $baseWidth)) -}}
-  {{- $currentSrc := newScratch -}}
+{{- if ne $original.MediaType.SubType "svg" -}}
+  {{- $baseWidth := (div $original.Width .density) -}}
 
-  {{- if eq $i 0 -}}
-    {{- $currentSrc.Add "url" $.src -}}
-  {{- else -}}
-    {{- $resized := $original.Resize (printf "%sx Lanczos" (string $currentSize)) -}}
-    {{- $currentSrc.Add "url" $resized.RelPermalink -}}
+  {{- range $i, $val := (seq .density) -}}
+    {{- $currentDensity := (sub $.density $i) -}}
+    {{- $currentSize := (mul (int $currentDensity) (int $baseWidth)) -}}
+    {{- $currentSrc := newScratch -}}
+
+    {{- if eq $i 0 -}}
+      {{- $currentSrc.Add "url" $original.Permalink -}}
+    {{- else -}}
+      {{- $resized := $original.Resize (printf "%sx Lanczos" (string $currentSize)) -}}
+      {{- $currentSrc.Add "url" $resized.RelPermalink -}}
+    {{- end -}}
+
+    {{- $scratch.Add "srcset" (slice (printf "%s %sx" ($currentSrc.Get "url") (string $currentDensity))) -}}
   {{- end -}}
-
-  {{- $scratch.Add "srcset" (slice (printf "%s %sx" ($currentSrc.Get "url") (string $currentDensity))) -}}
 {{- end -}}
 
 <img
-  srcset="{{ delimit ($scratch.Get "srcset") ", " }}"
-  src="{{ .src }}"
+  src="{{ $original.Permalink }}"
+  {{ if ne $original.MediaType.SubType "svg" }}
+    srcset="{{ delimit ($scratch.Get "srcset") ", " }}"
+  {{ end }}
   {{ range $attrName, $attrValue := .attrs }}
     {{- if or (ne $attrName "srcset") (ne $attrName "src") -}}
       {{- $attrName -}}="{{- $attrValue -}}"

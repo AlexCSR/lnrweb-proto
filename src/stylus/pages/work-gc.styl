@@ -19,6 +19,14 @@ $ns = ".work-gc"
           height 500px
         +b($m)
           height 560px
+    &.-breakthrough
+      img
+        +a($t)
+          width 100%
+        +b($t)
+          height 500px
+      .container
+        overflow hidden
   &__text
     &.-assignment
       +a($sd)
@@ -40,7 +48,7 @@ $ns = ".work-gc"
         margin 107px 0 115px
     &.-challenge
       +a($sd)
-        margin 262px 0 259px
+        margin 262px 0 260px
       +btw($t, $sd)
         margin 267px 0 265px 
       +btw($m, $t)
@@ -49,7 +57,7 @@ $ns = ".work-gc"
         margin 103px 0 99px 
     &.-breakthrough
       +a($sd)
-        margin 259px 0 242px
+        margin 260px 0 125px
       +btw($t, $sd)
         margin 265px 0 253px
       +btw($m, $t)
@@ -119,3 +127,59 @@ $ns = ".work-gc"
       align-items flex-end
     &-bottom
       display flex
+  &__takeaction
+    margin 248px 0 
+    .container
+      +a($sd)
+        padding-left 7.35%
+      +a($t)
+        display flex
+    &-text
+      padding-top 9px
+      +a($t)
+        margin-right 9.2%
+        width 36.5%
+        flex 0 0 auto
+      h4
+        img[src]
+          margin-right 3px
+      > p
+        margin 31px 7px 58px
+      dl
+        padding 0
+        margin 0 0 0 2px
+        +btw($sm, $t)
+          display flex
+          flex-wrap wrap
+        dt
+          width 100% 
+          font-size 22px
+          line-height 46px
+          font-weight 600 
+          padding 0
+          margin 0 0 3px
+        dd
+          padding 0
+          margin 0 0 7px 1px
+          +btw($sm, $t)
+            width 48%
+          figure,
+          p
+            display inline-block
+            vertical-align middle
+          figure
+            width 21px
+            font-size 0
+            line-height 0
+            text-align center
+            margin 4px 16px 0 0
+            img
+              display inline-block
+    &-image
+      text-align center
+      +a($t)
+        flex 1 1 auto
+      img
+        display inline-block
+        vertical-align top
+        max-width 100% 

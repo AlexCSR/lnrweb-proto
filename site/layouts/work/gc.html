@@ -1,5 +1,6 @@
 {{ define "main" }}
-  <div class="work-single work-gc">
+  {{ $ns := "work-gc" }}
+  <div class="work-single {{$ns}}">
     <div class="work-single__header">
       <div class="container">
         <div class="work-single__header-main">
@@ -27,10 +28,10 @@
         </div>
       </div>
     </div>
-    <div class="work-gc__image -intro">
+    <div class="{{$ns}}__image -intro">
       {{ partial "cover" (dict "context" . "src" "images/intro.jpg" "density" 2) }}
     </div>
-    <div class="work-gc__text -assignment">
+    <div class="{{$ns}}__text -assignment">
       <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column">
@@ -43,7 +44,7 @@
         </div>
       </div>
     </div>
-    <div class="work-gc__quote -assignment">
+    <div class="{{$ns}}__quote -assignment">
       <div class="container">
         {{ partial "cover" (dict "context" . "src" "images/assignment.jpg" "density" 2) }}
         <div class="work-single__quote">
@@ -58,7 +59,7 @@
         </div>
       </div>
     </div>
-    <div class="work-gc__text -background">
+    <div class="{{$ns}}__text -background">
       <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column">
@@ -71,30 +72,30 @@
         </div>
       </div>
     </div>
-    <div class="work-gc__background">
+    <div class="{{$ns}}__background">
       <div class="container">
-        <div class="work-gc__background-top">
-          <div class="work-gc__background-image -top-left">
+        <div class="{{$ns}}__background-top">
+          <div class="{{$ns}}__background-image -top-left">
             {{ partial "img" (dict "context" . "src" "images/background-top-left.jpg" "density" 2) }}
           </div>
-          <div class="work-gc__background-image -top-right">
+          <div class="{{$ns}}__background-image -top-right">
             {{ partial "img" (dict "context" . "src" "images/background-top-right.jpg" "density" 2) }}
           </div>
         </div>
-        <div class="work-gc__background-bottom">
-          <div class="work-gc__background-image -bottom-left">
-            <img src="{{ (index (.Resources.Match "images/background-bottom-left.svg") 0).Permalink }}" alt="Global Citizen">
+        <div class="{{$ns}}__background-bottom">
+          <div class="{{$ns}}__background-image -bottom-left">
+            {{ partial "img" (dict "context" . "src" "images/background-bottom-left.svg" "attrs" (dict "alt" "Global Citizen")) }}
           </div>
-          <div class="work-gc__background-image -bottom-center">
+          <div class="{{$ns}}__background-image -bottom-center">
             {{ partial "img" (dict "context" . "src" "images/background-bottom-center.jpg" "density" 2) }}
           </div>
-          <div class="work-gc__background-image -bottom-right">
+          <div class="{{$ns}}__background-image -bottom-right">
             {{ partial "img" (dict "context" . "src" "images/background-bottom-right.jpg" "density" 2) }}
           </div>
         </div>
       </div>
     </div>
-    <div class="work-gc__text -challenge">
+    <div class="{{$ns}}__text -challenge">
       <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column">
@@ -108,7 +109,7 @@
         </div>
       </div>
     </div>
-    <div class="work-gc__text -breakthrough">
+    <div class="{{$ns}}__text -breakthrough">
       <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column">
@@ -119,6 +120,65 @@
             <p>Build the application as&nbsp;a&nbsp;centralized &laquo;Action&raquo; platform that can be&nbsp;used throughout the year and activated during special events like GC&nbsp;Festivals. </p>
             <p>By&nbsp;leveraging Global Citizen&rsquo;s partnership with Live Nation, the application can house all events that are accessible to&nbsp;users. At&nbsp;the same time, users can take actions on&nbsp;the issues that they care about most to&nbsp;spread awareness, educate themselves and their community, get access to&nbsp;events they love, and catalyze change.</p>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="{{$ns}}__image -breakthrough">
+      <div class="container">
+        {{ partial "img" (dict "context" . "src" "images/breakthrough.jpg" "density" 2) }}
+      </div>
+    </div>
+    <div class="{{$ns}}__takeaction">
+      <div class="container">
+        <div class="{{$ns}}__takeaction-text">
+          <h2>Work</h2>
+          <h4>
+            {{ partial "img" (dict "context" . "src" "images/takeaction-icon.svg") }}
+            Take Action
+          </h4>
+          <p>Hundreds of&nbsp;social Actions, updated in&nbsp;real-time by&nbsp;The Global Citizen policy team. Each Action type uses a&nbsp;unique function to&nbsp;spread awareness and leverage the mobile platform.</p>
+          <dl>
+            <dt>Action Types:</dt>
+            <dd>
+              <figure>
+                {{ partial "img" (dict "context" . "src" "images/takeaction-action-twitter.svg") }}
+              </figure>
+              <p>Tweet</p>
+            </dd>
+            <dd>
+              <figure>
+                {{ partial "img" (dict "context" . "src" "images/takeaction-action-sign.svg") }}
+              </figure>
+              <p>Sign a Petition</p>
+            </dd>
+            <dd>
+              <figure>
+                {{ partial "img" (dict "context" . "src" "images/takeaction-action-call.svg") }}
+              </figure>
+              <p>Call</p>
+            </dd>
+            <dd>
+              <figure>
+                {{ partial "img" (dict "context" . "src" "images/takeaction-action-email.svg") }}
+              </figure>
+              <p>Email</p>
+            </dd>
+            <dd>
+              <figure>
+                {{ partial "img" (dict "context" . "src" "images/takeaction-action-photo.svg") }}
+              </figure>
+              <p>Post a Photo</p>
+            </dd>
+            <dd>
+              <figure>
+                {{ partial "img" (dict "context" . "src" "images/takeaction-action-checkin.svg") }}
+              </figure>
+              <p>Check-in</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="{{$ns}}__takeaction-image">
+          {{ partial "img" (dict "context" . "src" "images/takeaction-image.jpg" "density" 2) }}
         </div>
       </div>
     </div>
