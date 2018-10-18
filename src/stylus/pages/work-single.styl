@@ -82,7 +82,6 @@ $ns = ".work-single"
     img
       display inline-block
       vertical-align middle
-      margin 0 13px 0 4px 
   h5
     font-weight 600
     color $black
@@ -354,7 +353,7 @@ $ns = ".work-single"
     &-content
       +a($sd)
         width 72.4%
-      +btw($m, $sd)
+      +btw($t, $sd)
         width 49.4% 
       +a($t)
         display flex
@@ -372,19 +371,20 @@ $ns = ".work-single"
         width 38%
         &:nth-child(3n)
           width 24%
+          padding-right 0
       +btw($t, $sd)
         &:nth-child(2n-1)
           width 61.8% 
         &:nth-child(2n)
           width 38.2%
+          padding-right 0
       +a($t)
-        padding 0 10px 52px 0
+        padding 0 25px 52px 0
       +b($t)
         padding-bottom 33px
       &-title
         color $black 
         padding-bottom 3px
-        white-space nowrap
         .ico
           display inline-block
           vertical-align baseline
@@ -398,6 +398,12 @@ $ns = ".work-single"
         color $gray 
         a
           color currentColor
+          &:not(:last-child)
+            &:after
+              display none
+            &:hover ~ a:last-child:after
+              fluxText()
+              transform translateX(2px)
           &[data-with-arrow]:after
             color #000
   &__afterwords

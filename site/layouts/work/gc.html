@@ -182,5 +182,283 @@
         </div>
       </div>
     </div>
+    <div class="{{$ns}}__newsfeed">
+      <div class="container">
+        <div class="{{$ns}}__newsfeed-text">
+          <h4>
+            {{ partial "img" (dict "context" . "src" "images/newsfeed-icon.svg") }}
+            Newsfeed
+          </h4>
+          <p>Features content based on core issues for deeper education.</p>
+        </div>
+      </div>
+    </div>
+    <div class="{{$ns}}__image -newsfeed">
+      {{ partial "img" (dict "context" . "src" "images/newsfeed-image.jpg" "density" 2 "attrs" (dict "class" "hidden-b-m")) }}
+      {{ partial "img" (dict "context" . "src" "images/newsfeed-image-mobile.jpg" "density" 2 "attrs" (dict "class" "hidden-a-m")) }}
+    </div>
+    <div class="{{$ns}}__rewards">
+      <div class="container">
+        <div class="{{$ns}}__rewards-text">
+          <h4>
+            {{ partial "img" (dict "context" . "src" "images/rewards-icon.svg") }}
+            Rewards
+            {{ partial "img" (dict "context" . "src" "images/rewards-badge.png" "density" 2) }}
+          </h4>
+          <p>When users take actions, they earn points. These points can be use to enter contests to win tickets to their favorite events throughout the year.</p>
+        </div>
+        <div class="{{$ns}}__rewards-covers">
+          <div class="{{$ns}}__rewards-covers-item">
+            {{ partial "img" (dict "context" . "src" "images/rewards-cover-1.jpg") }}
+          </div>
+          <div class="{{$ns}}__rewards-covers-item">
+            {{ partial "img" (dict "context" . "src" "images/rewards-cover-2.jpg") }}
+            <i></i>
+            <i></i>
+          </div>
+          <div class="{{$ns}}__rewards-covers-item">
+            {{ partial "img" (dict "context" . "src" "images/rewards-cover-3.jpg") }}
+          </div>
+          <div class="{{$ns}}__rewards-covers-item">
+            {{ partial "img" (dict "context" . "src" "images/rewards-cover-4.jpg") }}
+          </div>
+          <div class="{{$ns}}__rewards-covers-item">
+            {{ partial "img" (dict "context" . "src" "images/rewards-cover-5.jpg") }}
+            <i></i>
+            <i></i>
+          </div>
+          <div class="{{$ns}}__rewards-covers-item">
+            {{ partial "img" (dict "context" . "src" "images/rewards-cover-6.jpg") }}
+          </div>
+          <div class="{{$ns}}__rewards-covers-item">
+            {{ partial "img" (dict "context" . "src" "images/rewards-cover-7.jpg") }}
+          </div>
+          <div class="{{$ns}}__rewards-covers-item">
+            {{ partial "img" (dict "context" . "src" "images/rewards-cover-8.jpg") }}
+            <i></i>
+            <i></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="{{$ns}}__pre">
+      <div class="container">
+        <div class="{{$ns}}__pre-text">
+          <h2>Festival <br>Experience</h2>
+          <h4>Pre Festival</h4>
+          <p>Hundreds of&nbsp;social Actions, updated in&nbsp;real-time by&nbsp;The&nbsp;Global&nbsp;Citizen policy team. Each Action type uses a&nbsp;unique function to&nbsp;spread awareness and leverage the mobile platform.</p>
+          {{ partial "img" (dict "context" . "src" "images/pre-icons.svg") }}
+        </div>
+        <div class="{{$ns}}__pre-image">
+          {{ partial "img" (dict "context" . "src" "images/pre-image.png" "density" 2) }}
+        </div>
+      </div>
+    </div>
+    <div class="{{$ns}}__during">
+      <div class="container">
+        <h4>During Festival</h4>
+        <p>Leading up&nbsp;to&nbsp;the events, the app transitions to&nbsp;a&nbsp;unique journey for those interested in&nbsp;attending.</p>
+      </div>
+    </div>
+    <div class="{{$ns}}__image -during">
+      {{ partial "img" (dict "context" . "src" "images/during.jpg" "density" 2) }}
+    </div>
+    <div class="{{$ns}}__festivals">
+      <div class="container">
+        <div class="{{$ns}}__festivals-block">
+          <div class="{{$ns}}__festivals-block-item">
+            {{ partial "img" (dict "context" . "src" "images/festivals-ny-14.jpg" "density" 2) }}
+            <figcaption>New York 2014</figcaption>
+          </div>
+          <div class="{{$ns}}__festivals-block-item">
+            {{ partial "img" (dict "context" . "src" "images/festivals-munich-15.jpg" "density" 2) }}
+            <figcaption>Munich 2015</figcaption>
+          </div>
+          <div class="{{$ns}}__festivals-block-item">
+            {{ partial "img" (dict "context" . "src" "images/festivals-ny-15.jpg" "density" 2) }}
+            <figcaption>New York 2015</figcaption>
+          </div>
+        </div>
+        <div class="{{$ns}}__festivals-block">
+          <div class="{{$ns}}__festivals-block-item">
+            {{ partial "img" (dict "context" . "src" "images/festivals-ny-16.jpg" "density" 2) }}
+            <figcaption>New York 2016</figcaption>
+          </div>
+          <div class="{{$ns}}__festivals-block-item">
+            {{ partial "img" (dict "context" . "src" "images/festivals-mumbai-16.jpg" "density" 2) }}
+            <figcaption>Mumbai 2016</figcaption>
+          </div>
+          <div class="{{$ns}}__festivals-block-item">
+            {{ partial "img" (dict "context" . "src" "images/festivals-ny-17.jpg" "density" 2) }}
+            <figcaption>New York 2017</figcaption>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="{{$ns}}__moments">
+      <div class="container">
+        <figure>
+          {{ partial "img" (dict "context" . "src" "images/moments-1.jpg" "density" 2) }}
+        </figure>
+        <figure>
+          {{ partial "img" (dict "context" . "src" "images/moments-2.jpg" "density" 2) }}
+        </figure>
+        <figure>
+          {{ partial "img" (dict "context" . "src" "images/moments-3.jpg" "density" 2) }}
+        </figure>
+        <p>As&nbsp;world leaders, activists, celebrities and music performers take the stage, attendees of&nbsp;the event all have the app and are sent relevant Actions based off what is&nbsp;currently being discussed.</p>
+        <figure>
+          {{ partial "img" (dict "context" . "src" "images/moments-4.jpg" "density" 2) }}
+        </figure>
+        <figure>
+          {{ partial "img" (dict "context" . "src" "images/moments-5.jpg" "density" 2) }}
+        </figure>
+        <figure>
+          {{ partial "img" (dict "context" . "src" "images/moments-6.jpg" "density" 2) }}
+        </figure>
+      </div>
+    </div>
+    <div class="{{$ns}}__image -process">
+      <div class="container">
+        <h2>Iterative Process</h2>
+      </div>
+      {{ partial "img" (dict "context" . "src" "images/process.png" "density" 2 "attrs" (dict "class" "hidden-b-m")) }}
+      {{ partial "img" (dict "context" . "src" "images/process-mobile.png" "density" 2 "attrs" (dict "class" "hidden-a-m")) }}
+    </div>
+    <div class="{{$ns}}__text -analytics">
+      <div class="container">
+        <div class="work-single__text">
+          <div class="work-single__text-column">
+            <div class="work-single__text-decorator -top-left">
+              {{ partial "img" (dict "context" . "src" "images/analytics-top-left.svg") }}
+            </div>
+            <h2>
+              Product Analytics
+              <div class="work-single__text-triangle"></div>
+            </h2>
+          </div>
+          <div class="work-single__text-column">
+            <div class="work-single__text-decorator -top-right">
+              {{ partial "img" (dict "context" . "src" "images/analytics-top-right.svg") }}
+            </div>
+            <div class="work-single__text-triangle"></div>
+            <p>Our analytics platform continues to&nbsp;build insights and allow for analysis of&nbsp;how users are behaving within the app to&nbsp;optimize for usability and business goals.</p>
+          </div>
+          <div class="work-single__text-decorator -bottom">
+            {{ partial "img" (dict "context" . "src" "images/analytics-bottom.svg") }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="{{$ns}}__text -keyboard">
+      <div class="container">
+        <div class="work-single__text">
+          <div class="work-single__text-column">
+            <h2>Integrations</h2>
+            <h4>Keyboard</h4>
+          </div>
+          <div class="work-single__text-column">
+            <p>An&nbsp;integration with Tanooki Labs&rsquo; Actionmoji in&nbsp;to&nbsp;the applications gives Global Citizens a&nbsp;set of&nbsp;playful assets to&nbsp;share sentiment with their friends while raising awareness for the movement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="{{$ns}}__image -keyboard">
+      <div class="container">
+        <figure>
+          {{ partial "img" (dict "context" . "src" "images/keyboard-integration.png" "density" 2) }}
+        </figure>
+        <figure>
+          {{ partial "img" (dict "context" . "src" "images/keyboard-stickers.png" "density" 2) }}
+        </figure>
+      </div>
+    </div>
+    <div class="{{$ns}}__text -ibeacon">
+      <div class="container">
+        <div class="work-single__text">
+          <div class="work-single__text-column">
+            <h4>iBeacon <br>Technology</h4>
+          </div>
+          <div class="work-single__text-column">
+            <p>The introduction of&nbsp;Bluetooth Low Energy (BLE) iBeacons is&nbsp;an&nbsp;exciting transformation for the applications&rsquo; user experience. The foundation introduces innovative solutions for connectivity, privacy, accessibility and more. <br><a href="https://levinriegner.news/2017/10/05/finding-the-killer-app-how-beacon-technology-can-revolutionize-the-festival-experience/" target="_blank" rel="noopener noreferrer" data-with-arrow>Read more</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="{{$ns}}__image -ibeacon">
+      {{ partial "img" (dict "context" . "src" "images/ibeacon.jpg" "density" 2) }}
+    </div>
+    <div class="{{$ns}}__quote -ibeacon">
+      <div class="container">
+        {{ partial "cover" (dict "context" . "src" "images/ibeacon-quote.jpg" "density" 2) }}
+        <div class="work-single__quote">
+          <div class="work-single__quote-text">
+            “The success of&nbsp;the App is&nbsp;a&nbsp;result of&nbsp;working alongside highly skilled and collaborative teams who truly understand and align with our mission.”
+          </div>
+          <div class="work-single__quote-cite">
+            <b>Mark Lehman</b><br>
+            Chief Technology Officer at <br>
+            The Global Poverty Project
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="work-single__outcomes">
+      <div class="container">
+        <div class="work-single__outcomes-headline">
+          <h2>Outcomes</h2>
+        </div>
+        <div class="work-single__outcomes-content">
+          <div class="work-single__outcomes-block">
+            <div class="work-single__outcomes-block-title">500,000+ App downloads</div>
+            <div class="work-single__outcomes-block-value">App downloads</div>
+          </div>
+          <div class="work-single__outcomes-block">
+            <div class="work-single__outcomes-block-title">Special Features</div>
+            <div class="work-single__outcomes-block-value">Special Features: NBC, Billboard, NYT, <a href="https://aplus.com/a/l-and-r-designs-app-for-global-citizen-festival?utm_source=internal&amp;utm_medium=search" target="_blank" rel="noopener noreferrer" data-with-arrow>A-Plus</a>, <a href="https://technical.ly/brooklyn/2015/04/24/usher-earth-day-app-lr-alex-levin/" target="_blank" rel="noopener noreferrer" data-with-arrow>Technical.ly Brooklyn</a></div>
+          </div>
+          <div class="work-single__outcomes-block">
+            <div class="work-single__outcomes-block-title">150 Countries</div>
+            <div class="work-single__outcomes-block-value">App downloads</div>
+          </div>
+          <div class="work-single__outcomes-block">
+            <div class="work-single__outcomes-block-title">Social Mobile App Award 2017</div>
+            <div class="work-single__outcomes-block-value">Communicator Awards</div>
+          </div>
+          <div class="work-single__outcomes-block">
+            <div class="work-single__outcomes-block-title">Gold Award Winner User Experience 2016</div>
+            <div class="work-single__outcomes-block-value">GDUSA</div>
+          </div>
+          <div class="work-single__outcomes-block">
+            <div class="work-single__outcomes-block-title">5+ Trending topics catalyzed</div>
+            <div class="work-single__outcomes-block-value">Twitter</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="work-single__afterwords">
+      <div class="container">
+        <div class="work-single__afterwords-block">
+          <div class="afterword">
+            <div class="afterword__icon">
+              {{ partial "img" (dict "context" . "src" "images/app-icon.png" "density" 3 "attrs" (dict "alt" "Schumacher App")) }}
+            </div>
+            <div class="afterword__subheading">Download&nbsp;app</div>
+            <div class="afterword__links">
+              <a href="https://itunes.apple.com/us/app/global-citizen-take-action/id990655529?mt=8" target="_blank" rel="noopener noreferrer" data-with-arrow>iOS</a>
+              <a href="https://play.google.com/store/apps/details?id=lr.globalcitizen.com&hl=en_US" target="_blank" rel="noopener noreferrer" data-with-arrow>Android</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-single__afterwords-block">
+          <div class="afterword">
+            <div class="afterword__heading">Looking&nbsp;for a&nbsp;solution&nbsp;like&nbsp;this?</div>
+            <div class="afterword__subheading">
+              <a href="https://lr1.typeform.com/to/Y8wFjZ" target="_blank" rel="noopener noreferrer">Contact us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 {{ end }}

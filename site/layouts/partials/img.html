@@ -1,8 +1,9 @@
 {{- $scratch := newScratch -}}
 {{- $media := .context.Resources -}}
 {{- $original := index ($media.Match (printf "%s" .src)) 0 -}}
+{{- $withSrcset := (.density) and (ne $original.MediaType.SubType "svg") -}}
 
-{{- if ne $original.MediaType.SubType "svg" -}}
+{{- if $withSrcset -}}
   {{- $baseWidth := (div $original.Width .density) -}}
 
   {{- range $i, $val := (seq .density) -}}
@@ -13,7 +14,7 @@
     {{- if eq $i 0 -}}
       {{- $currentSrc.Add "url" $original.Permalink -}}
     {{- else -}}
-      {{- $resized := $original.Resize (printf "%sx Lanczos" (string $currentSize)) -}}
+      {{- $resized := $original.Resize (printf "%sx q95 Lanczos" (string $currentSize)) -}}
       {{- $currentSrc.Add "url" $resized.RelPermalink -}}
     {{- end -}}
 
@@ -23,7 +24,7 @@
 
 <img
   src="{{ $original.Permalink }}"
-  {{ if ne $original.MediaType.SubType "svg" }}
+  {{ if $withSrcset }}
     srcset="{{ delimit ($scratch.Get "srcset") ", " }}"
   {{ end }}
   {{ range $attrName, $attrValue := .attrs }}

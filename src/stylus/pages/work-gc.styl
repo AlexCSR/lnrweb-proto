@@ -1,5 +1,15 @@
 $ns = ".work-gc"
 
+@keyframes work-gc-pulse
+  0%
+    transform scale(0.8)
+    opacity 0.8
+  80%
+    opacity 0.5
+  100%
+    transform scale(2.2)
+    opacity 0
+
 {$ns}
   &__image
     img
@@ -27,6 +37,53 @@ $ns = ".work-gc"
           height 500px
       .container
         overflow hidden
+    &.-newsfeed
+      img
+        +a($m)
+          height 577px
+        +b($m)
+          width 132% 
+          height auto
+    &.-during
+      img
+        +a($m)
+          height 450px
+        +b($m)
+          width 100%
+    &.-process
+      background-image linear-gradient(to bottom, #fafafa 0%, #ffffff 86%, #ffffff 100%)
+      padding 228px 0 131px
+      .container
+        padding-left 7.35%
+      h2
+        margin-bottom 101px
+      img
+        +a($m)
+          height 603px
+          margin-left -20px
+        +b($m)
+          height 355px
+    &.-keyboard
+      .container
+        display flex
+        padding 0 7.35%
+      figure
+        display block
+        width 50%
+      img
+        max-width 100%
+        left auto
+        transform none 
+    &.-ibeacon
+      img
+        +a($m)
+          height 733px
+          margin-left 21px
+        +b($m)
+          width 100% 
+          height auto
+          transform none
+          left -5%
   &__text
     &.-assignment
       +a($sd)
@@ -64,6 +121,31 @@ $ns = ".work-gc"
         margin 105px 0 118px 
       +b($m)
         margin 99px 0 105px
+    &.-analytics
+      +b($d)
+        position relative
+      +a($sd)
+        padding 390px 0 401px
+      +btw($t, $sd)
+        padding 390px 0 355px 
+      +btw($m, $t)
+        padding 296px 0 329px 
+      +b($m)
+        padding 193px 0 222px 
+      .container
+        +a($d)
+          position relative
+      .work-single__text-triangle
+        border-top-color #ffe4e4 
+    &.-keyboard
+      margin 141px 0 125px
+    &.-ibeacon
+      margin 328px 0 32px
+      a
+        display inline-block
+        font-size 17px
+        margin-top 13px
+        color $pink 
   &__quote
     .container
       padding 30px 0 
@@ -103,6 +185,17 @@ $ns = ".work-gc"
             padding-bottom 71px
         &-cite
           margin 0 0 12px 50.8%
+    &.-ibeacon
+      margin 206px 0 0 
+      .work-single__quote
+        width 75%
+        &-text
+          +a($sd)
+            padding-bottom 40px
+          +btw($m, $sd)
+            padding-bottom 71px
+        &-cite
+          margin 0 0 6px 50.8%
   &__background
     img
       display block
@@ -128,7 +221,7 @@ $ns = ".work-gc"
     &-bottom
       display flex
   &__takeaction
-    margin 248px 0 
+    margin 248px 0 267px
     .container
       +a($sd)
         padding-left 7.35%
@@ -141,8 +234,8 @@ $ns = ".work-gc"
         width 36.5%
         flex 0 0 auto
       h4
-        img[src]
-          margin-right 3px
+        img
+          margin 0 3px 0 4px
       > p
         margin 31px 7px 58px
       dl
@@ -182,4 +275,259 @@ $ns = ".work-gc"
       img
         display inline-block
         vertical-align top
-        max-width 100% 
+        max-width 100%
+  &__newsfeed
+    margin 267px 0 -11px
+    .container
+      +a($sd)
+        padding-left 7.35%
+    &-text
+      position relative
+      z-index 2
+      h4
+        img
+          width 35px
+          margin 0 8px 0 -1px 
+      p
+        width 415px
+        margin-top 30px
+  &__rewards
+    margin 349px 0 223px
+    .container
+      +a($sd)
+        padding 0 7.35%
+    &-text
+      +a($m)
+        margin-bottom 33px
+      +b($m)
+        margin-bottom 77px
+      h4
+        img
+          &:first-child
+            margin 0 10px 2px 3px
+          &:last-child
+            display inline-block
+            vertical-align middle
+            margin-top 2px
+      p
+        width 500px
+        margin 31px 0 0 3px
+    &-covers
+      white-space nowrap
+      position relative
+      font-size 0
+      line-height 0
+      +a($m)
+        margin-left -5px
+        padding-top (458 / 1061 * 100)%
+      +b($m)
+        height 482px
+      &-item
+        display block
+        position absolute
+        +b($m)
+          top 0
+          left 50%
+        img
+          display block
+          position relative
+          z-index 2
+          width 100% 
+          border-radius 50%
+          box-shadow 3px 6px 20px rgba(#000, 0.15) 
+        i
+          display block
+          position absolute
+          z-index 1
+          top 50%
+          left 50%
+          width 70%
+          height 70%
+          margin -35%
+          background url("/work/global-citizen/images/rewards-circle.png") no-repeat 50% 50%
+          background-size contain
+          border-radius 50%
+          animation work-gc-pulse 2s infinite linear
+          &:last-child
+            animation-delay 1s 
+        &:nth-child(1)
+          +a($m)
+            top (206 / 458 * 100)%
+            left (32 / 1054 * 100)%
+            width (91 / 1054 * 100)%
+          +b($m)
+            width 82px
+            margin 384px 0 0 -177px
+        &:nth-child(2)
+          +a($m)
+            top (214 / 458 * 100)%
+            left (151 / 1054 * 100)%
+            width (156 / 1054 * 100)%
+          +b($m)
+            width 140px
+            margin 342px 0 0 -75px
+        &:nth-child(3)
+          +a($m)
+            top (112 / 458 * 100)%
+            left (283 / 1054 * 100)%
+            width (125 / 1054 * 100)%
+          +b($m)
+            width 113px
+            margin 74px 0 0 -264px
+        &:nth-child(4)
+          +a($m)
+            top (244 / 458 * 100)%
+            left (332 / 1054 * 100)%
+            width (187 / 1054 * 100)%
+          +b($m)
+            width 168px
+            margin 194px 0 0 -221px
+        &:nth-child(5)
+          +a($m)
+            top (28 / 458 * 100)%
+            left (436 / 1054 * 100)%
+            width (221 / 1054 * 100)%
+          +b($m)
+            width 200px
+            margin-left -129px
+        &:nth-child(6)
+          +a($m)
+            top (265 / 458 * 100)%
+            left (550 / 1054 * 100)%
+            width (116 / 1054 * 100)%
+          +b($m)
+            width 105px
+            margin 212px 0 0 -26px
+        &:nth-child(7)
+          +a($m)
+            top (126 / 458 * 100)%
+            left (669 / 1054 * 100)%
+            width (202 / 1054 * 100)%
+          +b($m)
+            width 182px
+            margin 88px 0 0 81px
+        &:nth-child(8)
+          +a($m)
+            top (206 / 458 * 100)%
+            left (901 / 1054 * 100)%
+            width (116 / 1054 * 100)%
+          +b($m)
+            width 105px
+            margin 296px 0 0 78px 
+          i
+            width 100%
+            height 100%
+            margin -50%
+  &__pre
+    background-image linear-gradient(to bottom, #fafafa 0%, #ffffff 86%, #ffffff 100%)
+    padding-top 238px 
+    .container
+      +a($sd)
+        padding-left 7.35%
+      +a($t)
+        display flex
+    &-text
+      +a($t)
+        width 45.2%
+        flex 0 0 auto
+      p
+        margin 31px 0 38px 
+    &-image
+      text-align center
+      +a($t)
+        flex 1 1 auto
+        margin-top 11px
+      img
+        display inline-block
+        vertical-align top
+        max-width 100%
+  &__during
+    margin 210px 0 73px
+    .container
+      +a($sd)
+        padding-left 7.35%
+    p
+      margin-top 31px
+      width 520px
+  &__festivals
+    +a($t)
+      margin 358px 0 257px
+    +b($t)
+      margin-top 163px
+    .container
+      display flex
+    &-block
+      display flex
+      justify-content space-between
+      box-sizing border-box
+      +a($t)
+        width 50%
+      &:first-child
+        +a($t)
+          padding-right 5px
+      &:last-child
+        +a($t)
+          padding 15.9% 0 0 5px
+        +b($t)
+          padding-top 16px
+      &-item
+        width 32%
+        img
+          display block
+          width 100%
+        figcaption
+          display block
+          text-align center
+          line-height 2.4em
+          font-weight 500
+          color #a4a4a4 
+          padding-top 0.33em
+          white-space nowrap
+          +a($d)
+            font-size 15px
+          +btw($t, $d)
+            font-size 14px
+          +btw($m, $t)
+            font-size 16px
+          +btw(481px, $m)
+            font-size 13px
+          +b(480px)
+            font-size 12px
+  &__moments
+    margin-bottom 260px 
+    .container
+      display flex
+      justify-content space-between
+      flex-wrap wrap
+      padding 0 7.35% 
+    figure
+      display block
+      font-size 0
+      line-height 0
+      &:nth-child(1)
+        width (523 / 1056 * 100)%
+      &:nth-child(2)
+        margin-top 230px
+        width (307 / 1056 * 100)%
+      &:nth-child(3)
+        width 100% 
+        text-align center
+        margin-top 150px
+      &:nth-child(5)
+        margin-top 387px
+        width (308 / 1056 * 100)%
+      &:nth-child(6)
+        margin-top -154px
+        width 69.8%
+        text-align center
+        img
+          width (308 / 737 * 100)%
+      &:nth-child(7)
+        width 100% 
+        text-align center
+        margin-top 226px
+    img
+      max-width 100%  
+    p
+      width 410px
+      margin-top 236px
