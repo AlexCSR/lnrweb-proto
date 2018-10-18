@@ -4,7 +4,7 @@
     <div class="work-single__header">
       <div class="container">
         <div class="work-single__header-main">
-          {{ partial "subhead" (dict "title" "Case File" "value" "Declassified") }}
+          {{ partial "subhead" (dict "title" "Global Citizen Case File" "value" "Declassified") }}
           <h1>A&nbsp;festival’s mobile app evolved into the future of&nbsp;social activism and awareness</h1>
         </div>
         <div class="work-single__header-aside">
@@ -244,7 +244,7 @@
     <div class="{{$ns}}__pre">
       <div class="container">
         <div class="{{$ns}}__pre-text">
-          <h2>Festival <br>Experience</h2>
+          <h2>Festival <br class="hidden-b-t">Experience</h2>
           <h4>Pre Festival</h4>
           <p>Hundreds of&nbsp;social Actions, updated in&nbsp;real-time by&nbsp;The&nbsp;Global&nbsp;Citizen policy team. Each Action type uses a&nbsp;unique function to&nbsp;spread awareness and leverage the mobile platform.</p>
           {{ partial "img" (dict "context" . "src" "images/pre-icons.svg") }}
@@ -377,7 +377,7 @@
       <div class="container">
         <div class="work-single__text">
           <div class="work-single__text-column">
-            <h4>iBeacon <br>Technology</h4>
+            <h4>iBeacon <br class="hidden-b-t">Technology</h4>
           </div>
           <div class="work-single__text-column">
             <p>The introduction of&nbsp;Bluetooth Low Energy (BLE) iBeacons is&nbsp;an&nbsp;exciting transformation for the applications&rsquo; user experience. The foundation introduces innovative solutions for connectivity, privacy, accessibility and more. <br><a href="https://levinriegner.news/2017/10/05/finding-the-killer-app-how-beacon-technology-can-revolutionize-the-festival-experience/" target="_blank" rel="noopener noreferrer" data-with-arrow>Read more</a></p>
@@ -386,7 +386,8 @@
       </div>
     </div>
     <div class="{{$ns}}__image -ibeacon">
-      {{ partial "img" (dict "context" . "src" "images/ibeacon.jpg" "density" 2) }}
+      {{ partial "img" (dict "context" . "src" "images/ibeacon.jpg" "density" 2 "attrs" (dict "class" "hidden-b-m")) }}
+      {{ partial "img" (dict "context" . "src" "images/ibeacon-mobile.jpg" "density" 2 "attrs" (dict "class" "hidden-a-m")) }} 
     </div>
     <div class="{{$ns}}__quote -ibeacon">
       <div class="container">

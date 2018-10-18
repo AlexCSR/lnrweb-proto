@@ -9,7 +9,7 @@
   {{- $currentSize := (mul (int $currentDensity) (int $baseWidth)) -}}
 
   {{- if eq $i 0 -}}
-    {{- $scratch.SetInMap "src" (string $currentDensity) $.src -}}
+    {{- $scratch.SetInMap "src" (string $currentDensity) $original.Permalink -}}
   {{- else -}}
     {{- $resized := $original.Resize (printf "%sx Lanczos" (string $currentSize)) -}}
     {{- $scratch.SetInMap "src" (string $currentDensity) $resized.RelPermalink -}}

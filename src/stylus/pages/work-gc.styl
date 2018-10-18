@@ -34,9 +34,11 @@ $ns = ".work-gc"
         +a($t)
           width 100%
         +b($t)
-          height 500px
+          height 550px
       .container
         overflow hidden
+        +b($m)
+          width 94.5% 
     &.-newsfeed
       img
         +a($m)
@@ -49,41 +51,64 @@ $ns = ".work-gc"
         +a($m)
           height 450px
         +b($m)
-          width 100%
+          width 116%
     &.-process
       background-image linear-gradient(to bottom, #fafafa 0%, #ffffff 86%, #ffffff 100%)
-      padding 228px 0 131px
+      +a($t)
+        padding 228px 0 131px
+      +b($t)
+        padding 71px 0 56px
       .container
-        padding-left 7.35%
+        +a($sd)
+          padding-left 7.35%
       h2
-        margin-bottom 101px
+        +a($t)
+          margin-bottom 101px
+        +b($t)
+          margin-bottom 81px 
       img
         +a($m)
           height 603px
           margin-left -20px
         +b($m)
-          height 355px
+          height 342px
     &.-keyboard
       .container
-        display flex
-        padding 0 7.35%
+        +a($sd)
+          padding 0 7.35%
+        +a($t)
+          display flex
       figure
         display block
-        width 50%
+        +a($t)
+          width 50%
+          box-sizing border-box
+          padding-right 25px
+        +b($t)
+          &:last-child
+            display none
       img
-        max-width 100%
-        left auto
-        transform none 
+        +a($sd)
+          max-width 100%
+        +btw($t, $sd)
+          max-width 80%
+        +a($t)
+          left auto
+          transform none 
+        +b($t)
+          max-width 100% 
     &.-ibeacon
       img
         +a($m)
           height 733px
           margin-left 21px
+        +btw($m, $t)
+          transform translateX(-40%)
         +b($m)
-          width 100% 
-          height auto
+          min-width 125%
+          min-height 669px
+          left -94px
           transform none
-          left -5%
   &__text
     &.-assignment
       +a($sd)
@@ -138,14 +163,25 @@ $ns = ".work-gc"
       .work-single__text-triangle
         border-top-color #ffe4e4 
     &.-keyboard
-      margin 141px 0 125px
+      +a($t)
+        margin 141px 0 125px
+      +b($t)
+        margin 66px 0 44px
     &.-ibeacon
-      margin 328px 0 32px
+      +a($t)
+        margin 328px 0 32px
+      +btw($m, $t)
+        margin 140px 0 32px 
+      +b($m)
+        margin 140px 0 -2px
       a
         display inline-block
         font-size 17px
-        margin-top 13px
         color $pink 
+        +a($t)
+          margin-top 13px
+        +b($t)
+          margin-top 15px
   &__quote
     .container
       padding 30px 0 
@@ -177,51 +213,104 @@ $ns = ".work-gc"
         text-align center
     &.-assignment
       .work-single__quote
-        width 67%
+        +a($t)
+          width 67%
+        +btw($m, $t)
+          width 75%
+        +b($m)
+          width 80%
         &-text
           +a($sd)
             padding-bottom 70px
           +btw($m, $sd)
             padding-bottom 71px
+          +b($m)
+            padding-bottom 56px
         &-cite
           margin 0 0 12px 50.8%
     &.-ibeacon
-      margin 206px 0 0 
+      +a($t)
+        margin-top 206px
+      +btw($m, $t)
+        margin-top 100px
       .work-single__quote
-        width 75%
+        +a($t)
+          width 75%
+        +b($t)
+          width 95%
         &-text
           +a($sd)
             padding-bottom 40px
           +btw($m, $sd)
             padding-bottom 71px
+          +b($m)
+            padding-bottom 51px
         &-cite
           margin 0 0 6px 50.8%
   &__background
+    +b($m)
+      margin -2px 0
     img
       display block
-      width 100% 
+      +a($m)
+        width 100% 
+      +b($m)
+        height 100% 
     .container
-      padding-left 7%
+      +a($sd)
+        padding-left 7%
+      +b($m)
+        width 100% 
     &-image
       flex 0 0 auto
-      padding 5px 6px
+      +a($m)
+        padding 5px 6px
+      +b($m)
+        border 2px solid #fff
+        overflow hidden
       &.-top-left
-        width 35.47% 
+        +a($m)
+          width 35.47% 
+        +b($m)
+          height 251px
       &.-top-right
-        width 53.805%
+        +a($m)
+          width 53.805%
+        +b($m)
+          height 273px
       &.-bottom-left
-        width 17.31%
+        +a($m)
+          width 17.31%
+        +b($m)
+          display none
       &.-bottom-center
-        width 53.7%
+        +a($m)
+          width 53.7%
+        +b($m)
+          height 273px
+          img
+            position relative
+            left -50px
       &.-bottom-right
-        width 26.4781%
+        +a($m)
+          width 26.4781%
+        +b($m)
+          height 251px
+    &-top,
+    &-bottom
+      +b($m)
+        flex-direction row-reverse
+        justify-content center
     &-top
       display flex
       align-items flex-end
     &-bottom
       display flex
   &__takeaction
-    margin 248px 0 267px
+    +a($t)
+      margin 248px 0 267px
+    +b($t)
+      margin 101px 0 133px
     .container
       +a($sd)
         padding-left 7.35%
@@ -233,11 +322,20 @@ $ns = ".work-gc"
         margin-right 9.2%
         width 36.5%
         flex 0 0 auto
+      +b($m)
+        margin-bottom 51px
       h4
         img
-          margin 0 3px 0 4px
+          +a($m)
+            margin 0 3px 0 4px
+          +b($m)
+            width 18px
+            margin 2px -1px 0px 2px 
       > p
-        margin 31px 7px 58px
+        +a($m)
+          margin 31px 7px 58px
+        +b($m)
+          margin 29px 2px 36px 
       dl
         padding 0
         margin 0 0 0 2px
@@ -246,16 +344,24 @@ $ns = ".work-gc"
           flex-wrap wrap
         dt
           width 100% 
-          font-size 22px
-          line-height 46px
           font-weight 600 
           padding 0
-          margin 0 0 3px
+          +a($m)
+            font-size 22px
+            line-height 46px
+            margin 0 0 3px
+          +b($m)
+            font-size 17px
+            line-height 40px
+            margin 0 0 5px
         dd
           padding 0
-          margin 0 0 7px 1px
           +btw($sm, $t)
-            width 48%
+            width 50%
+          +a($m)
+            margin 0 0 7px
+          +b($m)
+            margin 0 0 11px
           figure,
           p
             display inline-block
@@ -268,16 +374,26 @@ $ns = ".work-gc"
             margin 4px 16px 0 0
             img
               display inline-block
+              +b($m)
+                transform scale(0.9)
     &-image
-      text-align center
       +a($t)
         flex 1 1 auto
+      +a($m)
+        text-align center
       img
-        display inline-block
-        vertical-align top
-        max-width 100%
+        +a($m)
+          display inline-block
+          vertical-align top
+          max-width 100%
+        +b($m)
+          width 120%
+          margin-left -9px
   &__newsfeed
-    margin 267px 0 -11px
+    +a($t)
+      margin 267px 0 -11px
+    +b($t)
+      margin 90px 0 35px
     .container
       +a($sd)
         padding-left 7.35%
@@ -286,13 +402,19 @@ $ns = ".work-gc"
       z-index 2
       h4
         img
-          width 35px
-          margin 0 8px 0 -1px 
+          +a($m)
+            width 35px
+            margin 0 8px 0 -1px 
+          +b($m)
+            margin 0 1px 
       p
-        width 415px
+        max-width 415px
         margin-top 30px
   &__rewards
-    margin 349px 0 223px
+    +a($t)
+      margin 349px 0 223px
+    +b($t)
+      margin 129px 0 181px 
     .container
       +a($sd)
         padding 0 7.35%
@@ -304,13 +426,20 @@ $ns = ".work-gc"
       h4
         img
           &:first-child
-            margin 0 10px 2px 3px
+            +a($m)
+              margin 0 10px 2px 3px
+            +b($m)
+              width 20px
+              margin-left 2px
           &:last-child
-            display inline-block
-            vertical-align middle
-            margin-top 2px
+            +a($m)
+              display inline-block
+              vertical-align middle
+              margin-top 2px
+            +b($m)
+              display none
       p
-        width 500px
+        max-width 500px
         margin 31px 0 0 3px
     &-covers
       white-space nowrap
@@ -419,8 +548,9 @@ $ns = ".work-gc"
             height 100%
             margin -50%
   &__pre
-    background-image linear-gradient(to bottom, #fafafa 0%, #ffffff 86%, #ffffff 100%)
-    padding-top 238px 
+    +a($m)
+      background-image linear-gradient(to bottom, #fafafa 0%, #ffffff 86%, #ffffff 100%)
+      padding-top 238px 
     .container
       +a($sd)
         padding-left 7.35%
@@ -430,32 +560,64 @@ $ns = ".work-gc"
       +a($t)
         width 45.2%
         flex 0 0 auto
+      +b($t)
+        margin-bottom 32px
       p
-        margin 31px 0 38px 
+        margin-top 31px
+        +a($t)
+          margin-bottom 38px
+        +b($t)
+          margin-bottom 33px
+      img
+        +a($t)
+          max-width 100% 
+        +b($t)
+          display block
+          margin auto
+          width 84.5%
+          max-width 402px
     &-image
-      text-align center
+      +a($sd)
+        text-align center
+      +btw($t, $sd)
+        text-align right
       +a($t)
         flex 1 1 auto
         margin-top 11px
+      +b($t)
+        text-align center
       img
         display inline-block
         vertical-align top
-        max-width 100%
+        +a($sd)
+          max-width 100%
+        +btw($t, $sd)
+          max-width 80%
+        +b($t)
+          max-width 95.5% 
+          margin-left -8px
   &__during
-    margin 210px 0 73px
+    +a($t)
+      margin 210px 0 73px
+    +b($t)
+      margin 85px 0 67px 
     .container
       +a($sd)
         padding-left 7.35%
     p
-      margin-top 31px
-      width 520px
+      max-width 520px
+      +a($t)
+        margin-top 31px
+      +b($m)
+        margin-top 36px
   &__festivals
     +a($t)
       margin 358px 0 257px
     +b($t)
-      margin-top 163px
+      margin 175px 0 73px
     .container
-      display flex
+      +a($t)
+        display flex
     &-block
       display flex
       justify-content space-between
@@ -478,7 +640,6 @@ $ns = ".work-gc"
         figcaption
           display block
           text-align center
-          line-height 2.4em
           font-weight 500
           color #a4a4a4 
           padding-top 0.33em
@@ -489,45 +650,85 @@ $ns = ".work-gc"
             font-size 14px
           +btw($m, $t)
             font-size 16px
-          +btw(481px, $m)
+          +btw($sm, $m)
             font-size 13px
-          +b(480px)
-            font-size 12px
+          +a($sm)
+            line-height 2.4em
+          +b($sm)
+            font-size 11px
+            line-height 20px
   &__moments
-    margin-bottom 260px 
+    +a($t)
+      margin-bottom 260px 
+    +b($t)
+      margin-bottom 98px 
     .container
-      display flex
-      justify-content space-between
-      flex-wrap wrap
-      padding 0 7.35% 
+      +a($t)
+        display flex
+        justify-content space-between
+        flex-wrap wrap
+        padding 0 7.35% 
     figure
       display block
       font-size 0
       line-height 0
+      +b($t)
+        margin-bottom 20px
       &:nth-child(1)
-        width (523 / 1056 * 100)%
-      &:nth-child(2)
-        margin-top 230px
-        width (307 / 1056 * 100)%
-      &:nth-child(3)
-        width 100% 
-        text-align center
-        margin-top 150px
-      &:nth-child(5)
-        margin-top 387px
-        width (308 / 1056 * 100)%
-      &:nth-child(6)
-        margin-top -154px
-        width 69.8%
-        text-align center
+        +a($t)
+          width (523 / 1056 * 100)%
         img
-          width (308 / 737 * 100)%
+          +b($t)
+            width 74%
+      &:nth-child(2)
+        +a($t)
+          margin-top 230px
+          width (307 / 1056 * 100)%
+        +b($t)
+          text-align right
+        img
+          +b($t)
+            width 50.2%
+      &:nth-child(3)
+        +a($t)
+          width 100% 
+          text-align center
+          margin-top 150px
+        img
+          +b($t)
+            width 100% 
+      &:nth-child(5)
+        +a($t)
+          margin-top 387px
+          width (308 / 1056 * 100)%
+        +b($t)
+          text-align right
+        img
+          +b($t)
+            width 58.2%
+      &:nth-child(6)
+        +a($t)
+          margin-top -154px
+          width 69.8%
+          text-align center
+        img
+          +a($t)
+            width (308 / 737 * 100)%
+          +b($t)
+            width 57%
       &:nth-child(7)
-        width 100% 
-        text-align center
-        margin-top 226px
+        +a($t)
+          width 100% 
+          text-align center
+          margin-top 226px
+        img
+          +b($t)
+            width 100% 
     img
       max-width 100%  
     p
-      width 410px
-      margin-top 236px
+      max-width 410px
+      +a($t)
+        margin-top 236px
+      +b($t)
+        margin 70px 0 76px 
