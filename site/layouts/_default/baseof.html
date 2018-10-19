@@ -1,5 +1,15 @@
+{{- $scratch := newScratch -}}
+
+{{- if .Params.basename -}}
+  {{- $scratch.Set "basename" .Params.basename -}}
+{{- else if (eq .Page.Kind "404") -}}
+  {{- $scratch.Set "basename" "landing" -}}
+{{- end -}}
+
+{{- $basename := $scratch.Get "basename" -}}
+
 <!doctype html>
-<html lang="en"{{ if .Params.basename }} class="page-{{ .Params.basename }}"{{ end }}>
+<html lang="en"{{ if $basename }} class="page-{{ $basename }}"{{ end }}>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
@@ -26,7 +36,7 @@
     {{ partial "sprite" . }}
     {{ partial "nav" . }}
     <div class="wrapper">
-      {{ if eq .Params.basename "work-case" }}
+      {{ if eq $basename "work-case" }}
         {{ partial "progressbar" . }}
       {{ end }}
       {{ partial "header" . }}
@@ -34,7 +44,7 @@
         {{ block "main" . }}{{ end }}
       </main>
     </div>
-    {{ if ne .Params.basename "landing" }}
+    {{ if ne $basename "landing" }}
       {{ partial "footer" . }}
     {{ end }}
     <script src="/app.js"></script>
