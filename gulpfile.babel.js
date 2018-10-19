@@ -135,6 +135,7 @@ gulp.task('copy', () => {
     `${__dirname}/dist/js`,
   ]).then(() => {
     gulp.src('./src/fonts/**/*.*').pipe(gulp.dest('./dist/fonts'));
+    gulp.src('./src/css/**/*.*').pipe(gulp.dest('./dist/css'));
     gulp.src('./src/js/**/*.*').pipe(gulp.dest('./dist/js'));
     browserSync.reload();
   });

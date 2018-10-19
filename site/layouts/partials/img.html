@@ -28,8 +28,8 @@
     srcset="{{ delimit ($scratch.Get "srcset") ", " }}"
   {{ end }}
   {{ range $attrName, $attrValue := .attrs }}
-    {{- if or (ne $attrName "srcset") (ne $attrName "src") -}}
-      {{- $attrName -}}="{{- $attrValue -}}"
-    {{- end -}}
+    {{ if or (ne $attrName "srcset") (ne $attrName "src") }}
+      {{ printf "%s" $attrName | safeHTMLAttr }}="{{ printf "%s" $attrValue | safeHTMLAttr }}"
+    {{ end }}
   {{ end }}
 >
