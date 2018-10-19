@@ -28,7 +28,13 @@
     {{ if .Description }}
       <meta name="description" content="{{ .Description }}">
     {{ end }}
-    <title>{{ .Title }}</title>
+    <title>
+      {{- if (eq .Page.Kind "404") -}}
+        L+R | Page not found
+      {{- else -}}
+        {{ .Title }}
+      {{- end -}}
+    </title>
     <link rel="stylesheet" href="/css/aos.css">
     <link rel="stylesheet" href="/css/main.css">
   </head>
