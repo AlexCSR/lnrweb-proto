@@ -7,7 +7,7 @@ title: "A LinkedIn for music professionals, L+R designs the User Interface for t
 description: ""
 category: "Project Launch"
 author: "L+R"
-date: 2017-04-28T08:20:59.000Z
+date: 2017-04-28T20:20:59.000Z
 
 preview_image: "images/cover.png"
 story_image: "images/cover.png"

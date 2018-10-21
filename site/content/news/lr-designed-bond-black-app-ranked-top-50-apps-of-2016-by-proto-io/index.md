@@ -7,7 +7,7 @@ title: "Bond Black ranked top 50 apps of 2016 by Proto.io"
 description: ""
 category: "Project Update"
 author: "L+R"
-date: 2016-11-29T08:16:32.000Z
+date: 2016-11-29T20:16:32.000Z
 
 preview_image: "images/cover.png"
 story_image: "images/cover.png"

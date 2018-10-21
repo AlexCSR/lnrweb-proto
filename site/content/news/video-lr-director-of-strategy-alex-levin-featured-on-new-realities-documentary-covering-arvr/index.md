@@ -7,7 +7,7 @@ title: "[VIDEO] L+R Director of Strategy, Alex Levin, featured on ‘New Realiti
 description: ""
 category: "Our Team"
 author: "L+R"
-date: 2017-04-26T05:09:38.000Z
+date: 2017-04-26T17:09:38.000Z
 
 preview_image: "images/cover.jpg"
 story_image: "images/cover.jpg"

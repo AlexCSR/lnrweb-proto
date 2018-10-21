@@ -7,7 +7,7 @@ title: "L+R named one of top “10 Brooklyn design firms you should know”"
 description: ""
 category: "Our Team"
 author: "L+R"
-date: 2017-04-11T02:22:31.000Z
+date: 2017-04-11T14:22:31.000Z
 
 preview_image: "images/cover.jpg"
 story_image: "images/cover.jpg"

@@ -7,7 +7,7 @@ title: "The beautiful balance of retail and digital customer experience"
 description: ""
 category: "Project Launch"
 author: "L+R"
-date: 2016-11-19T09:19:28.000Z
+date: 2016-11-19T21:19:28.000Z
 
 preview_image: "images/cover.jpg"
 story_image: "images/cover.jpg"

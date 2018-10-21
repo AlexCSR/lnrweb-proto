@@ -7,7 +7,7 @@ title: "SpaceApps NYC rebrand for NASA Space Apps Challenge"
 description: ""
 category: "Project Launch"
 author: "L+R"
-date: 2017-04-26T08:05:05.000Z
+date: 2017-04-26T20:05:05.000Z
 
 preview_image: "images/cover.png"
 story_image: "images/cover.png"
