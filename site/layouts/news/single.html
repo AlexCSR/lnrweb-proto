@@ -1,126 +1,138 @@
 {{ define "main" }}
-  <div class="news-single">
-    <div class="news-single__main">
-      <div class="news-single__main-cover -fixed" style="background-image: url('{{ .Params.story_image }}');"></div>
-      <div class="news-single__main-article">
-        <div class="news-single__main-article-heading">
-          {{ partial "subhead" (dict "title" .Params.category) }}
-          <h1>{{ .Params.title }}</h1>
-          {{ partial "news-info" (dict "date" (dateFormat "Jan 2, 2006" .PublishDate) "author" .Params.author) }}
+  {{ if (eq .Params.kind "normal") }}
+    <div class="news-single">
+      <div class="news-single__main">
+        <div class="news-single__main-cover -fixed">
+          {{ partial "cover" (dict "context" . "src" .Params.story_image "density" 3) }}
         </div>
-        <div class="news-single__main-article-body">
-          {{ .Content }}
+        <div class="news-single__main-article">
+          <div class="news-single__main-article-heading">
+            {{ partial "subhead" (dict "title" .Params.category) }}
+            <h1>{{ .Params.title }}</h1>
+            {{ partial "news-info" (dict "date" (dateFormat "Jan 2, 2006" .PublishDate) "author" .Params.author) }}
+          </div>
+          <div class="news-single__main-article-body">
+            {{ .Content }}
+          </div>
+          {{ if .Params.afterword }}
+            {{ partial "afterword" (dict "context" .Params.afterword) }}
+          {{ end }}
         </div>
-        {{ partial "afterword" (dict "context" .Params.afterword) }}
       </div>
-    </div>
-    <div class="container">
-      <div class="news-single__related">
-        {{ partial "subhead" (dict "title" "Related Articles") }}
-        <div class="news-list">
-          <div class="news-list__list">
-            <div class="news-list__list-item news-list__normal">
-              <a href="" class="news-list__normal-inner" data-no-flux>
-                <span class="news-list__normal-preview">
-                  <img src="/temp/news-1.jpg" alt="">
-                </span>
-                <span class="news-list__normal-body">
-                  {{ partial "subhead" (dict "title" "Design Teaching") }}
-                  <span class="news-list__normal-headline">
-                    <span class="news-list__normal-headline-copy">
-                      <span>
-                        The search for alternatives: L+R’s Director of Aesthetics, Ryan Riegner, introduces systems and tools for alternate ideation
-                      </span>
-                    </span>
-                    The search for alternatives: L+R’s Director of Aesthetics, Ryan Riegner, introduces systems and tools for alternate ideation
+      <div class="container">
+        <div class="news-single__related">
+          {{ partial "subhead" (dict "title" "Related Articles") }}
+          <div class="news-list">
+            <div class="news-list__list">
+              <div class="news-list__list-item news-list__normal">
+                <a href="" class="news-list__normal-inner" data-no-flux>
+                  <span class="news-list__normal-preview">
+                    <img src="/temp/news-1.jpg" alt="">
                   </span>
-                  {{ partial "news-info" (dict "date" "May 9, 2018" "author" "L+R") }}
-                </span>
-              </a>
-            </div>
-            <div class="news-list__list-item news-list__normal">
-              <a href="" class="news-list__normal-inner" data-no-flux>
-                <span class="news-list__normal-preview">
-                  <img src="/temp/news-2.jpg" alt="">
-                </span>
-                <span class="news-list__normal-body">
-                  {{ partial "subhead" (dict "title" "Our Team") }}
-                  <span class="news-list__normal-headline">
-                    <span class="news-list__normal-headline-copy">
-                      <span>
-                        L+R Senior Designer, Chris Martiníe named in GDUSA’s “People to Watch in 2018”
+                  <span class="news-list__normal-body">
+                    {{ partial "subhead" (dict "title" "Design Teaching") }}
+                    <span class="news-list__normal-headline">
+                      <span class="news-list__normal-headline-copy">
+                        <span>
+                          The search for alternatives: L+R’s Director of Aesthetics, Ryan Riegner, introduces systems and tools for alternate ideation
+                        </span>
                       </span>
+                      The search for alternatives: L+R’s Director of Aesthetics, Ryan Riegner, introduces systems and tools for alternate ideation
                     </span>
-                    L+R Senior Designer, Chris Martiníe named in GDUSA’s “People to Watch in 2018”
+                    {{ partial "news-info" (dict "date" "May 9, 2018" "author" "L+R") }}
                   </span>
-                  {{ partial "news-info" (dict "date" "Feb 13, 2018" "author" "L+R") }}
-                </span>
-              </a>
-            </div>
-            <div class="news-list__list-item news-list__normal">
-              <a href="" class="news-list__normal-inner" data-no-flux>
-                <span class="news-list__normal-preview">
-                  <img src="/temp/news-3.jpg" alt="">
-                </span>
-                <span class="news-list__normal-body">
-                  {{ partial "subhead" (dict "title" "Project Launch") }}
-                  <span class="news-list__normal-headline">
-                    <span class="news-list__normal-headline-copy">
-                      <span>
-                        Dig – The dog person’s dating app launched
+                </a>
+              </div>
+              <div class="news-list__list-item news-list__normal">
+                <a href="" class="news-list__normal-inner" data-no-flux>
+                  <span class="news-list__normal-preview">
+                    <img src="/temp/news-2.jpg" alt="">
+                  </span>
+                  <span class="news-list__normal-body">
+                    {{ partial "subhead" (dict "title" "Our Team") }}
+                    <span class="news-list__normal-headline">
+                      <span class="news-list__normal-headline-copy">
+                        <span>
+                          L+R Senior Designer, Chris Martiníe named in GDUSA’s “People to Watch in 2018”
+                        </span>
                       </span>
+                      L+R Senior Designer, Chris Martiníe named in GDUSA’s “People to Watch in 2018”
                     </span>
-                    Dig – The dog person’s dating app launched
+                    {{ partial "news-info" (dict "date" "Feb 13, 2018" "author" "L+R") }}
                   </span>
-                  {{ partial "news-info" (dict "date" "Mar 29, 2018" "author" "Meredith") }}
-                </span>
-              </a>
+                </a>
+              </div>
+              <div class="news-list__list-item news-list__normal">
+                <a href="" class="news-list__normal-inner" data-no-flux>
+                  <span class="news-list__normal-preview">
+                    <img src="/temp/news-3.jpg" alt="">
+                  </span>
+                  <span class="news-list__normal-body">
+                    {{ partial "subhead" (dict "title" "Project Launch") }}
+                    <span class="news-list__normal-headline">
+                      <span class="news-list__normal-headline-copy">
+                        <span>
+                          Dig – The dog person’s dating app launched
+                        </span>
+                      </span>
+                      Dig – The dog person’s dating app launched
+                    </span>
+                    {{ partial "news-info" (dict "date" "Mar 29, 2018" "author" "Meredith") }}
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="news-single__nav">
-      <div class="news-single__nav-block">
-        {{ if .PrevInSection }}
-          <a href="{{ .PrevInSection.Permalink }}" class="news-single__nav-block-link" data-no-flux>
-            <span class="news-single__nav-block-link-arrow">
-              ←&nbsp;&nbsp;Prev Post
-            </span>
-            <span class="news-single__nav-block-link-preview" style="background-image: url('{{ .PrevInSection.Params.preview_image }}');">
-              <span class="news-single__nav-block-link-preview-title">
-                {{ .PrevInSection.Title }}
-              </span>
-            </span>
-          </a>
-        {{ end }}
+      <div class="news-single__nav">
+        <div class="news-single__nav-block">
+          {{ if .PrevInSection }}
+            {{ if eq .PrevInSection.Params.kind "normal" }}
+              <a href="{{ .PrevInSection.Permalink }}" class="news-single__nav-block-link" data-no-flux>
+                <span class="news-single__nav-block-link-arrow">
+                  ←&nbsp;&nbsp;Prev Post
+                </span>
+                <span class="news-single__nav-block-link-preview">
+                  {{ partial "cover" (dict "context" .PrevInSection "src" .PrevInSection.Params.preview_image "density" 3) }}
+                  <span class="news-single__nav-block-link-preview-title">
+                    {{ .PrevInSection.Title }}
+                  </span>
+                </span>
+              </a>
+            {{ end }}
+          {{ end }}
+        </div>
+        <div class="news-single__nav-block">
+          {{ if .NextInSection }}
+            {{ if eq .NextInSection.Params.kind "normal" }}
+              <a href="{{ .NextInSection.Permalink }}" class="news-single__nav-block-link" data-no-flux>
+                <span class="news-single__nav-block-link-arrow">
+                  Next Post&nbsp;&nbsp;→
+                </span>
+                <span class="news-single__nav-block-link-preview">
+                  {{ partial "cover" (dict "context" .NextInSection "src" .NextInSection.Params.preview_image "density" 3) }}
+                  <span class="news-single__nav-block-link-preview-title">
+                    {{ .NextInSection.Title }}
+                  </span>
+                </span>
+              </a>
+            {{ end }}
+          {{ end }}
+        </div>
       </div>
-      <div class="news-single__nav-block">
-        {{ if .NextInSection }}
-          <a href="{{ .NextInSection.Permalink }}" class="news-single__nav-block-link" data-no-flux>
-            <span class="news-single__nav-block-link-arrow">
-              Next Post&nbsp;&nbsp;→
-            </span>
-            <span class="news-single__nav-block-link-preview" style="background-image: url('{{ .NextInSection.Params.preview_image }}');">
-              <span class="news-single__nav-block-link-preview-title">
-                {{ .NextInSection.Title }}
-              </span>
-            </span>
-          </a>
-        {{ end }}
+      <div class="news-single__share">
+        <div class="news-single__share-title">Share</div>
+        <a href="" data-no-flux>
+          {{ partial "svg" (dict "glyph" "social-facebook") }} 
+        </a>
+        <a href="" data-no-flux>
+          {{ partial "svg" (dict "glyph" "social-linkedin") }} 
+        </a>
+        <a href="" data-no-flux>
+          {{ partial "svg" (dict "glyph" "social-twitter") }} 
+        </a>
       </div>
     </div>
-    <div class="news-single__share">
-      <div class="news-single__share-title">Share</div>
-      <a href="" data-no-flux>
-        {{ partial "svg" (dict "glyph" "social-facebook") }} 
-      </a>
-      <a href="" data-no-flux>
-        {{ partial "svg" (dict "glyph" "social-linkedin") }} 
-      </a>
-      <a href="" data-no-flux>
-        {{ partial "svg" (dict "glyph" "social-twitter") }} 
-      </a>
-    </div>
-  </div>
+  {{ end }}
 {{ end }}

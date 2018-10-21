@@ -1,4 +1,4 @@
-import AOS from 'aos';
+// import AOS from 'aos';
 
 require('./document');
 require('./partials/nav');
@@ -8,9 +8,9 @@ require('./pages/work-list');
 require('./pages/news-list');
 require('./pages/news-single');
 
-AOS.init({
-  duration: 1000,
-});
+// AOS.init({
+//   duration: 1000,
+// });
 
 // JS Goes here - ES6 supported
 if (window.netlifyIdentity) {

@@ -1,0 +1,22 @@
+---
+basename: "news-single"
+kind: "normal"
+url: "/news/.html"
+
+title: ""
+description: ""
+category: ""
+author: ""
+date: 20XX-XX-XXTXX:XX:00.000Z
+
+preview_image: "images/cover.png"
+story_image: "images/cover.png"
+
+afterword:
+  heading: 
+  subheading: 
+  link:
+    - anchor: iOS
+      href: "#"
+
+---
