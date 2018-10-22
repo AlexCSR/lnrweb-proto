@@ -2,7 +2,7 @@
   {{ if (eq .Params.kind "normal") }}
     <div class="news-single">
       <div class="news-single__main">
-        <div class="news-single__main-cover -fixed">
+        <div class="news-single__main-cover">
           {{ partial "cover" (dict "context" . "src" .Params.story_image "density" 3) }}
         </div>
         <div class="news-single__main-article">
@@ -123,13 +123,13 @@
       </div>
       <div class="news-single__share">
         <div class="news-single__share-title">Share</div>
-        <a href="" data-no-flux>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.levinriegner.com{{ .Permalink }}&display=popup&ref=plugin&src=like" title="Facebook" target="_blank" rel="noopener noreferrer" data-no-flux>
           {{ partial "svg" (dict "glyph" "social-facebook") }} 
         </a>
-        <a href="" data-no-flux>
+        <a href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.levinriegner.com{{ .Permalink }}&title={{ .Title }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" data-no-flux>
           {{ partial "svg" (dict "glyph" "social-linkedin") }} 
         </a>
-        <a href="" data-no-flux>
+        <a href="http://twitter.com/intent/tweet?text=https://www.levinriegner.com{{ .Permalink }} / {{ .Title }} @levinriegner" target="_blank" rel="noopener noreferrer" title="Twitter" data-no-flux>
           {{ partial "svg" (dict "glyph" "social-twitter") }} 
         </a>
       </div>
