@@ -9,20 +9,20 @@ category: "Project Update"
 author: "L+R"
 date: 2017-05-07T16:03:32.000Z
 
-preview_image: "images/cover.jpg"
-story_image: "images/cover.jpg"
+preview_image: "images/10-cover.jpg"
+story_image: "images/10-cover.jpg"
 
 ---
 
 L+R developed the Interface Design for [Jammcard](http://jammcard.com/), and was recently featured on Forbes!
 
-{{% img src="images/image-app.jpg" %}}
+{{% img src="images/10-image-app.jpg" %}}
 
-{{% img src="images/image-forbes.png" %}}
+{{% img src="images/10-image-forbes.png" %}}
 
 [Original Post titled “Jammcard Has Evolved Into A Musician’s LinkedIn” by Hugh McIntyre, Contributor, Forbes](https://www.forbes.com/sites/hughmcintyre/2017/05/04/jammcard-has-evolved-into-a-musicians-linkedin/#12e84df0517d)
 
-{{% img src="images/image-homepage.jpg" %}}
+{{% img src="images/10-image-homepage.jpg" %}}
 
 *Jammcard’s homepage (screenshot taken by Hugh McIntyre).*
 

@@ -13,7 +13,7 @@ import imagesLoaded from '../libs/imagesloaded.pkgd.min';
   function fixedCover() {
     const articleRect = $article.getBoundingClientRect();
     const shouldFix =
-      (articleRect.height > window.innerHeight) &&
+      (articleRect.height + articleRect.top > window.innerHeight) &&
       (articleRect.bottom - window.innerHeight > 0);
 
     if (!isCoverFixed && shouldFix) {

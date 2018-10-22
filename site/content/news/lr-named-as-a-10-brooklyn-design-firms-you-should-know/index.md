@@ -9,8 +9,8 @@ category: "Our Team"
 author: "L+R"
 date: 2017-04-11T14:22:31.000Z
 
-preview_image: "images/cover.jpg"
-story_image: "images/cover.jpg"
+preview_image: "images/6-cover.jpg"
+story_image: "images/6-cover.jpg"
 
 afterword:
   subheading: Read original post

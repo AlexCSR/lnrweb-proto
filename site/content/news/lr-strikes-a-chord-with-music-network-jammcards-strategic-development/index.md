@@ -9,8 +9,8 @@ category: "Project Launch"
 author: "L+R"
 date: 2017-04-28T20:20:59.000Z
 
-preview_image: "images/cover.png"
-story_image: "images/cover.png"
+preview_image: "images/9-cover.png"
+story_image: "images/9-cover.png"
 
 afterword:
   subheading: Download apps

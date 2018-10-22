@@ -9,8 +9,8 @@ category: "Project Update"
 author: "L+R"
 date: 2016-11-29T20:16:32.000Z
 
-preview_image: "images/cover.png"
-story_image: "images/cover.png"
+preview_image: "images/4-cover.png"
+story_image: "images/4-cover.png"
 
 ---
 

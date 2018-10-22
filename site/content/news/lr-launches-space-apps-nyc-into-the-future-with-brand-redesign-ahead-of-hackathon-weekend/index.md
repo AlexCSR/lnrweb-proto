@@ -9,8 +9,8 @@ category: "Project Launch"
 author: "L+R"
 date: 2017-04-26T20:05:05.000Z
 
-preview_image: "images/cover.png"
-story_image: "images/cover.png"
+preview_image: "images/8-cover.png"
+story_image: "images/8-cover.png"
 
 ---
 

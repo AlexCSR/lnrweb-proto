@@ -1,6 +1,5 @@
 {{- $scratch := newScratch -}}
-{{- $media := .context.Resources -}}
-{{- $original := index ($media.Match (printf "%s" .src)) 0 -}}
+{{- $original := .context.Resources.GetMatch .src -}}
 {{- $baseWidth := (div $original.Width .density) -}}
 {{- $id := (printf "image-%s" (md5 $original.Name)) -}}
 

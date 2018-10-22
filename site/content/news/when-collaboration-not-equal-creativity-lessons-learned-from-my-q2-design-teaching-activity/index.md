@@ -9,8 +9,8 @@ category: "Design Teaching"
 author: "Julia Keller"
 date: 2017-06-23T18:48:38.000Z
 
-preview_image: "images/cover.png"
-story_image: "images/cover.png"
+preview_image: "images/12-cover.png"
+story_image: "images/12-cover.png"
 
 ---
 
@@ -20,7 +20,7 @@ What my research uncovered was that collaboration didn’t necessarily promote c
 
 This early study has since been supported by research that demonstrates creativity is threatened in group contexts due to social loafing (people slack off because someone else will do the heavy lifting), conformity, downward norm-setting, and production blocking (we can’t all talk at once). What these studies amounted to was a sort of Creativity Paradox. Researchers at Thompson Rivers University explained that, “when it comes to creativity…teams excel at convergent thinking, but individuals excel at divergent thinking. This is paradoxical because intuitively, most people strongly believe that teams are more creative than individuals, when in fact they aren’t”. 
 
-{{% img src="images/image.png" %}}
+{{% img src="images/12-image.png" %}}
 
 It turns out that the first step to optimize creative thinking is to ask if the question or task at hand requires divergent or convergent thinking. If there is a need for diverse choices or options, people should have time to work independently. On the other hand, groups are excellent on zeroing in on the “best” answer given a specific set of parameters and goals.
 

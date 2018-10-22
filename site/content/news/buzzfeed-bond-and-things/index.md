@@ -9,8 +9,8 @@ category: "Project Launch"
 author: "L+R"
 date: 2017-08-07T20:21:52.000Z
 
-preview_image: "images/cover.jpg"
-story_image: "images/cover.jpg"
+preview_image: "images/15-cover.jpg"
+story_image: "images/15-cover.jpg"
 
 afterword:
   subheading: "Get More"
@@ -26,18 +26,18 @@ As a media powerhouse with 200+ million monthly page views, BuzzFeed is constant
 
 Check out some of the cards:
 
-{{% img src="images/image-card-1.jpg" %}}
+{{% img src="images/15-image-card-1.jpg" %}}
 
 *Tyler Naugle / BuzzFeed*
 
-{{% img src="images/image-card-2.jpg" %}}
+{{% img src="images/15-image-card-2.jpg" %}}
 
 *Mike Hinson / BuzzFeed*
 
-{{% img src="images/image-card-3.jpg" %}}
+{{% img src="images/15-image-card-3.jpg" %}}
 
 *Lyla Ribot / BuzzFeed*
 
-{{% img src="images/image-robot.jpg" %}}
+{{% img src="images/15-image-robot.jpg" %}}
 
 *Image of the Bond robot in action!*

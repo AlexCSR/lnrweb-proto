@@ -9,8 +9,8 @@ category: "Project Launch"
 author: "L+R"
 date: 2016-10-18T19:28:17.000Z
 
-preview_image: "images/cover.jpg"
-story_image: "images/cover.jpg"
+preview_image: "images/1-cover.jpg"
+story_image: "images/1-cover.jpg"
 
 afterword:
   subheading: Unidos
@@ -28,7 +28,7 @@ To develop Unidos Feet in 2 Words partnered with L+R, a leading user experience 
 
 Latinos could be the deciding factor in the race for the White House, as well as numerous congressional and state and local races across the country. Unidos (available for download on iPhones) aims to break the historic pattern of lower-than-average voter turnout among Latinos and young people by speaking to them where they get their news – on their phones – with content that responds to their interests whether it is family, the economy, technology or politics.
 
-{{% img src="images/app.png" %}}
+{{% img src="images/1-app.png" %}}
 
 Unidos was conceptualized by Feet in 2 Worlds, an award-winning non-profit news website and public radio content producer that tells the stories of today’s immigrants to the rest of America.  To create Unidos Feet in 2 Worlds brought together a team of Latino journalists with extensive experience covering national and local politics in the U.S. and Latin America. The app also reflects extensive input from young Latinos across the country who helped to come up with the Unidos name and shape the app’s many features.
 
@@ -49,7 +49,7 @@ Unidos offers a curated feed of news from a wide range of sources in both Englis
 
 The Unidos news feed is just one of the app’s many features. “Anyone with a question about registering, voting or other aspects of the election process can turn to our easy-to-use guides,” said Medina Uribe. The guides include links to a variety of websites where Unidos users can register to vote, report problems with voting, and learn how they can become more deeply involved in the election process.
 
-{{% img src="images/image-screens.jpg" %}}
+{{% img src="images/1-image-screens.jpg" %}}
 
 > “We are working closely with non-profit partners who have extensive resources to help people register and vote.”
 >

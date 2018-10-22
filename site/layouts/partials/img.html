@@ -1,6 +1,5 @@
 {{- $scratch := newScratch -}}
-{{- $media := .context.Resources -}}
-{{- $original := index ($media.Match (printf "%s" .src)) 0 -}}
+{{- $original := .context.Resources.GetMatch .src -}}
 {{- $withSrcset := (.density) and (ne $original.MediaType.SubType "svg") -}}
 
 {{- if $withSrcset -}}

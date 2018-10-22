@@ -9,16 +9,16 @@ category: "Project Launch"
 author: "L+R"
 date: 2017-07-25T20:25:59.000Z
 
-preview_image: "images/cover.png"
-story_image: "images/cover.png"
+preview_image: "images/13-cover.png"
+story_image: "images/13-cover.png"
 
 ---
 
-{{% img src="images/image-icon.png" %}}
+{{% img src="images/13-image-icon.png" %}}
 
 L+R partnered with Heywood & Sons on their **Watersen** project to design and build the software interface that connects and operates their hardware device. Watersen is a non-intrusive IoT sensor for families to track their household water consumption. The project is co-funded with the Suez Group.
 
-{{% img src="images/image-water.jpg" %}}
+{{% img src="images/13-image-water.jpg" %}}
 
 *Estimates vary, but each person uses about 80-100 gallons of water per day.*
 
@@ -32,7 +32,7 @@ L+R built the user interface design that connected the smart device with Bluetoo
 > Digital Product Designer
 > L+R
 
-{{% img src="images/image-engineering.jpg" %}}
+{{% img src="images/13-image-engineering.jpg" %}}
 
 *Electrical engineering of the Watersen product*
 

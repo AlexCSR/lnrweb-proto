@@ -9,8 +9,8 @@ category: "Client Update"
 author: "L+R"
 date: 2017-06-14T16:25:44.000Z
 
-preview_image: "images/cover.jpg"
-story_image: "images/cover.jpg"
+preview_image: "images/11-cover.jpg"
+story_image: "images/11-cover.jpg"
 
 afterword:
   subheading: "Read the Full Article"
@@ -22,7 +22,7 @@ afterword:
 
 L+R completed the branding of Factory_OS, a modular home startup, based in Vallejo, California. They have recently announced an exciting order from Alphabet.
 
-{{% img src="images/image-island.jpg" %}}
+{{% img src="images/11-image-island.jpg" %}}
 
 *Photo: Michael Macor, The Chronicle*
 
@@ -32,7 +32,7 @@ Updated June 14, 2017 4:02 p.m. ET
 
 VALLEJO, Calif.—Soaring home prices and apartment rents in Silicon Valley have become a growing headache for technology titans. Google owner Alphabet Inc. is taking a step toward addressing the issue.
 
-{{% img src="images/image-factory.jpg" %}}
+{{% img src="images/11-image-factory.jpg" %}}
 
 *Photo: Michael Macor, The Chronicle*
 
