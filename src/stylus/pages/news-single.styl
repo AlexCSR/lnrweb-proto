@@ -90,12 +90,13 @@ $ns = ".news-single"
             border-bottom-width 0
           p + p
             margin-top 39px
-          p:not(:last-child) 
+          p:not(:last-child),
+          p:only-child
             font-family $GTAmericaMono
             font-style italic
             font-size 18px
             line-height 34px
-          p:last-child
+          p:last-child:not(:only-child)
             float right
             position relative
             white-space pre
