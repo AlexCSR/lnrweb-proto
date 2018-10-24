@@ -1,6 +1,8 @@
 {{- $scratch := newScratch -}}
 {{- $original := .context.Resources.GetMatch .src -}}
-{{- $withSrcset := (.density) and (ne $original.MediaType.SubType "svg") -}}
+{{- $isSVG := (eq $original.MediaType.SubType "svg") -}}
+{{- $isGIF := (eq $original.MediaType.SubType "gif") -}}
+{{- $withSrcset := (.density) and (ne $isSVG) and (ne $isGIF) -}}
 
 {{- if $withSrcset -}}
   {{- $baseWidth := (div $original.Width .density) -}}
