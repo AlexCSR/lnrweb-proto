@@ -29,6 +29,7 @@
         </div>
       </div>
       <div class="news-list__list">
+        <!--
         <div class="news-list__list-item news-list__pinned" style="background-color: #0D0D0D; background-image: url('/temp/clutch.jpg');">
           <div class="news-list__pinned-body">
             {{ partial "subhead" (dict "title" "Our Team") }}
@@ -210,8 +211,30 @@
             </span>
           </a>
         </div>
+        -->
+        {{ range where .Pages.ByPublishDate.Reverse "Params.kind" "normal" }}
+          <div class="news-list__list-item news-list__normal">
+            <a href="{{ .Permalink }}" class="news-list__normal-inner" data-no-flux>
+              <span class="news-list__normal-preview">
+                {{ partial "img" (dict "context" . "src" .Params.preview_image "attrs" (dict "alt" .Title)) }}
+              </span>
+              <span class="news-list__normal-body">
+                {{ partial "subhead" (dict "title" .Params.category) }}
+                <span class="news-list__normal-headline">
+                  <span class="news-list__normal-headline-copy">
+                    <span>
+                      {{ .Title }}
+                    </span>
+                  </span>
+                  {{ .Title }}
+                </span>
+                {{ partial "news-info" (dict "date" "Mar 29, 2018" "author" .Params.author) }}
+              </span>
+            </a>
+          </div>
+        {{ end }}
       </div>
-      {{ if gt .Paginator.TotalPages 1 }}
+<!--       {{ if gt .Paginator.TotalPages 1 }}
         {{ if .Paginator.HasNext }}
           <div class="news-list__preloader">
             <a href="{{ .Paginator.Next.URL }}" class="news-list__preloader-next"></a>
@@ -222,12 +245,7 @@
             </div>
           </div>
         {{ end }}
-      {{ end }}
+      {{ end }} -->
     </div>
   </div>
-<!--
-{{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
-  <div></div>
-{{ end }}
--->
 {{end}}
