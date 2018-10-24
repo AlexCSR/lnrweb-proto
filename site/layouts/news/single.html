@@ -9,7 +9,7 @@
           <div class="news-single__main-article-heading">
             {{ partial "subhead" (dict "title" .Params.category) }}
             <h1>{{ .Params.title }}</h1>
-            {{ partial "news-info" (dict "date" (dateFormat "Jan 2, 2006" .PublishDate) "author" .Params.author) }}
+            {{ partial "news-info" (dict "date" .PublishDate "author" .Params.author) }}
           </div>
           <div class="news-single__main-article-body">
             {{ .Content }}
@@ -39,7 +39,7 @@
                       </span>
                       The search for alternatives: L+R’s Director of Aesthetics, Ryan Riegner, introduces systems and tools for alternate ideation
                     </span>
-                    {{ partial "news-info" (dict "date" "May 9, 2018" "author" "L+R") }}
+                    {{ partial "news-info" (dict "date" "2017-10-05T15:04:10.000Z" "author" "L+R") }}
                   </span>
                 </a>
               </div>
@@ -58,7 +58,7 @@
                       </span>
                       L+R Senior Designer, Chris Martiníe named in GDUSA’s “People to Watch in 2018”
                     </span>
-                    {{ partial "news-info" (dict "date" "Feb 13, 2018" "author" "L+R") }}
+                    {{ partial "news-info" (dict "date" "2017-10-05T15:04:10.000Z" "author" "L+R") }}
                   </span>
                 </a>
               </div>
@@ -77,7 +77,7 @@
                       </span>
                       Dig – The dog person’s dating app launched
                     </span>
-                    {{ partial "news-info" (dict "date" "Mar 29, 2018" "author" "Meredith") }}
+                    {{ partial "news-info" (dict "date" "2017-10-05T15:04:10.000Z" "author" "Meredith") }}
                   </span>
                 </a>
               </div>
