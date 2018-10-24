@@ -2,37 +2,46 @@
 {{- $original := .context.Resources.GetMatch .src -}}
 {{- $baseWidth := (div $original.Width .density) -}}
 {{- $id := (printf "image-%s" (md5 $original.Name)) -}}
+{{- $shouldResize := and (ne $original.MediaType.SubType "svg") (ne $original.MediaType.SubType "gif") -}}
 
-{{- range $i, $val := (seq .density) -}}
-  {{- $currentDensity := (sub $.density $i) -}}
-  {{- $currentSize := (mul (int $currentDensity) (int $baseWidth)) -}}
+{{- if $shouldResize -}}
+  {{- range $i, $val := (seq .density) -}}
+    {{- $currentDensity := (sub $.density $i) -}}
+    {{- $currentSize := (mul (int $currentDensity) (int $baseWidth)) -}}
 
-  {{- if eq $i 0 -}}
-    {{- $scratch.SetInMap "src" (string $currentDensity) $original.Permalink -}}
-  {{- else -}}
-    {{- $resized := $original.Resize (printf "%sx Lanczos" (string $currentSize)) -}}
-    {{- $scratch.SetInMap "src" (string $currentDensity) $resized.RelPermalink -}}
+    {{- if eq $i 0 -}}
+      {{- $scratch.SetInMap "src" (string $currentDensity) $original.Permalink -}}
+    {{- else -}}
+      {{- $resized := $original.Resize (printf "%sx Lanczos" (string $currentSize)) -}}
+      {{- $scratch.SetInMap "src" (string $currentDensity) $resized.RelPermalink -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
 <div class="cover" id="{{ $id }}">
   <style>
-    #{{ $id }} {
-      background-image: url("{{ index ($scratch.Get "src") "1" }}");
-    }
-    {{ if isset ($scratch.Get "src") "2" }}
-    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 192dpi) {
+    {{ if $shouldResize }}
       #{{ $id }} {
-        background-image: url("{{ index ($scratch.Get "src") "2" }}");
+        background-image: url("{{ index ($scratch.Get "src") "1" }}");
       }
-    }
-    {{ end }}
-    {{ if isset ($scratch.Get "src") "3" }}
-    @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (min-resolution: 3dppx), only screen and (min-resolution: 288dpi) {
+      {{ if isset ($scratch.Get "src") "2" }}
+      @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 192dpi) {
+        #{{ $id }} {
+          background-image: url("{{ index ($scratch.Get "src") "2" }}");
+        }
+      }
+      {{ end }}
+      {{ if isset ($scratch.Get "src") "3" }}
+      @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (min-resolution: 3dppx), only screen and (min-resolution: 288dpi) {
+        #{{ $id }} {
+          background-image: url("{{ index ($scratch.Get "src") "3" }}");
+        }
+      }
+      {{ end }}
+    {{ else }}
       #{{ $id }} {
-        background-image: url("{{ index ($scratch.Get "src") "3" }}");
+        background-image: url("{{ $original.Permalink }}");
       }
-    }
     {{ end }}
   </style>
 </div>
