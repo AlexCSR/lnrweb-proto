@@ -9,38 +9,66 @@ $ns = ".news-single"
 {$ns}
   &__main
     position relative
-    padding-left 50%
+    +a($t)
+      padding-left 50%
     &-cover
-      position absolute
-      left 0
-      bottom 0
-      width 50%
-      height 100vh
+      +a($t)
+        position absolute
+        left 0
+        bottom 0
+        width 50%
+        height 100vh
+        &.-fixed
+          position fixed
+      +b($t)
+        position relative
+        margin-top 101px
+        &:before
+          content "" 
+          display block
+          padding-top 60%
       .cover
         position absolute
         top 0
         left 0
         right 0
         bottom 0 
-      &.-fixed
-        position fixed
     &-article
-      padding 135px 14% 0 13.4%
       border-bottom 1px solid rgba(#bfbfbf, 0.25)
+      +a($t)
+        padding 135px 14% 0 13.4%
+      +btw($m, $t)
+        padding-top 109px
+      +b($m)
+        padding-top 50px
+      .container
+        +a($t) 
+          width 100% 
       &-heading
-        padding-bottom 109px
+        +a($m)
+          padding-bottom 109px
+        +b($m)
+          padding-bottom 50px
         .subhead
           margin-bottom 8px
         h1
           font-weight normal
           font-family $Ogg
-          font-size 44px
-          line-height 60px 
           padding 0
           margin 0 0 4px
+          +a($m)
+            font-size 44px
+            line-height 60px 
+          +b($m)
+            font-size 28px
+            line-height 40px
         .news-info
           color #a4a4a4 
-          font-size 17px
+          +a($m)
+            font-size 17px
+          +b($m)
+            font-size 14px
+            line-height 20px
       &-body
         font-size 16px
         line-height 29px
@@ -57,11 +85,14 @@ $ns = ".news-single"
           margin 29px 0 
         img
           display block
-          max-width 125%
           margin 42px 0 30px
           position relative
           left 50%
           transform translateX(-50%)
+          +a($t)
+            max-width 125%
+          +b($t)
+            max-width 100% 
         hr
           display block
           padding 0
@@ -124,25 +155,41 @@ $ns = ".news-single"
           margin-bottom 0 !important
       .afterword
         border-top 1px solid rgba(#bfbfbf, 0.25)
-        padding 145px 0 
+        +a($m)
+          padding 145px 0 
+        +b($m)
+          padding 70px 0 
+        &__heading,
+        &__subheading
+          +b($m)
+            font-size 30px
+            line-height 40px
   &__related
     padding 114px 0 140px
     .news-list
       padding-top 57px
   &__nav
     border-top 1px solid rgba(#bfbfbf, 0.25)
-    display flex
     text-align center
+    +a($t)
+      display flex
     &-block
-      width 50%
       box-sizing border-box
       padding 20px
+      +a($t)
+        width 50%
       & + &
-        border-left 1px solid rgba(#bfbfbf, 0.25)
+        +a($t)
+          border-left 1px solid rgba(#bfbfbf, 0.25)
+        +b($t)
+          border-top 1px solid rgba(#bfbfbf, 0.25)
       &-link
         display block
         position relative
-        height 460px
+        +a($t)
+          height 460px
+        +b($t)
+          height 230px
         &-arrow
           display block
           position absolute
@@ -151,10 +198,14 @@ $ns = ".news-single"
           transform translate(-50%, -50%)
           transition-property opacity, visibility
           transition-duration $speed  
-          font-size 34px
           line-height 40px
           color #000
           padding-bottom 18px
+          white-space nowrap
+          +a($m)
+            font-size 34px
+          +b($m)
+            font-size 30px
         &-preview
           display flex
           justify-content center

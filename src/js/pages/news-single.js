@@ -37,6 +37,10 @@ import imagesLoaded from '../libs/imagesloaded.pkgd.min';
 ;(function () {
   const $share = document.querySelector('.news-single__share');
 
+  if (!$share) {
+    return;
+  }
+
   function share(e) {
     const $link = e.target.closest('a');
     const windowSettings = 'height=380,width=660,resizable=0,toolbar=0,menubar=0,status=0,location=0,scrollbars=0';

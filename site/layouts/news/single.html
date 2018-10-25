@@ -6,17 +6,19 @@
           {{ partial "cover" (dict "context" . "src" .Params.story_image "density" 3) }}
         </div>
         <div class="news-single__main-article">
-          <div class="news-single__main-article-heading">
-            {{ partial "subhead" (dict "title" .Params.category) }}
-            <h1>{{ .Params.title }}</h1>
-            {{ partial "news-info" (dict "date" .PublishDate "author" .Params.author) }}
+          <div class="container">
+            <div class="news-single__main-article-heading">
+              {{ partial "subhead" (dict "title" .Params.category) }}
+              <h1>{{ .Params.title }}</h1>
+              {{ partial "news-info" (dict "date" .PublishDate "author" .Params.author) }}
+            </div>
+            <div class="news-single__main-article-body">
+              {{ .Content }}
+            </div>
+            {{ if .Params.afterword }}
+              {{ partial "afterword" (dict "context" .Params.afterword) }}
+            {{ end }}
           </div>
-          <div class="news-single__main-article-body">
-            {{ .Content }}
-          </div>
-          {{ if .Params.afterword }}
-            {{ partial "afterword" (dict "context" .Params.afterword) }}
-          {{ end }}
         </div>
       </div>
       <div class="container">
