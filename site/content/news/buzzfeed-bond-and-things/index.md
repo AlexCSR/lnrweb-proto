@@ -9,7 +9,7 @@ category: "Project Launch"
 author: "L+R"
 date: 2017-08-07T20:21:52.000Z
 
-preview_image: "images/15-preview.jpg"
+preview_image: "images/15-preview.png"
 story_image: "images/15-cover.png"
 
 afterword:
